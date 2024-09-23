@@ -16,6 +16,7 @@
         android:textAllCaps="false"
         android:textSize="21sp"
         android:textStyle="bold" />
+
     <ImageView
         android:layout_width="370sp"
         android:layout_height="370sp"
@@ -23,6 +24,7 @@
         android:id="@+id/imageView"
         android:layout_marginTop="10sp"
         />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,6 +36,7 @@
         android:layout_below="@+id/imageView"
         android:layout_marginTop="10sp"
         />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,6 +48,7 @@
         android:id="@+id/result"
         android:layout_below="@+id/classified"
         />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,6 +60,7 @@
         android:layout_below="@+id/result"
         android:layout_marginTop="30sp"
         />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,4 +72,15 @@
         android:layout_below="@+id/confidencesText"
         />
 
+    <Button
+        android:id="@+id/learn_dispose_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/confidence"
+        android:layout_marginTop="20sp"
+        android:text="Learn How to Dispose This Item"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
 </RelativeLayout>

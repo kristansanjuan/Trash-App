@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            String[] classes = {"Nabubulok", "Hindi Nabubulok", "Recyclable"};
+            String[] classes = {"Biodegradable", "Non-biodegradable", "Recyclable", "Biohazard"};
 
             result.setText(classes[maxPos]);
 
