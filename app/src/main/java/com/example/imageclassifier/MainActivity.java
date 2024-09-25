@@ -1,5 +1,5 @@
 package com.example.imageclassifier;
-//testing commit
+//testing commits
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
