@@ -1,5 +1,5 @@
 package com.example.imageclassifier;
-//testing commits
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            String[] classes = {"Biodegradable", "Non-biodegradable", "Recyclable", "Biohazard"};
+            String[] classes = {"Biodegradable", "Non-biodegradable", "Recyclable"};//, "Biohazard"
 
             result.setText(classes[maxPos]);
 
