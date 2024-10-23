@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="@drawable/menu_bg">
+
+    <ImageButton
+        android:id="@+id/closeMenuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cancel_icon"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_gravity="end" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:divider="@color/black"
+        android:showDividers="middle"
+        android:dividerPadding="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ecosort1"
+            android:layout_gravity="start"
+            android:layout_marginStart="50dp"
+            android:paddingBottom="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:paddingTop="10dp"
+            android:paddingLeft="21dp"/>
+
+    </LinearLayout>
+
+
+</FrameLayout>

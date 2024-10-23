@@ -7,6 +7,34 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+
+    <string name="biodegradableTitle">Biodegradable</string>
+    <string name="nonBiodegradableTitle">Non-Biodegradable</string>
+    <string name="recyclableTitle">Recyclable</string>
+    <string name="hazardousTitle">Hazardous</string>
+    <string name="infectiousTitle">Infectious</string>
+
+    <string name="biodegradableDescription">
+        (explanations) Some trash Blah Blah Blah Blah
+        Blah Blah Blah Blah Blah Blah Blah Blah
+    </string>
+    <string name="nonBiodegradableDescription">
+        (explanations) Another trash Blah Blah Blah Blah
+        Blah Blah Blah Blah Blah Blah Blah Blah
+    </string>
+    <string name="recyclableDescription">
+        (explanations) Trash again Blah Blah Blah Blah
+        Blah Blah Blah Blah Blah Blah Blah Blah
+    </string>
+    <string name="hazardousDescription">
+        (explanations) Different kind of trash Blah Blah
+        Blah Blah Blah Blah Blah Blah Blah Blah
+    </string>
+    <string name="infectiousDescription">
+        (explanations) Whole new trash Blah Blah Blah
+        Blah Blah Blah Blah Blah Blah Blah Blah
+    </string>
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
