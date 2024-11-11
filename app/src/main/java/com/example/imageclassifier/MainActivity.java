@@ -233,17 +233,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            String[] classes = {"Biodegradable", "Non-biodegradable", "Recyclable"};//, "Biohazard"
-
-            result.setText(classes[maxPos]);
-
-            String s = "";
-            for(int i = 0; i < classes.length; i++){
-                s += String.format("%s: %.1f%%\n", classes[i], confidences[i] * 100);
-            }
-
-            confidence.setText(s);
-
+            String[] classes = {"Plastic Cups", "Papers", "Batteries", "Fruits", "Flammable", "Wood", "Aluminum", "Animal", "EcoBag", "Plastic Bag", "Organic Waste", "Face Masks", "Chemicals", "Juice Packs", "Leaves", "Books", "Clothes"};//Class 14 = Face Masks
+            String detectedObject = classes[maxPos];
+            result.setText(detectedObject);
+            
             // Releases model resources if no longer used.
             model.close();
         } catch (IOException e) {

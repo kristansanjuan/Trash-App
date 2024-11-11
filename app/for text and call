@@ -1,0 +1,43 @@
+            String category;
+            switch (detectedObject) {
+                case "Hazardous Waste":
+                    category = "Hazardous";
+
+                    // Show buttons for calling or texting authorities
+                    Button callButton = findViewById(R.id.call_authorities_button);
+                    Button textButton = findViewById(R.id.text_authorities_button);
+                    callButton.setVisibility(View.VISIBLE);
+                    textButton.setVisibility(View.VISIBLE);
+
+                    // Handle Call Button Click
+                    callButton.setOnClickListener(v -> {
+                        Intent callIntent = new Intent(Intent.ACTION_CALL);
+                        callIntent.setData(Uri.parse("tel:+123456789")); // Replace with authority number
+                        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CALL_PHONE}, 101);
+                            return;
+                        }
+                        startActivity(callIntent);
+                    });
+
+                    // Handle Text Button Click
+                    textButton.setOnClickListener(v -> {
+                        // Get the current location
+                        getCurrentLocation(location -> {
+                            if (location != null) {
+                                double latitude = location.getLatitude();
+                                double longitude = location.getLongitude();
+                                String message = "Hazardous waste detected at location: " +
+                                        "https://maps.google.com/?q=" + latitude + "," + longitude;
+
+                                // Send the SMS
+                                sendSMS("+123456789", message);  // Replace with authority number
+                            } else {
+                                Toast.makeText(MainActivity.this, "Unable to get location", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    });
+                    break;
+                default:
+                    category = "Non-biodegradable";
+            }
