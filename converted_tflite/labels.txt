@@ -1,0 +1,17 @@
+0 Plastic Cups
+1 Papers
+2 Batteries
+3 Fruits
+4 Flammable
+5 Wood
+6 Aluminum
+7 Animal
+8 EcoBag
+9 Plastic Bag
+10 Organic Waste
+11 Class 14
+12 Chemicals
+13 Juice Packs
+14 Leaves
+15 Books
+16 Clothes
