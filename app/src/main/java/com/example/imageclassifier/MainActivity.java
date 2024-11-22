@@ -27,6 +27,7 @@ import com.google.android.material.navigation.NavigationView;
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -35,8 +36,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView result, confidence;
-    ImageView imageView;
+    /*TextView result, confidence;
+    ImageView imageView;*/
     ImageButton picture;
     int imageSize = 224;
     DrawerLayout drawerLayout;
@@ -68,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        result = findViewById(R.id.result);
+        /*result = findViewById(R.id.result);
         confidence = findViewById(R.id.confidence);
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.imageView);*/
         picture = findViewById(R.id.cameraButton);
         drawerLayout = findViewById(R.id.mainLayout);
         openMenu = findViewById(R.id.openMenuButton);
@@ -196,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
         animator.start();
     }
 
-    public void classifyImage(Bitmap image) {
+    /*public void classifyImage(Bitmap image) {
         try {
             ModelUnquant model = ModelUnquant.newInstance(getApplicationContext());
 
@@ -255,6 +256,23 @@ public class MainActivity extends AppCompatActivity {
             image = Bitmap.createScaledBitmap(image,imageSize,imageSize,false);
             classifyImage(image);
 
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }*/
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            Bitmap image = (Bitmap) data.getExtras().get("data");
+            int dimension = Math.min(image.getWidth(), image.getHeight());
+            image = ThumbnailUtils.extractThumbnail(image, dimension, dimension);
+
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            image.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
+
+            Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+            intent.putExtra("image", byteArray);
+            startActivity(intent);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

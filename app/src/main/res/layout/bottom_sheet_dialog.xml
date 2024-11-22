@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/result_bg"
+    android:padding="16sp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="65sp"
+        android:layout_height="5sp"
+        app:cardBackgroundColor="@color/lightblue"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10sp"
+        app:cardCornerRadius="5sp">
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/wasteType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waste type here"
+        android:textSize="27sp"
+        android:textColor="#343232"
+        android:fontFamily="@font/generalsansregular"
+        android:textStyle="bold"
+        android:layout_marginBottom="30sp" />
+
+    <TextView
+        android:id="@+id/classified"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#343232"
+        android:fontFamily="@font/generalsansregular"
+        android:layout_marginBottom="15sp" />
+
+    <TextView
+        android:id="@+id/disposeGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#343232"
+        android:fontFamily="@font/generalsansregular"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take another picture"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:fontFamily="@font/generalsansregular"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/lightblue"
+        app:cornerRadius="15dp" />
+
+    <!--<TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#C30000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/confidencesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confidences:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/confidence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp" />-->
+
+
+</LinearLayout>

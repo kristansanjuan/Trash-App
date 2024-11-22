@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/mainLayout"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
@@ -55,9 +56,13 @@
             android:layout_height="75dp"
             android:background="@drawable/round_button_bg"
             android:src="@drawable/biodegradable1"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="0"
-            app:layout_constraintCircleRadius="100dp" />
+            app:layout_constraintCircleRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/nonBiodegradableButton"
@@ -65,9 +70,13 @@
             android:layout_height="75dp"
             android:background="@drawable/round_button_bg"
             android:src="@drawable/nonbiodegradable1"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="288"
-            app:layout_constraintCircleRadius="100dp" />
+            app:layout_constraintCircleRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/recyclableButton"
@@ -75,9 +84,13 @@
             android:layout_height="75dp"
             android:background="@drawable/round_button_bg"
             android:src="@drawable/recyclable1"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="216"
-            app:layout_constraintCircleRadius="100dp" />
+            app:layout_constraintCircleRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/hazardousButton"
@@ -85,9 +98,13 @@
             android:layout_height="75dp"
             android:background="@drawable/round_button_bg"
             android:src="@drawable/hazardous1"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="144"
-            app:layout_constraintCircleRadius="100dp" />
+            app:layout_constraintCircleRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/infectiousButton"
@@ -95,19 +112,23 @@
             android:layout_height="75dp"
             android:background="@drawable/round_button_bg"
             android:src="@drawable/infectious1"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="72"
-            app:layout_constraintCircleRadius="100dp" />
+            app:layout_constraintCircleRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/titleArea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="20sp"
-            android:textColor="#343232"
-            android:textStyle="bold"
             android:fontFamily="@font/generalsansregular"
+            android:text=""
+            android:textColor="#343232"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/cameraButton"
             app:layout_constraintEnd_toEndOf="parent"
@@ -119,13 +140,13 @@
             android:id="@+id/descriptionArea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="18sp"
-            android:textColor="#706666"
             android:fontFamily="@font/generalsansregular"
-            android:visibility="gone"
             android:paddingStart="30dp"
             android:paddingEnd="30dp"
+            android:text=""
+            android:textColor="#706666"
+            android:textSize="18sp"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/cameraButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -139,8 +160,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="64dp"
-            android:backgroundTint="#4E4848"
             android:background="@drawable/round_button_bg"
+            android:backgroundTint="#4E4848"
             android:src="@drawable/camera_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -160,7 +181,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cameraButton" />
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/imageView"
             android:layout_width="147dp"
             android:layout_height="156dp"
@@ -246,7 +267,7 @@
             android:textAllCaps="false"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:visibility="gone" />
+            android:visibility="gone" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
