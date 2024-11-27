@@ -84,13 +84,47 @@ public class ResultActivity extends AppCompatActivity {
         }
     }
 
+    private String classifyObject(String detectedObject) {
+        // Classify the detected object into categories
+        switch (detectedObject) {
+            case "Plastic Cups":
+            case "Plastic Bag":
+            case "EcoBag":
+            case "Aluminum":
+            case "Juice Packs":
+                return "Non-Biodegradable";
+            case "Papers":
+            case "Leaves":
+            case "Fruits":
+            case "Wood":
+            case "Organic Waste":
+                return "Biodegradable";
+            case "Batteries":
+            case "Chemicals":
+            case "Face Masks":
+                return "Hazardous";
+            case "Books":
+            case "Clothes":
+                return "Non-Biodegradable";
+            case "Animal":
+                return "Non-Biodegradable";
+            default:
+                return "Unknown";
+        }
+    }
+
     private void showBottomSheet(String detectedObject, float confidence) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null);
 
         TextView classifiedTextView = bottomSheetView.findViewById(R.id.classified);
         TextView disposeGuideTextView = bottomSheetView.findViewById(R.id.disposeGuide);
+        TextView wasteTypeTextView = bottomSheetView.findViewById(R.id.wasteType);
 
+        String wasteCategory = classifyObject(detectedObject);
+
+        wasteTypeTextView.setText(wasteCategory);
+        classifiedTextView.setText("This is: " + detectedObject);
         classifiedTextView.setText("This is: " + detectedObject);
         disposeGuideTextView.setText("To proper dispose of " + detectedObject + ", follow these steps:");
 
