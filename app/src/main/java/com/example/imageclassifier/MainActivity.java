@@ -20,6 +20,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.imageclassifier.ml.ModelUnquant;
 import com.google.android.material.navigation.NavigationView;
@@ -36,10 +37,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    /*TextView result, confidence;
-    ImageView imageView;*/
     ImageButton picture;
-    int imageSize = 224;
     DrawerLayout drawerLayout;
     ImageButton openMenu;
     NavigationView navigationView;
@@ -69,9 +67,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*result = findViewById(R.id.result);
-        confidence = findViewById(R.id.confidence);
-        imageView = findViewById(R.id.imageView);*/
         picture = findViewById(R.id.cameraButton);
         drawerLayout = findViewById(R.id.mainLayout);
         openMenu = findViewById(R.id.openMenuButton);
@@ -197,83 +192,33 @@ public class MainActivity extends AppCompatActivity {
         animator.start();
     }
 
-    /*public void classifyImage(Bitmap image) {
-        try {
-            ModelUnquant model = ModelUnquant.newInstance(getApplicationContext());
-
-            // Creates inputs for reference.
-            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 224, 224, 3}, DataType.FLOAT32);
-            ByteBuffer byteBuffer = ByteBuffer.allocateDirect(4*imageSize*imageSize*3);
-            byteBuffer.order(ByteOrder.nativeOrder());
-
-            int [] intValues = new int[imageSize*imageSize];
-            image.getPixels(intValues,0,image.getWidth(),0,0,image.getWidth(),image.getHeight());
-            int pixel = 0;
-            for(int i = 0; i < imageSize; i++){
-                for(int j = 0; j < imageSize; j++){
-                    int val = intValues[pixel++]; // RGB
-                    byteBuffer.putFloat(((val >> 16) & 0xFF)*(1.f/255.f));
-                    byteBuffer.putFloat(((val >> 8) & 0xFF)*(1.f/255.f));
-                    byteBuffer.putFloat((val & 0xFF)*(1.f/255.f));
-                }
-            }
-
-            inputFeature0.loadBuffer(byteBuffer);
-
-            // Runs model inference and gets result.
-            ModelUnquant.Outputs outputs = model.process(inputFeature0);
-            TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
-
-            float[] confidences = outputFeature0.getFloatArray();
-            int maxPos = 0;
-            float maxConfidence = 0;
-            for(int i = 0; i < confidences.length; i++){
-                if(confidences[i] > maxConfidence){
-                    maxConfidence = confidences[i];
-                    maxPos = i;
-                }
-            }
-
-            String[] classes = {"Plastic Cups", "Papers", "Batteries", "Fruits", "Flammable", "Wood", "Aluminum", "Animal", "EcoBag", "Plastic Bag", "Organic Waste", "Face Masks", "Chemicals", "Juice Packs", "Leaves", "Books", "Clothes"};//Class 14 = Face Masks
-            String detectedObject = classes[maxPos];
-            result.setText(detectedObject);
-            
-            // Releases model resources if no longer used.
-            model.close();
-        } catch (IOException e) {
-            // TODO Handle the exception
-        }
+    private void showError(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == 1 && resultCode == RESULT_OK) {
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getExtras() != null) {
             Bitmap image = (Bitmap) data.getExtras().get("data");
-            int dimension = Math.min(image.getWidth(),image.getHeight());
-            image = ThumbnailUtils.extractThumbnail(image,dimension,dimension);
-            imageView.setImageBitmap(image);
+            if (image != null) {
+                int dimension = Math.min(image.getWidth(), image.getHeight());
+                image = ThumbnailUtils.extractThumbnail(image, dimension, dimension);
 
-            image = Bitmap.createScaledBitmap(image,imageSize,imageSize,false);
-            classifyImage(image);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                image.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
 
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }*/
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == 1 && resultCode == RESULT_OK) {
-            Bitmap image = (Bitmap) data.getExtras().get("data");
-            int dimension = Math.min(image.getWidth(), image.getHeight());
-            image = ThumbnailUtils.extractThumbnail(image, dimension, dimension);
-
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            image.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
-
-            Intent intent = new Intent(MainActivity.this, ResultActivity.class);
-            intent.putExtra("image", byteArray);
-            startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                intent.putExtra("image", byteArray);
+                startActivity(intent);
+            } else {
+                // Handle the case where the image is null
+                showError("Failed to capture image.");
+            }
+        } else {
+            showError("No image captured or operation cancelled.");
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 }
