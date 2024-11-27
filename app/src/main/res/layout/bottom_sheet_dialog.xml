@@ -21,7 +21,7 @@
         android:id="@+id/wasteType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Waste type here"
+        android:text=""
         android:textSize="27sp"
         android:textColor="#343232"
         android:fontFamily="@font/generalsansregular"
@@ -50,7 +50,8 @@
         android:layout_gravity="center"
         android:layout_marginBottom="30sp" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
+        android:id="@+id/takeAnotherPictureButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Take another picture"
@@ -63,33 +64,11 @@
         android:backgroundTint="@color/lightblue"
         app:cornerRadius="15dp" />
 
-    <!--<TextView
-        android:id="@+id/result"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/resizedImageView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="#C30000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp" />
-
-    <TextView
-        android:id="@+id/confidencesText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confidences:"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp" />
-
-    <TextView
-        android:id="@+id/confidence"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="#000"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp" />-->
-
+        android:contentDescription="Resized Image"
+        android:scaleType="centerInside"/>
 
 </LinearLayout>
