@@ -35,6 +35,29 @@
         Blah Blah Blah Blah Blah Blah Blah Blah
     </string>
 
+    <string name="title1">Welcome to Ecosort</string>
+    <string name="title2">Turn Waste Into Wisdom</string>
+    <string name="title3">How to use ECOSORT</string>
+
+    <string name="description1">
+        Helping you sort waste efficiently for a sustainable future. Together, we make a difference!
+        By sorting and recycling waste effectively, we free our planet from pollution and open the door
+        to a healthier, greener, and more sustainable world for all.
+    </string>
+
+    <string name="description2">
+        Proper waste management empowers individuals and communities by reducing environmental burdens,
+        promoting sustainability, and creating opportunities for a cleaner future.
+    </string>
+
+    <string name="description3">
+        ECOSORT, your guide to efficient waste segregation! To use the app, simply open it, point your
+        camera at the object you want to classify, and tap the Scan button. It will quickly identify and
+        categorize the item into one of five categories: Biodegradable, Non-Biodegradable, Recyclable,
+        Hazardous, or Infectious. Once classified, follow the recommended disposal method for responsible
+        waste management!
+    </string>
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
@@ -71,4 +94,6 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
