@@ -60,7 +60,7 @@ public class DisposalGuideActivity {
                         "4. Hugasan ang iyong mga kamay gamit ang sabon at tubig pagkatapos itapon ang mask."
         });
 
-        defaultGuides.put("Plastic Utensil", new String[]{
+        defaultGuides.put("Plastic Utensils", new String[]{
                 // English
                 "1. Get something you may use as a glove to pick up the plastic utensil.\n" +
                         "2. Check if the utensils are recyclable (look for recycling symbols).\n" +
