@@ -198,27 +198,34 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getExtras() != null) {
-            Bitmap image = (Bitmap) data.getExtras().get("data");
-            if (image != null) {
-                int dimension = Math.min(image.getWidth(), image.getHeight());
-                image = ThumbnailUtils.extractThumbnail(image, dimension, dimension);
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getExtras() != null) {
+            // Retrieve the captured image as a Bitmap
+            Bitmap image = (Bitmap) data.getExtras().get("data");
+
+            if (image != null) {
+                // Resize the image to match the input size expected by the model (224x224)
+                Bitmap resizedImage = Bitmap.createScaledBitmap(image, 224, 224, true);
+
+                // Compress the resized image into a ByteArray for passing to the next activity
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                image.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                resizedImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byte[] byteArray = stream.toByteArray();
 
+                // Pass the resized image to ResultActivity
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 intent.putExtra("image", byteArray);
                 startActivity(intent);
             } else {
-                // Handle the case where the image is null
-                showError("Failed to capture image.");
+                // Handle the case where the image could not be captured
+                showError("Failed to capture image. Please try again.");
             }
         } else {
+            // Handle other cases where the operation failed or was cancelled
             showError("No image captured or operation cancelled.");
         }
-        super.onActivityResult(requestCode, resultCode, data);
     }
+
 
 }
