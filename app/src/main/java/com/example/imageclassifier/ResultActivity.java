@@ -73,7 +73,8 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
 
-            String[] classes = {"Plastic Cups", "Papers", "Batteries", "Fruits", "Flammable", "Wood", "Aluminum", "Animal", "EcoBag", "Plastic Bag", "Organic Waste", "Face Masks", "Chemicals", "Juice Packs", "Leaves", "Books", "Clothes"};
+            String[] classes = {"Foods", "Plastic Bottle", "Face Masks", "Plastic Utensils", "Syringe"};
+            //String[] classes = {"Plastic Cups", "Papers", "Batteries", "Fruits", "Flammable", "Wood", "Aluminum", "Animal", "EcoBag", "Plastic Bag", "Organic Waste", "Face Masks", "Chemicals", "Juice Packs", "Leaves", "Books", "Clothes"};
             String detectedObject = classes[maxPos];
 
             showBottomSheet(detectedObject, maxConfidence);
@@ -87,27 +88,32 @@ public class ResultActivity extends AppCompatActivity {
     private String classifyObject(String detectedObject) {
         // Classify the detected object into categories
         switch (detectedObject) {
-            case "Plastic Cups":
+            /*case "Plastic Cups":
             case "Plastic Bag":
             case "EcoBag":
             case "Aluminum":
-            case "Juice Packs":
+            case "Juice Packs":*/
+            case "Plastic Utensils":
+            case "Plastic Bottle":
                 return "Non-Biodegradable";
-            case "Papers":
+            /*case "Papers":
             case "Leaves":
             case "Fruits":
             case "Wood":
-            case "Organic Waste":
+            case "Organic Waste":*/
+            case "Foods":
                 return "Biodegradable";
-            case "Batteries":
+            /*case "Batteries":
             case "Chemicals":
             case "Face Masks":
-                return "Hazardous";
-            case "Books":
-            case "Clothes":
-                return "Non-Biodegradable";
-            case "Animal":
-                return "Non-Biodegradable";
+                return "Hazardous";*/
+            /*case "Books":
+            case "Clothes":*/
+            case "Syringes":
+            case "Face Masks":
+                return "Infectious";
+            /*case "Animal":
+                return "Non-Biodegradable";*/
             default:
                 return "Unknown";
         }
