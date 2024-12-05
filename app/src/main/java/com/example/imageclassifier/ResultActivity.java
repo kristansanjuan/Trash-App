@@ -1,6 +1,5 @@
 package com.example.imageclassifier;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -15,6 +14,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import java.io.IOException;
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
+import org.w3c.dom.Text;
+
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
@@ -123,16 +124,21 @@ public class ResultActivity extends AppCompatActivity {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null);
 
+        DisposalGuideActivity disposalGuideActivity = new DisposalGuideActivity();
+
         TextView classifiedTextView = bottomSheetView.findViewById(R.id.classified);
-        TextView disposeGuideTextView = bottomSheetView.findViewById(R.id.disposeGuide);
+        TextView disposalGuideTitleTextView = bottomSheetView.findViewById(R.id.disposalGuideTitle);
         TextView wasteTypeTextView = bottomSheetView.findViewById(R.id.wasteType);
+        TextView disposalGuideContentsTextView = bottomSheetView.findViewById(R.id.disposalGuideContents);
 
         String wasteCategory = classifyObject(detectedObject);
 
+        String disposalGuide = disposalGuideActivity.getGuide(detectedObject);
+
         wasteTypeTextView.setText(wasteCategory);
         classifiedTextView.setText("This is: " + detectedObject);
-        classifiedTextView.setText("This is: " + detectedObject);
-        disposeGuideTextView.setText("To proper dispose of " + detectedObject + ", follow these steps:");
+        disposalGuideTitleTextView.setText("To proper dispose of " + detectedObject + ", follow these steps:");
+        disposalGuideContentsTextView.setText(disposalGuide);
 
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();

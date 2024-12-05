@@ -16,11 +16,6 @@
             android:icon="@drawable/categories_icon" />
 
         <item
-            android:id="@+id/navHistory"
-            android:title="History"
-            android:icon="@drawable/history_icon" />
-
-        <item
             android:id="@+id/navKnowledge"
             android:title="Knowledge"
             android:icon="@drawable/knowledge_icon" />
@@ -29,10 +24,6 @@
 
     <group
         android:id="@+id/otherGroup">
-    <item
-        android:id="@+id/navSettings"
-        android:title="Settings"
-        android:icon="@drawable/settings_icon" />
 
     <item
         android:id="@+id/navHelp"
