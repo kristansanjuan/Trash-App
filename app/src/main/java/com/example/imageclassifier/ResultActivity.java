@@ -110,7 +110,7 @@ public class ResultActivity extends AppCompatActivity {
                 return "Hazardous";*/
             /*case "Books":
             case "Clothes":*/
-            case "Syringes":
+            case "Syringe":
             case "Face Masks":
                 return "Infectious";
             /*case "Animal":
