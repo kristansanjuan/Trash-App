@@ -41,14 +41,23 @@
         android:layout_marginBottom="15sp" />
 
     <TextView
-        android:id="@+id/disposeGuide"
+        android:id="@+id/disposalGuideTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:textColor="#343232"
         android:fontFamily="@font/generalsansregular"
-        android:layout_gravity="center"
-        android:layout_marginBottom="30sp" />
+        android:layout_gravity="center" />
+    
+    <TextView
+        android:id="@+id/disposalGuideContents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#343232"
+        android:fontFamily="@font/generalsansregular"
+        android:layout_marginBottom="30sp"
+        android:layout_gravity="center" />
 
     <Button
         android:id="@+id/takeAnotherPictureButton"

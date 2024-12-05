@@ -1,6 +1,5 @@
 package com.example.imageclassifier;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -22,7 +21,7 @@ public class ResultActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private TextView result;
-    private int imageSize = 224; // adjust this based on your model's input size
+    private int imageSize = 224;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,16 +116,21 @@ public class ResultActivity extends AppCompatActivity {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null);
 
+        DisposalGuideActivity disposalGuideActivity = new DisposalGuideActivity();
+
         TextView classifiedTextView = bottomSheetView.findViewById(R.id.classified);
-        TextView disposeGuideTextView = bottomSheetView.findViewById(R.id.disposeGuide);
+        TextView disposeGuideTitleTextView = bottomSheetView.findViewById(R.id.disposalGuideTitle);
         TextView wasteTypeTextView = bottomSheetView.findViewById(R.id.wasteType);
+        TextView disposalGuideContentsTextView = bottomSheetView.findViewById(R.id.disposalGuideContents);
 
         String wasteCategory = classifyObject(detectedObject);
 
+        String disposalGuide = disposalGuideActivity.getGuide(detectedObject);
+
         wasteTypeTextView.setText(wasteCategory);
         classifiedTextView.setText("This is: " + detectedObject);
-        classifiedTextView.setText("This is: " + detectedObject);
-        disposeGuideTextView.setText("To proper dispose of " + detectedObject + ", follow these steps:");
+        disposeGuideTitleTextView.setText("To proper dispose of " + detectedObject + ", follow these steps:");
+        disposalGuideContentsTextView.setText(disposalGuide);
 
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
