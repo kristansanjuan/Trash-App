@@ -216,7 +216,11 @@ public class MainActivity extends AppCompatActivity {
                 // Pass the resized image to ResultActivity
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 intent.putExtra("image", byteArray);
+
+                // Use FLAG_ACTIVITY_CLEAR_TOP to clear the previous instances of ResultActivity
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish(); // Close the current instance of ResultActivity to avoid stacking
             } else {
                 // Handle the case where the image could not be captured
                 showError("Failed to capture image. Please try again.");
