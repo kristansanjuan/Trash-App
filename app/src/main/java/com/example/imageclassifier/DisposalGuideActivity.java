@@ -46,7 +46,7 @@ public class DisposalGuideActivity {
                         "4. Iwasang sunugin ang plastik dahil naglalabas ito ng mapanganib na mga kemikal."
         });
 
-        defaultGuides.put("Face Mask", new String[]{
+        defaultGuides.put("Face Masks", new String[]{
                 // English
                 "1. Get something you may use as a glove to pick up the mask.\n" +
                         "2. Place the used mask in a plastic bag or a sealed container.\n" +
