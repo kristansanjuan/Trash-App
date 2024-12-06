@@ -4,9 +4,11 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -53,14 +55,25 @@ public class SplashScreenActivity extends AppCompatActivity{
 
         animatorSet.start();
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+        new Handler().postDelayed(() -> {
+            SharedPreferences sharedPreferences = getSharedPreferences("OnboardingPrefs", MODE_PRIVATE);
+            boolean isFirstTime = sharedPreferences.getBoolean("isFirstTime", true);
+
+            if (isFirstTime) {
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("isFirstTime", false);
+                editor.apply();
+
+
+                startActivity(new Intent(SplashScreenActivity.this, OnboardingActivity.class));
+            } else {
+
+                startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
             }
-        }, 3000); // Delay for 3 seconds
+
+            finish();
+        }, 3000);
     }
     private void animateBackgroundColor(View view, int startColor, int endColor) {
         ValueAnimator colorAnimation = ValueAnimator.ofArgb(startColor, endColor);
