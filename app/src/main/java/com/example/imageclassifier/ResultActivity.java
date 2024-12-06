@@ -58,9 +58,14 @@ public class ResultActivity extends AppCompatActivity {
             for (int i = 0; i < imageSize; i++) {
                 for (int j = 0; j < imageSize; j++) {
                     int val = intValues[pixel++];
-                    byteBuffer.putFloat(((val >> 16) & 0xFF) * (1.f / 255.f));
-                    byteBuffer.putFloat(((val >> 8) & 0xFF) * (1.f / 255.f));
-                    byteBuffer.putFloat((val & 0xFF) * (1.f / 255.f));
+                    int r = (val >> 16) & 0xFF; // Extract red channel
+                    int g = (val >> 8) & 0xFF;  // Extract green channel
+                    int b = val & 0xFF;         // Extract blue channel
+
+                    // Normalize and put RGB values into the ByteBuffer
+                    byteBuffer.putFloat(r * (1.f / 255.f));
+                    byteBuffer.putFloat(g * (1.f / 255.f));
+                    byteBuffer.putFloat(b * (1.f / 255.f));
                 }
             }
 
