@@ -60,9 +60,9 @@ public class ResultActivity extends AppCompatActivity {
             for (int i = 0; i < imageSize; i++) {
                 for (int j = 0; j < imageSize; j++) {
                     int val = intValues[pixel++];
-                    byteBuffer.putFloat(((pixel >> 16) & 0xFF) / 255.0f);  // Red
-                    byteBuffer.putFloat(((pixel >> 8) & 0xFF) / 255.0f);   // Green
-                    byteBuffer.putFloat((pixel & 0xFF) / 255.0f);          // Blue
+                    byteBuffer.putFloat(((val >> 16) & 0xFF) * (1.f / 255.f));  // Red
+                    byteBuffer.putFloat(((val >> 8) & 0xFF) * (1.f / 255.f));   // Green
+                    byteBuffer.putFloat((val & 0xFF) * (1.f / 255.f));          // Blue
                 }
             }
 
