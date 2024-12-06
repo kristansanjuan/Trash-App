@@ -207,19 +207,17 @@ public class MainActivity extends AppCompatActivity {
             if (image != null) {
                 // Resize the image to match the input size expected by the model (224x224)
 
-                int width = image.getWidth();
-                int height = image.getHeight();
-                int dimension = Math.min(width, height);
+                int dimension = Math.min(image.getWidth(), image.getHeight());
 
                 // Crop the image to a square
-                Bitmap croppedImage = ThumbnailUtils.extractThumbnail(image, dimension, dimension);
+                image = ThumbnailUtils.extractThumbnail(image, dimension, dimension);
 
                 // Resize the cropped image to the input size expected by the model (e.g., 224x224)
-                Bitmap resizedImage = Bitmap.createScaledBitmap(image, 224, 224, true);
+                image = Bitmap.createScaledBitmap(image, 224, 224, false);
 
                 // Compress the resized image into a ByteArray for passing to the next activity
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                resizedImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                image.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byte[] byteArray = stream.toByteArray();
 
                 // Pass the resized image to ResultActivity
