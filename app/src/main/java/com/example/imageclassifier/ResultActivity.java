@@ -1,9 +1,12 @@
 package com.example.imageclassifier;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +26,9 @@ public class ResultActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private TextView result;
-    private int imageSize = 224; // adjust this based on your model's input size
+    private int imageSize = 224;
+
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +135,7 @@ public class ResultActivity extends AppCompatActivity {
         TextView disposalGuideTitleTextView = bottomSheetView.findViewById(R.id.disposalGuideTitle);
         TextView wasteTypeTextView = bottomSheetView.findViewById(R.id.wasteType);
         TextView disposalGuideContentsTextView = bottomSheetView.findViewById(R.id.disposalGuideContents);
+        Button takeAnotherPictureButton = bottomSheetView.findViewById(R.id.takeAnotherPictureButton);
 
         String wasteCategory = classifyObject(detectedObject);
 
@@ -140,8 +146,37 @@ public class ResultActivity extends AppCompatActivity {
         disposalGuideTitleTextView.setText("To proper dispose of " + detectedObject + ", follow these steps:");
         disposalGuideContentsTextView.setText(disposalGuide);
 
+        // Set up click listener for the button
+        takeAnotherPictureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Relaunch the camera intent
+                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (cameraIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(cameraIntent, 1);
+                }
+                bottomSheetDialog.dismiss(); // Close the Bottom Sheet dialog
+            }
+        });
+
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
+    }
+
+    // Handle the result of the new picture taken
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK && data != null) {
+            // Get the image from the camera
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+
+            // Update the image and classify it
+            imageView.setImageBitmap(imageBitmap);
+            classifyImage(imageBitmap);
+        }
     }
 
 }
