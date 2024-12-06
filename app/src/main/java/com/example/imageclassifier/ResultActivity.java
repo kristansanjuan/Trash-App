@@ -21,6 +21,7 @@ import org.w3c.dom.Text;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import android.util.Log;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -59,9 +60,9 @@ public class ResultActivity extends AppCompatActivity {
             for (int i = 0; i < imageSize; i++) {
                 for (int j = 0; j < imageSize; j++) {
                     int val = intValues[pixel++];
-                    byteBuffer.putFloat(((val >> 16) & 0xFF) * (1.f / 255.f)); // Red
-                    byteBuffer.putFloat(((val >> 8) & 0xFF) * (1.f / 255.f));  // Green
-                    byteBuffer.putFloat((val & 0xFF) * (1.f / 255.f));         // Blue
+                    byteBuffer.putFloat(((pixel >> 16) & 0xFF) / 255.0f);  // Red
+                    byteBuffer.putFloat(((pixel >> 8) & 0xFF) / 255.0f);   // Green
+                    byteBuffer.putFloat((pixel & 0xFF) / 255.0f);          // Blue
                 }
             }
 
@@ -84,7 +85,21 @@ public class ResultActivity extends AppCompatActivity {
             //String[] classes = {"Plastic Cups", "Papers", "Batteries", "Fruits", "Flammable", "Wood", "Aluminum", "Animal", "EcoBag", "Plastic Bag", "Organic Waste", "Face Masks", "Chemicals", "Juice Packs", "Leaves", "Books", "Clothes"};
             String detectedObject = classes[maxPos];
 
+            // Check if confidence is below 35%
+            if (maxConfidence <= 0.35f) {
+                // Show a "Can't classify" message if confidence is low
+                detectedObject = "Unknown";
+            }
+
             showBottomSheet(detectedObject, maxConfidence);
+
+            String s = "";
+            for (int i = 0; i < classes.length; i++) {
+                s += String.format("%s: %.1f%%\n", classes[i], confidences[i] * 100);
+            }
+
+            // Print the result to the console log
+            Log.d("ClassificationResult", s);
 
             model.close();
         } catch (IOException e) {
@@ -122,7 +137,7 @@ public class ResultActivity extends AppCompatActivity {
             /*case "Animal":
                 return "Non-Biodegradable";*/
             default:
-                return "Unknown";
+                return "Can't classify (Confidence too low)";
         }
     }
 
@@ -143,9 +158,20 @@ public class ResultActivity extends AppCompatActivity {
         String disposalGuide = disposalGuideActivity.getGuide(detectedObject);
 
         wasteTypeTextView.setText(wasteCategory);
-        classifiedTextView.setText("This is: " + detectedObject);
-        disposalGuideTitleTextView.setText("To proper dispose of " + detectedObject + ", follow these steps:");
-        disposalGuideContentsTextView.setText(disposalGuide);
+        // Update UI elements based on classification
+        if ("Unknown".equals(detectedObject)) {
+            // Leave UI elements blank if the classification is unknown
+            wasteTypeTextView.setText(wasteCategory);
+            classifiedTextView.setText("This is: " + detectedObject );
+            disposalGuideTitleTextView.setText("");
+            disposalGuideContentsTextView.setText("");
+        } else {
+            // Set the detected object and guide
+            wasteTypeTextView.setText(wasteCategory);
+            classifiedTextView.setText("This is: " + detectedObject);
+            disposalGuideTitleTextView.setText("To properly dispose of " + detectedObject + ", follow these steps:");
+            disposalGuideContentsTextView.setText(disposalGuide);
+        }
 
         // Set up click listener for the button
         takeAnotherPictureButton.setOnClickListener(new View.OnClickListener() {
