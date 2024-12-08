@@ -1,5 +1,6 @@
 package com.example.imageclassifier;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -15,6 +16,9 @@ import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
@@ -40,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton picture;
     DrawerLayout drawerLayout;
     ImageButton openMenu;
-    NavigationView navigationView;
+    NavigationView navigationView1;
+    NavigationView navigationView2;
     ImageButton closeButton;
     TextView titleArea;
     TextView descriptionArea;
@@ -70,9 +75,52 @@ public class MainActivity extends AppCompatActivity {
         picture = findViewById(R.id.cameraButton);
         drawerLayout = findViewById(R.id.mainLayout);
         openMenu = findViewById(R.id.openMenuButton);
-        navigationView = findViewById(R.id.navMenu);
+        navigationView1 = findViewById(R.id.navMenu1);
         titleArea = findViewById(R.id.titleArea);
         descriptionArea = findViewById(R.id.descriptionArea);
+        navigationView2 = findViewById(R.id.navMenu2);
+
+        //bale eto ung listener ng menu items, line 84-123
+        navigationView2.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                int id = item.getItemId();
+
+                if (id == R.id.navHelp) {
+                    Intent intent = new Intent(MainActivity.this, OnboardingActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (id == R.id.navAbout) {
+                    Toast.makeText(MainActivity.this, "About is clicked!", Toast.LENGTH_SHORT).show();
+                } else if (id == R.id.navContactUs) {
+                    Toast.makeText(MainActivity.this, "Contact Us is clicked!", Toast.LENGTH_SHORT).show();
+                }
+
+                drawerLayout.close();
+
+                return false;
+            }
+        });
+
+        navigationView1.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                if (id == R.id.navHome) {
+                    Toast.makeText(MainActivity.this, "Home is clicked!", Toast.LENGTH_SHORT).show();
+                } else if (id == R.id.navCategories) {
+                    Toast.makeText(MainActivity.this, "Categories is clicked!", Toast.LENGTH_SHORT).show();
+                } else if (id == R.id.navKnowledge) {
+                    Toast.makeText(MainActivity.this, "Knowledge Us is clicked!", Toast.LENGTH_SHORT).show();
+                }
+
+                drawerLayout.close();
+
+                return false;
+            }
+        });
 
         ImageButton button1 = findViewById(R.id.biodegradableButton);
         ImageButton button2 = findViewById(R.id.infectiousButton);
@@ -93,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        View headerView = navigationView.getHeaderView(0);
+        View headerView = navigationView1.getHeaderView(0);
         closeButton = headerView.findViewById(R.id.closeMenuButton);
 
         closeButton.setOnClickListener(new View.OnClickListener() {
@@ -238,5 +286,23 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /*@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_items2, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.navHelp) {
+
+            Intent intent = new Intent(MainActivity.this, OnboardingActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }*/
 }
