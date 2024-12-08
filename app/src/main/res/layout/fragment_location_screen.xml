@@ -57,7 +57,8 @@
         app:layout_constraintBottom_toTopOf="@id/proceedButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_default="wrap">
+        app:layout_constraintHeight_default="wrap"
+        app:cardBackgroundColor="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"

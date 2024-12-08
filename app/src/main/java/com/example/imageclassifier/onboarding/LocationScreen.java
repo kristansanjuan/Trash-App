@@ -69,8 +69,18 @@ public class LocationScreen extends Fragment {
 
         // Handle list item click
         locationListView.setOnItemClickListener((parent, view1, position, id) -> {
+            // Highlight the clicked item
+            for (int i = 0; i < locationListView.getChildCount(); i++) {
+                // Reset all items to default background color
+                locationListView.getChildAt(i).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+            }
+
+            // Set the background color of the clicked item
+            view1.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
+
+            // Save the selected location
             selectedLocation = locationList.get(position);
-            Toast.makeText(getContext(), "Selected: " + selectedLocation, Toast.LENGTH_SHORT).show();
+
         });
 
         // Proceed button click
