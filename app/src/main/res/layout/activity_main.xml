@@ -189,10 +189,33 @@
         android:layout_gravity="start"
         android:background="@drawable/menu_bg"
         app:headerLayout="@layout/menu_header"
-        app:itemIconTint="@color/white"
+        app:itemIconTint="@color/yellow"
         app:dividerInsetStart="20dp"
         app:dividerInsetEnd="20dp"
         app:itemTextColor="@color/white"
-        app:menu="@menu/menu_items" />
+        app:menu="@menu/menu_items1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1"/>
+            
+            <com.google.android.material.navigation.NavigationView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:menu="@menu/menu_items2"
+                android:background="@drawable/menu_bg"
+                app:itemTextColor="@color/white"
+                app:itemIconTint="@color/white"
+                android:paddingBottom="50sp" />
+            
+        </LinearLayout>
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
