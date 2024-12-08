@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.imageclassifier.onboarding.FirstScreen;
+import com.example.imageclassifier.onboarding.LocationScreen;
 import com.example.imageclassifier.onboarding.OnboardingAdapter;
 import com.example.imageclassifier.onboarding.SecondScreen;
 import com.example.imageclassifier.onboarding.ThirdScreen;
@@ -23,6 +24,7 @@ public class OnboardingActivity extends AppCompatActivity {
         adapter.addFragment(new FirstScreen());
         adapter.addFragment(new SecondScreen());
         adapter.addFragment(new ThirdScreen());
+        adapter.addFragment(new LocationScreen());
 
         viewPager.setAdapter(adapter);
     }

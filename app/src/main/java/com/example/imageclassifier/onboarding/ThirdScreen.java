@@ -27,9 +27,8 @@ public class ThirdScreen extends Fragment {
         Button skipButton = view.findViewById(R.id.skipButton);
 
         skipButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), MainActivity.class);
-            startActivity(intent);
-            getActivity().finish();
+            ViewPager2 viewPager = getActivity().findViewById(R.id.viewPager);
+            viewPager.setCurrentItem(3);
         });
 
         return view;
