@@ -28,6 +28,19 @@
         android:textStyle="bold"
         android:layout_marginBottom="30sp" />
 
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/translateSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp"
+        android:fontFamily="@font/generalsansregular"
+        app:thumbTint="@drawable/thumb"
+        app:trackTint="@drawable/track"
+        app:switchMinWidth="56sp"
+        app:switchPadding="10sp"
+        android:text="English?"
+        android:textSize="14sp" />
+
     <TextView
         android:id="@+id/classified"
         android:layout_width="wrap_content"

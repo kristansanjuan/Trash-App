@@ -9,4 +9,7 @@
     <color name="red">#D62728</color>
     <color name="orange">#FF7F0E</color>
     <color name="lightblue">#247D7F</color>
+    <color name="lightgray">#ECECEC</color>
+    <color name="darkergray">#909090</color>
+    <color name="darkcyan">#005353</color>
 </resources>
