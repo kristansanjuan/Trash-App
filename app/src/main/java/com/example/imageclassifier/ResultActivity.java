@@ -108,37 +108,70 @@ public class ResultActivity extends AppCompatActivity {
         }
     }
 
-    private String classifyObject(String detectedObject) {
+    private String classifyObject(String detectedObject, boolean isEnglish) {
         // Classify the detected object into categories
-        switch (detectedObject) {
+        if (isEnglish){
+            switch (detectedObject) {
             /*case "Plastic Cups":
             case "Plastic Bag":
             case "EcoBag":
             case "Aluminum":
             case "Juice Packs":*/
-            case "Plastic Utensils":
-            case "Plastic Bottle":
-                return "Non-Biodegradable";
+                case "Plastic Utensils":
+                case "Plastic Bottle":
+                    return "Non-Biodegradable";
             /*case "Papers":
             case "Leaves":
             case "Fruits":
             case "Wood":
             case "Organic Waste":*/
-            case "Foods":
-                return "Biodegradable";
+                case "Foods":
+                    return "Biodegradable";
             /*case "Batteries":
             case "Chemicals":
             case "Face Masks":
                 return "Hazardous";*/
             /*case "Books":
             case "Clothes":*/
-            case "Syringe":
-            case "Face Masks":
-                return "Infectious";
+                case "Syringe":
+                case "Face Masks":
+                    return "Infectious";
             /*case "Animal":
                 return "Non-Biodegradable";*/
-            default:
-                return "Can't classify (Confidence too low)";
+                default:
+                    return "Can't classify (Confidence too low)";
+            }
+        } else {
+            switch (detectedObject) {
+            /*case "Plastic Cups":
+            case "Plastic Bag":
+            case "EcoBag":
+            case "Aluminum":
+            case "Juice Packs":*/
+                case "Plastic Utensils":
+                case "Plastic Bottle":
+                    return "Hindi Nabubulok";
+            /*case "Papers":
+            case "Leaves":
+            case "Fruits":
+            case "Wood":
+            case "Organic Waste":*/
+                case "Foods":
+                    return "Nabubulok";
+            /*case "Batteries":
+            case "Chemicals":
+            case "Face Masks":
+                return "Hazardous";*/
+            /*case "Books":
+            case "Clothes":*/
+                case "Syringe":
+                case "Face Masks":
+                    return "Nakakahawa";
+            /*case "Animal":
+                return "Non-Biodegradable";*/
+                default:
+                    return "Hindi ma-klasipika";
+            }
         }
     }
 
@@ -155,26 +188,31 @@ public class ResultActivity extends AppCompatActivity {
         Button takeAnotherPictureButton = bottomSheetView.findViewById(R.id.takeAnotherPictureButton);
         SwitchCompat languageSwitch = bottomSheetView.findViewById(R.id.translateSwitch);
 
-        String wasteCategory = classifyObject(detectedObject);
+        // Set initial text for the switch (when OFF - Tagalog, when ON - English)
+        languageSwitch.setText(languageSwitch.isChecked() ? "ENG" : "TAG");
 
-        String disposalGuide = disposalGuideActivity.getGuide(detectedObject);
+        boolean isEnglish = languageSwitch.isChecked();
 
+        // Function to update the UI based on language
+        updateLanguageUI(detectedObject, isEnglish, wasteTypeTextView, classifiedTextView, disposalGuideTitleTextView, disposalGuideContentsTextView, disposalGuideActivity);
 
-        wasteTypeTextView.setText(wasteCategory);
-        // Update UI elements based on classification
-        if ("Unknown".equals(detectedObject)) {
-            // Leave UI elements blank if the classification is unknown
-            wasteTypeTextView.setText(wasteCategory);
-            classifiedTextView.setText("This is: " + detectedObject );
-            disposalGuideTitleTextView.setText("");
-            disposalGuideContentsTextView.setText("");
-        } else {
-            // Set the detected object and guide
-            wasteTypeTextView.setText(wasteCategory);
-            classifiedTextView.setText("This is: " + detectedObject);
-            disposalGuideTitleTextView.setText("To properly dispose of " + detectedObject + ", follow these steps:");
-            disposalGuideContentsTextView.setText(disposalGuide);
-        }
+        // Set up language toggle functionality
+        languageSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            // Update language setting in DisposalGuideActivity
+            disposalGuideActivity.toggleLanguage();
+
+            // Update the language preference
+            updateLanguageUI(detectedObject, isChecked, wasteTypeTextView, classifiedTextView, disposalGuideTitleTextView, disposalGuideContentsTextView, disposalGuideActivity);
+
+            // Update the switch's text
+            languageSwitch.setText(isChecked ? "ENG" : "TAG");
+
+            if (isChecked) {
+                takeAnotherPictureButton.setText("Take Another Picture");
+            } else {
+                takeAnotherPictureButton.setText("Kumuha ng Isa Pang Litrato");
+            }
+        });
 
         // Set up click listener for the button
         takeAnotherPictureButton.setOnClickListener(new View.OnClickListener() {
@@ -191,6 +229,37 @@ public class ResultActivity extends AppCompatActivity {
 
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
+    }
+
+    private void updateLanguageUI(String detectedObject, boolean isEnglish, TextView wasteTypeTextView, TextView classifiedTextView, TextView disposalGuideTitleTextView, TextView disposalGuideContentsTextView, DisposalGuideActivity disposalGuideActivity) {
+        String wasteCategory = classifyObject(detectedObject, isEnglish);
+        String disposalGuide = disposalGuideActivity.getGuide(detectedObject);
+
+        if ("Unknown".equals(detectedObject)) {
+            // Update UI for unknown object
+            if (isEnglish) {
+                wasteTypeTextView.setText("Can't classify (Confidence too low)");
+                classifiedTextView.setText("This is: " + detectedObject);
+                disposalGuideTitleTextView.setText("");
+                disposalGuideContentsTextView.setText("");
+            } else {
+                wasteTypeTextView.setText("Hindi ma-klasipika (Masyadong mababa ang kumpiyansa)");
+                classifiedTextView.setText("Ito ay: " + detectedObject);
+                disposalGuideTitleTextView.setText("");
+                disposalGuideContentsTextView.setText("");
+            }
+        } else {
+            // Update UI for classified object
+            wasteTypeTextView.setText(wasteCategory);
+            classifiedTextView.setText(isEnglish ? "This is: " + detectedObject : "Ito ay: " + detectedObject);
+            disposalGuideTitleTextView.setText(isEnglish
+                    ? "To properly dispose of " + detectedObject + ", follow these steps:"
+                    : "Para sa tamang pagtatapon ng " + detectedObject + ", sundin ang mga steps na ito:");
+            disposalGuideContentsTextView.setText(disposalGuide);
+        }
+
+        // Set the disposal guide contents (ensure it supports both languages)
+        disposalGuideContentsTextView.setText(disposalGuide);
     }
 
     // Handle the result of the new picture taken
