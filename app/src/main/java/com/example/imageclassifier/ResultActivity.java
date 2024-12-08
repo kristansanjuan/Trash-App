@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.example.imageclassifier.ml.ModelUnquant;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -152,10 +153,12 @@ public class ResultActivity extends AppCompatActivity {
         TextView wasteTypeTextView = bottomSheetView.findViewById(R.id.wasteType);
         TextView disposalGuideContentsTextView = bottomSheetView.findViewById(R.id.disposalGuideContents);
         Button takeAnotherPictureButton = bottomSheetView.findViewById(R.id.takeAnotherPictureButton);
+        SwitchCompat languageSwitch = bottomSheetView.findViewById(R.id.translateSwitch);
 
         String wasteCategory = classifyObject(detectedObject);
 
         String disposalGuide = disposalGuideActivity.getGuide(detectedObject);
+
 
         wasteTypeTextView.setText(wasteCategory);
         // Update UI elements based on classification

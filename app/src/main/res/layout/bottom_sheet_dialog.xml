@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,29 +18,48 @@
 
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/wasteType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="27sp"
-        android:textColor="#343232"
-        android:fontFamily="@font/generalsansregular"
-        android:textStyle="bold"
-        android:layout_marginBottom="30sp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30sp">
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/translateSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30sp"
-        android:fontFamily="@font/generalsansregular"
-        app:thumbTint="@drawable/thumb"
-        app:trackTint="@drawable/track"
-        app:switchMinWidth="56sp"
-        app:switchPadding="10sp"
-        android:text="English?"
-        android:textSize="14sp" />
+        <TextView
+            android:id="@+id/wasteType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/generalsansregular"
+            android:text=""
+            android:textColor="#343232"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.533" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/translateSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/generalsansregular"
+            android:text="LNG"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:switchMinWidth="56sp"
+            app:switchPadding="10sp"
+            app:thumbTint="@drawable/thumb"
+            app:trackTint="@drawable/track" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     <TextView
         android:id="@+id/classified"
