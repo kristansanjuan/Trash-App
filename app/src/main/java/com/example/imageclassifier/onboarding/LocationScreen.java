@@ -1,6 +1,8 @@
 package com.example.imageclassifier.onboarding;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,8 +76,14 @@ public class LocationScreen extends Fragment {
         // Proceed button click
         proceedButton.setOnClickListener(v -> {
             if (!selectedLocation.isEmpty()) {
+                // Save the selected location
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("AppPreferences", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("selectedLocation", selectedLocation);
+                editor.apply();
+
+                // Proceed to the next activity
                 Intent intent = new Intent(getContext(), MainActivity.class);
-                intent.putExtra("selectedLocation", selectedLocation);
                 startActivity(intent);
                 getActivity().finish();
             } else {
