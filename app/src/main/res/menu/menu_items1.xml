@@ -22,24 +22,4 @@
 
     </group>
 
-    <group
-        android:id="@+id/otherGroup">
-
-    <item
-        android:id="@+id/navHelp"
-        android:title="Help"
-        android:icon="@drawable/help_icon" />
-
-    <item
-        android:id="@+id/navAbout"
-        android:title="About"
-        android:icon="@drawable/about_icon" />
-
-    <item
-        android:id="@+id/navContactUs"
-        android:title="Contact Us"
-        android:icon="@drawable/contactus_icon" />
-
-    </group>
-
 </menu>
