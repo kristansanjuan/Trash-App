@@ -1,3 +1,28 @@
+This for retrieving the location
+
+            SharedPreferences sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE);
+            String savedLocation = sharedPreferences.getString("selectedLocation", "No location selected"); // Default value
+            if (!savedLocation.equals("No location selected")) {
+                Toast.makeText(this, "Saved Location: " + savedLocation, Toast.LENGTH_SHORT).show();
+            }
+
+This is for user to change location
+
+            SharedPreferences sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE);
+            String savedLocation = sharedPreferences.getString("selectedLocation", null);
+
+            if (savedLocation != null) {
+                Toast.makeText(this, "Welcome back! Your location: " + savedLocation, Toast.LENGTH_LONG).show();
+                // Optionally skip location selection screen
+            } else {
+                // No location saved yet, direct to LocationScreen
+                Intent intent = new Intent(this, LocationScreen.class);
+                startActivity(intent);
+                finish();
+            }
+
+This is for the CALL AND TEXT
+
             String category;
             switch (detectedObject) {
                 case "Hazardous Waste":
