@@ -117,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 drawerLayout.close();
-
                 return false;
             }
         });
@@ -283,6 +282,21 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // Handle other cases where the operation failed or was cancelled
             showError("No image captured or operation cancelled.");
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 100) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted, you can now use the camera
+                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, 1);
+            } else {
+                // Permission denied, show a message
+                Toast.makeText(this, "Camera permission is required to capture image", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
