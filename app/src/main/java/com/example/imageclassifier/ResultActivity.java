@@ -87,7 +87,7 @@ public class ResultActivity extends AppCompatActivity {
             String detectedObject = classes[maxPos];
 
             // Check if confidence is below 35%
-            if (maxConfidence <= 0.35f) {
+            if (maxConfidence <= 0.55f) {
                 // Show a "Can't classify" message if confidence is low
                 detectedObject = "Unknown";
             }
@@ -272,10 +272,26 @@ public class ResultActivity extends AppCompatActivity {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
 
-            // Update the image and classify it
+            // Update the imageView to show the new picture
             imageView.setImageBitmap(imageBitmap);
+
+            // Classify the new image
             classifyImage(imageBitmap);
         }
+    }
+
+    // In ResultActivity.java
+
+    @Override
+    public void onBackPressed() {
+        // Navigate to MainActivity (Home)
+        super.onBackPressed();
+        Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+
+        // Finish the current activity
+        finish();
     }
 
 }
