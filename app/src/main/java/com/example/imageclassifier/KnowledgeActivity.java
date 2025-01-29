@@ -1,20 +1,22 @@
 package com.example.imageclassifier;
 
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.widget.SearchView;
+
+import java.util.ArrayList;
 
 
 public class KnowledgeActivity extends BaseActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_knowlege);
+        setActivityContent(R.layout.activity_knowledge);
+
 
     }
 

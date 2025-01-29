@@ -81,6 +81,7 @@
                 android:id="@+id/locationListView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:cacheColorHint="@color/white"
                 android:divider="@android:color/transparent"
                 android:dividerHeight="8dp" />
         </LinearLayout>

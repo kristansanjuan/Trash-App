@@ -1,5 +1,6 @@
 package com.example.imageclassifier;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -20,7 +23,6 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
-        // Set up the toolbar
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
@@ -39,6 +41,24 @@ public class BaseActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+
+        NavigationView navigationView = findViewById(R.id.navMenu1);
+        navigationView.setNavigationItemSelectedListener(item -> {
+
+            if (item.getItemId() == R.id.navHome) {
+                startActivity(new Intent(this, MainActivity.class));
+            } else if (item.getItemId() == R.id.navKnowledge) {
+                startActivity(new Intent(this, KnowledgeActivity.class));
+            } else if (item.getItemId() == R.id.navHelp) {
+                startActivity(new Intent(this, OnboardingActivity.class));
+            } else {
+                return false;
+            }
+
+            drawerLayout.closeDrawer(GravityCompat.START);
+            return true;
+        });
+
     }
 
     protected void setActivityContent(int layoutId) {
