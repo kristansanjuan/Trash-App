@@ -7,32 +7,41 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
 
     <string name="biodegradableTitle">Biodegradable</string>
     <string name="nonBiodegradableTitle">Non-Biodegradable</string>
     <string name="recyclableTitle">Recyclable</string>
     <string name="hazardousTitle">Hazardous</string>
     <string name="infectiousTitle">Infectious</string>
+    <string name="ewasteTitle">E-waste</string>
 
     <string name="biodegradableDescription">
-        (explanations) Some trash Blah Blah Blah Blah
-        Blah Blah Blah Blah Blah Blah Blah Blah
+        Biodegradable waste is material that breaks down naturally through
+        microorganisms and environmental factors, such as food scraps, dry leaves, and organic
+        waste. This process helps reduce environmental impact and can contribute to climate
+        protection through recycling.
     </string>
     <string name="nonBiodegradableDescription">
-        (explanations) Another trash Blah Blah Blah Blah
-        Blah Blah Blah Blah Blah Blah Blah Blah
+        Non-biodegradable waste refers to materials that cannot be broken down or
+        decomposed by natural biological processes. These wastes, such as plastics, metals, and glass,
+        remain in the environment for long periods, potentially causing harm to ecosystems. Unlike
+        biodegradable waste, non-biodegradable waste does not return to the earth and requires alternative
+        methods of disposal or recycling.
     </string>
     <string name="recyclableDescription">
-        (explanations) Trash again Blah Blah Blah Blah
-        Blah Blah Blah Blah Blah Blah Blah Blah
+        Recyclable waste refers to materials that can be collected, processed, and transformed
+        into new products instead of being disposed of in landfills. Common recyclable materials
+        include paper, glass, plastic, and metal, which can be reused after undergoing a recycling
+        process to reduce environmental impact and conserve resources.
     </string>
-    <string name="hazardousDescription">
-        (explanations) Different kind of trash Blah Blah
-        Blah Blah Blah Blah Blah Blah Blah Blah
-    </string>
-    <string name="infectiousDescription">
-        (explanations) Whole new trash Blah Blah Blah
-        Blah Blah Blah Blah Blah Blah Blah Blah
+    <string name="ewasteDescription">
+        Electronic waste (e-waste) refers to discarded electronic devices and equipment, such as
+        computers, phones, and televisions, that are no longer in use or intended for reuse. This type of
+        waste includes a wide range of items with electrical components or circuitry, often containing
+        hazardous materials. Proper disposal and recycling of e-waste are essential to reduce environmental
+        impact and recover valuable materials.
     </string>
 
     <string name="title1">Welcome to Ecosort</string>
@@ -94,4 +103,6 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

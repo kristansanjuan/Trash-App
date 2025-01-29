@@ -3,8 +3,10 @@ package com.example.imageclassifier;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.Manifest;
@@ -16,30 +18,20 @@ import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.imageclassifier.ml.ModelUnquant;
 import com.google.android.material.navigation.NavigationView;
 
-import org.tensorflow.lite.DataType;
-import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
-
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     ImageButton picture;
     DrawerLayout drawerLayout;
@@ -54,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     int[] oldIcon = {
             R.drawable.biodegradable1,
             R.drawable.infectious1,
-            R.drawable.hazardous1,
+            R.drawable.e_waste1,
             R.drawable.recyclable1,
             R.drawable.nonbiodegradable1
     };
@@ -70,31 +62,32 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setActivityContent(R.layout.activity_main);
+
+        //setContentView(R.layout.activity_main);
+
+        //Toolbar toolbar = findViewById(R.id.toolBar);
+        //setSupportActionBar(toolbar);
 
         picture = findViewById(R.id.cameraButton);
-        drawerLayout = findViewById(R.id.mainLayout);
-        openMenu = findViewById(R.id.openMenuButton);
-        navigationView1 = findViewById(R.id.navMenu1);
+        //drawerLayout = findViewById(R.id.mainLayout);
+        //openMenu = findViewById(R.id.openMenuButton);
+        //navigationView1 = findViewById(R.id.navMenu1);
         titleArea = findViewById(R.id.titleArea);
         descriptionArea = findViewById(R.id.descriptionArea);
-        navigationView2 = findViewById(R.id.navMenu2);
+        //navigationView2 = findViewById(R.id.navMenu2);
 
         //bale eto ung listener ng menu items, line 84-123
-        navigationView2.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        /**navigationView2.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 int id = item.getItemId();
 
-                if (id == R.id.navHelp) {
-                    Intent intent = new Intent(MainActivity.this, OnboardingActivity.class);
-                    startActivity(intent);
-                    return true;
-                } else if (id == R.id.navAbout) {
+                if (id == R.id.navAbout) {
                     Toast.makeText(MainActivity.this, "About is clicked!", Toast.LENGTH_SHORT).show();
-                } else if (id == R.id.navContactUs) {
-                    Toast.makeText(MainActivity.this, "Contact Us is clicked!", Toast.LENGTH_SHORT).show();
+                //} else if (id == R.id.navContactUs) {
+                    //Toast.makeText(MainActivity.this, "Contact Us is clicked!", Toast.LENGTH_SHORT).show();
                 }
 
                 drawerLayout.close();
@@ -110,45 +103,64 @@ public class MainActivity extends AppCompatActivity {
 
                 if (id == R.id.navHome) {
                     Toast.makeText(MainActivity.this, "Home is clicked!", Toast.LENGTH_SHORT).show();
-                } else if (id == R.id.navCategories) {
-                    Toast.makeText(MainActivity.this, "Categories is clicked!", Toast.LENGTH_SHORT).show();
+                //} else if (id == R.id.navCategories) {
+                    //Toast.makeText(MainActivity.this, "Categories is clicked!", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.navKnowledge) {
-                    Toast.makeText(MainActivity.this, "Knowledge Us is clicked!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "Knowledge Us is clicked!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, KnowledgeActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (id == R.id.navHelp) {
+                    Intent intent = new Intent(MainActivity.this, OnboardingActivity.class);
+                    startActivity(intent);
+                    return true;
                 }
 
                 drawerLayout.close();
                 return false;
             }
-        });
+        });**/
 
         ImageButton button1 = findViewById(R.id.biodegradableButton);
-        ImageButton button2 = findViewById(R.id.infectiousButton);
-        ImageButton button3 = findViewById(R.id.hazardousButton);
-        ImageButton button4 = findViewById(R.id.recyclableButton);
-        ImageButton button5 = findViewById(R.id.nonBiodegradableButton);
+        //ImageButton button2 = findViewById(R.id.infectiousButton);
+        ImageButton button2 = findViewById(R.id.ewasteButton);
+        ImageButton button3 = findViewById(R.id.recyclableButton);
+        ImageButton button4 = findViewById(R.id.nonBiodegradableButton);
 
         button1.setOnClickListener(view -> onButtonClick(button1, R.drawable.biodegradable2, 0, R.string.biodegradableTitle, R.string.biodegradableDescription));
-        button2.setOnClickListener(view -> onButtonClick(button2, R.drawable.infectious2, 1, R.string.infectiousTitle, R.string.infectiousDescription));
-        button3.setOnClickListener(view -> onButtonClick(button3, R.drawable.hazardous2, 2, R.string.hazardousTitle, R.string.hazardousDescription));
-        button4.setOnClickListener(view -> onButtonClick(button4, R.drawable.recyclable2, 3, R.string.recyclableTitle, R.string.recyclableDescription));
-        button5.setOnClickListener(view -> onButtonClick(button5, R.drawable.nonbiodegradable2, 4, R.string.nonBiodegradableTitle, R.string.nonBiodegradableDescription));
+        //button2.setOnClickListener(view -> onButtonClick(button2, R.drawable.infectious2, 1, R.string.infectiousTitle, R.string.infectiousDescription));
+        button2.setOnClickListener(view -> onButtonClick(button2, R.drawable.e_waste2, 2, R.string.ewasteTitle, R.string.ewasteDescription));
+        button3.setOnClickListener(view -> onButtonClick(button3, R.drawable.recyclable2, 3, R.string.recyclableTitle, R.string.recyclableDescription));
+        button4.setOnClickListener(view -> onButtonClick(button4, R.drawable.nonbiodegradable2, 4, R.string.nonBiodegradableTitle, R.string.nonBiodegradableDescription));
 
-        openMenu.setOnClickListener(new View.OnClickListener() {
+        /**openMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.open();
             }
-        });
+        });**/
+        /**openMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(GravityCompat.START); // Opens the drawer from the start (left)
+            }
+        });**/
 
-        View headerView = navigationView1.getHeaderView(0);
-        closeButton = headerView.findViewById(R.id.closeMenuButton);
+        //View headerView = navigationView1.getHeaderView(0);
+        //closeButton = headerView.findViewById(R.id.closeMenuButton);
 
-        closeButton.setOnClickListener(new View.OnClickListener() {
+        /**closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.close();
             }
-        });
+        });**/
+        /**closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.closeDrawer(GravityCompat.START); // Closes the drawer from the start (left)
+            }
+        });**/
 
         picture.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,8 +178,8 @@ public class MainActivity extends AppCompatActivity {
 
         List<ImageButton> wasteButtons = new ArrayList<>();
         wasteButtons.add(findViewById(R.id.biodegradableButton));
-        wasteButtons.add(findViewById(R.id.infectiousButton));
-        wasteButtons.add(findViewById(R.id.hazardousButton));
+        //wasteButtons.add(findViewById(R.id.infectiousButton));
+        wasteButtons.add(findViewById(R.id.ewasteButton));
         wasteButtons.add(findViewById(R.id.recyclableButton));
         wasteButtons.add(findViewById(R.id.nonBiodegradableButton));
 
@@ -180,6 +192,10 @@ public class MainActivity extends AppCompatActivity {
         }
         button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), buttonColors[index])));
         button.setImageResource(newIcon);
+        //ShapeDrawable shapeDrawable = new ShapeDrawable();
+        //shapeDrawable.getPaint().setColor(Color.BLACK);
+        //shapeDrawable.getPaint().setStyle(Paint.Style.STROKE);
+        //shapeDrawable.getPaint().setStrokeWidth(1f);
         selectedButton = button;
 
         displayInfo(titleId, descriptionId);
@@ -196,9 +212,9 @@ public class MainActivity extends AppCompatActivity {
     private int getButtonIndex(ImageButton button) {
         if (button.getId() == R.id.biodegradableButton) {
             return 0;
-        } else if (button.getId() == R.id.infectiousButton) {
-            return 1;
-        } else if (button.getId() == R.id.hazardousButton) {
+        //} else if (button.getId() == R.id.infectiousButton) {
+        //    return 1;
+        } else if (button.getId() == R.id.ewasteButton) {
             return 2;
         } else if (button.getId() == R.id.recyclableButton) {
             return 3;
@@ -218,16 +234,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void startCircularAnimation(List<ImageButton> buttons) {
         ValueAnimator animator = ValueAnimator.ofFloat(0f, 360f);
-        animator.setDuration(10000);
+        animator.setDuration(18000);
         animator.setRepeatCount(ValueAnimator.INFINITE);
         animator.setInterpolator(new LinearInterpolator());
 
         animator.addUpdateListener(animation -> {
             float angle = (float) animation.getAnimatedValue();
+            float separationAngle = 360f / buttons.size();
 
             for (int i = 0; i < buttons.size(); i++) {
                 ImageButton button = buttons.get(i);
-                float newAngle = (i * 72 + angle) % 360;
+                float newAngle = (i * separationAngle + angle) % 360;
 
                 ConstraintLayout.LayoutParams params =
                         (ConstraintLayout.LayoutParams) button.getLayoutParams();

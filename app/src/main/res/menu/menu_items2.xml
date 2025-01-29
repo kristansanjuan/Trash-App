@@ -2,25 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
     tools:context="com.example.imageclassifier.MainActivity">
 
     <group
         android:id="@+id/otherGroup">
 
         <item
-            android:id="@+id/navHelp"
-            android:title="Help"
-            android:icon="@drawable/help_icon" />
-
-        <item
             android:id="@+id/navAbout"
             android:title="About"
             android:icon="@drawable/about_icon" />
 
-        <item
+        <!--<item
             android:id="@+id/navContactUs"
             android:title="Contact Us"
-            android:icon="@drawable/contactus_icon" />
+            android:icon="@drawable/contactus_icon" />-->
+
+        <item
+            android:id="@+id/navExit"
+            android:title="Exit"
+            android:icon="@drawable/ecosort_logo1" />
 
     </group>
 

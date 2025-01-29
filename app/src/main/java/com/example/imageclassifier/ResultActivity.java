@@ -3,6 +3,8 @@ package com.example.imageclassifier;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -108,7 +110,7 @@ public class ResultActivity extends AppCompatActivity {
         }
     }
 
-    private String classifyObject(String detectedObject, boolean isEnglish) {
+    private String classifyObject(String detectedObject, boolean isEnglish, ImageView wasteIcon) {
         // Classify the detected object into categories
         if (isEnglish){
             switch (detectedObject) {
@@ -119,6 +121,7 @@ public class ResultActivity extends AppCompatActivity {
             case "Juice Packs":*/
                 case "Plastic Utensils":
                 case "Plastic Bottle":
+                    wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Non-Biodegradable";
             /*case "Papers":
             case "Leaves":
@@ -126,6 +129,7 @@ public class ResultActivity extends AppCompatActivity {
             case "Wood":
             case "Organic Waste":*/
                 case "Foods":
+                    wasteIcon.setImageResource(R.drawable.biodegradable1);
                     return "Biodegradable";
             /*case "Batteries":
             case "Chemicals":
@@ -150,6 +154,7 @@ public class ResultActivity extends AppCompatActivity {
             case "Juice Packs":*/
                 case "Plastic Utensils":
                 case "Plastic Bottle":
+                    wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Hindi Nabubulok";
             /*case "Papers":
             case "Leaves":
@@ -157,6 +162,7 @@ public class ResultActivity extends AppCompatActivity {
             case "Wood":
             case "Organic Waste":*/
                 case "Foods":
+                    wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Nabubulok";
             /*case "Batteries":
             case "Chemicals":
@@ -187,14 +193,15 @@ public class ResultActivity extends AppCompatActivity {
         TextView disposalGuideContentsTextView = bottomSheetView.findViewById(R.id.disposalGuideContents);
         Button takeAnotherPictureButton = bottomSheetView.findViewById(R.id.takeAnotherPictureButton);
         SwitchCompat languageSwitch = bottomSheetView.findViewById(R.id.translateSwitch);
+        ImageView wasteTypeIcon = bottomSheetView.findViewById(R.id.wasteTypeIcon);
 
         // Set initial text for the switch (when OFF - Tagalog, when ON - English)
-        languageSwitch.setText(languageSwitch.isChecked() ? "ENG" : "TAG");
+        //languageSwitch.setText(languageSwitch.isChecked() ? "ENG" : "TAG");
 
         boolean isEnglish = languageSwitch.isChecked();
 
         // Function to update the UI based on language
-        updateLanguageUI(detectedObject, isEnglish, wasteTypeTextView, classifiedTextView, disposalGuideTitleTextView, disposalGuideContentsTextView, disposalGuideActivity);
+        updateLanguageUI(detectedObject, isEnglish, wasteTypeTextView, wasteTypeIcon, classifiedTextView, disposalGuideTitleTextView, disposalGuideContentsTextView, disposalGuideActivity);
 
         // Set up language toggle functionality
         languageSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -202,10 +209,10 @@ public class ResultActivity extends AppCompatActivity {
             disposalGuideActivity.toggleLanguage();
 
             // Update the language preference
-            updateLanguageUI(detectedObject, isChecked, wasteTypeTextView, classifiedTextView, disposalGuideTitleTextView, disposalGuideContentsTextView, disposalGuideActivity);
+            updateLanguageUI(detectedObject, isChecked, wasteTypeTextView, wasteTypeIcon, classifiedTextView, disposalGuideTitleTextView, disposalGuideContentsTextView, disposalGuideActivity);
 
             // Update the switch's text
-            languageSwitch.setText(isChecked ? "ENG" : "TAG");
+            //languageSwitch.setText(isChecked ? "ENG" : "TAG");
 
             if (isChecked) {
                 takeAnotherPictureButton.setText("Take Another Picture");
@@ -231,8 +238,8 @@ public class ResultActivity extends AppCompatActivity {
         bottomSheetDialog.show();
     }
 
-    private void updateLanguageUI(String detectedObject, boolean isEnglish, TextView wasteTypeTextView, TextView classifiedTextView, TextView disposalGuideTitleTextView, TextView disposalGuideContentsTextView, DisposalGuideActivity disposalGuideActivity) {
-        String wasteCategory = classifyObject(detectedObject, isEnglish);
+    private void updateLanguageUI(String detectedObject, boolean isEnglish, TextView wasteTypeTextView, ImageView wasteTypeImageView, TextView classifiedTextView, TextView disposalGuideTitleTextView, TextView disposalGuideContentsTextView, DisposalGuideActivity disposalGuideActivity) {
+        String wasteCategory = classifyObject(detectedObject, isEnglish, wasteTypeImageView);
         String disposalGuide = disposalGuideActivity.getGuide(detectedObject);
 
         if ("Unknown".equals(detectedObject)) {

@@ -10,7 +10,8 @@
     <color name="orange">#FF7F0E</color>
     <color name="lightblue">#247D7F</color>
     <color name="lightgray">#ECECEC</color>
-    <color name="darkergray">#909090</color>
+    <color name="midgray">#909090</color>
     <color name="darkcyan">#005353</color>
     <color name="bluegreen">#088F8F</color>
+    <color name="darkgray">#343232</color>
 </resources>

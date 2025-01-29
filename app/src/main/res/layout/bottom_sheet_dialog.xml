@@ -39,55 +39,80 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.533" />
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/translateSwitch"
+        <ImageView
+            android:id="@+id/wasteTypeIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/generalsansregular"
-            android:text=" "
-            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:switchMinWidth="56sp"
-            app:switchPadding="10sp"
-            app:thumbTint="@drawable/thumb"
-            app:trackTint="@drawable/track" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/classified"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#343232"
-        android:fontFamily="@font/generalsansregular"
-        android:layout_marginBottom="15sp" />
 
-    <TextView
-        android:id="@+id/disposalGuideTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#343232"
-        android:fontFamily="@font/generalsansregular"
-        android:layout_gravity="center" />
 
-    <TextView
-        android:id="@+id/disposalGuideContents"
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/translateSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#343232"
         android:fontFamily="@font/generalsansregular"
-        android:layout_gravity="center"
-        android:layout_marginBottom="30sp" />
+        android:text="Traslate"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:switchMinWidth="56sp"
+        app:switchPadding="10sp"
+        app:thumbTint="@drawable/thumb"
+        app:trackTint="@drawable/track" />
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/classified"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#343232"
+                android:fontFamily="@font/generalsansregular"
+                android:layout_marginBottom="15sp" />
+
+            <TextView
+                android:id="@+id/disposalGuideTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#343232"
+                android:fontFamily="@font/generalsansregular"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/disposalGuideContents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#343232"
+                android:fontFamily="@font/generalsansregular"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30sp" />
+
+        </LinearLayout>
+        
+    </ScrollView>
 
     <Button
         android:id="@+id/takeAnotherPictureButton"
@@ -103,11 +128,11 @@
         android:backgroundTint="@color/lightblue"
         app:cornerRadius="15dp" />
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/resizedImageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="Resized Image"
-        android:scaleType="centerInside"/>
+        android:scaleType="centerInside"/>-->
 
 </LinearLayout>

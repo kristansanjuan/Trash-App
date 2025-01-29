@@ -8,13 +8,12 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Toolbar
-            android:id="@+id/toolbar"
+        <!--<androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -37,18 +36,52 @@
                 android:background="@android:color/transparent"
                 android:src="@drawable/menu_icon" />
 
-        </Toolbar>
+        </androidx.appcompat.widget.Toolbar>-->
 
-        <View
-            android:id="@+id/centerPoint"
-            android:layout_width="0.1dp"
-            android:layout_height="0.1dp"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@+id/cameraButton"
+        <ImageView
+            android:id="@+id/cicle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <ImageView
+            android:id="@+id/circle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle2"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintVertical_bias="0.273" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.122" />
+
+        <ImageView
+            android:id="@+id/circle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.055" />
+
+        <ImageView
+            android:id="@+id/centerPoint"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:src="@drawable/ecosort_logo1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22" />
 
         <ImageButton
             android:id="@+id/biodegradableButton"
@@ -59,7 +92,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="0"
-            app:layout_constraintCircleRadius="100dp"
+            app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -72,8 +105,8 @@
             android:src="@drawable/nonbiodegradable1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
-            app:layout_constraintCircleAngle="288"
-            app:layout_constraintCircleRadius="100dp"
+            app:layout_constraintCircleAngle="270"
+            app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -86,27 +119,27 @@
             android:src="@drawable/recyclable1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
-            app:layout_constraintCircleAngle="216"
-            app:layout_constraintCircleRadius="100dp"
+            app:layout_constraintCircleAngle="90"
+            app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/hazardousButton"
+            android:id="@+id/ewasteButton"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:background="@drawable/round_button_bg"
-            android:src="@drawable/hazardous1"
+            android:src="@drawable/e_waste1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
-            app:layout_constraintCircleAngle="144"
-            app:layout_constraintCircleRadius="100dp"
+            app:layout_constraintCircleAngle="180"
+            app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
+        <!--<ImageButton
             android:id="@+id/infectiousButton"
             android:layout_width="75dp"
             android:layout_height="75dp"
@@ -118,7 +151,7 @@
             app:layout_constraintCircleRadius="100dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />-->
 
         <TextView
             android:id="@+id/titleArea"
@@ -133,8 +166,8 @@
             app:layout_constraintBottom_toTopOf="@+id/cameraButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintVertical_bias="0.535" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
 
         <TextView
             android:id="@+id/descriptionArea"
@@ -145,8 +178,9 @@
             android:paddingEnd="30dp"
             android:text=""
             android:textColor="#706666"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:visibility="gone"
+            android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/cameraButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -168,6 +202,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -182,7 +217,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cameraButton" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.navigation.NavigationView
+    <!--<com.google.android.material.navigation.NavigationView
         android:id="@+id/navMenu1"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -204,7 +239,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0sp"
                 android:layout_weight="1"/>
-            
+
             <com.google.android.material.navigation.NavigationView
                 android:id="@+id/navMenu2"
                 android:layout_width="match_parent"
@@ -214,9 +249,9 @@
                 app:itemTextColor="@color/white"
                 app:itemIconTint="@color/white"
                 android:paddingBottom="50sp" />
-            
+
         </LinearLayout>
 
-    </com.google.android.material.navigation.NavigationView>
+    </com.google.android.material.navigation.NavigationView>-->
 
 </androidx.drawerlayout.widget.DrawerLayout>
