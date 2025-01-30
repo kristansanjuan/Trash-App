@@ -39,7 +39,7 @@
             </intent-filter>-->
         </activity>
         <activity android:name=".ResultActivity" />
-        <activity android:name=".KnowledgeActivity" />
+        <activity android:name=".KnowledgeActivity" android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".BaseActivity" />
     </application>
 

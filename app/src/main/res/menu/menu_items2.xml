@@ -21,7 +21,7 @@
         <item
             android:id="@+id/navExit"
             android:title="Exit"
-            android:icon="@drawable/ecosort_logo1" />
+            android:icon="@drawable/exit_icon" />
 
     </group>
 
