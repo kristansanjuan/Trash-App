@@ -114,67 +114,61 @@ public class ResultActivity extends AppCompatActivity {
         // Classify the detected object into categories
         if (isEnglish){
             switch (detectedObject) {
-            /*case "Plastic Cups":
-            case "Plastic Bag":
-            case "EcoBag":
-            case "Aluminum":
-            case "Juice Packs":*/
+                /*case "Glass":
+                case "Plastic Type Waste":
+                case "Sanitary Napkins":
+                case "Styrofoam Type Waste"::*/
                 case "Plastic Utensils":
                 case "Plastic Bottle":
                     wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Non-Biodegradable";
-            /*case "Papers":
-            case "Leaves":
-            case "Fruits":
-            case "Wood":
-            case "Organic Waste":*/
+                /*case "Environmental Waste":
+                case "Leftover Foods":
+                case "Organic Waste":*/
                 case "Foods":
                     wasteIcon.setImageResource(R.drawable.biodegradable1);
                     return "Biodegradable";
-            /*case "Batteries":
-            case "Chemicals":
-            case "Face Masks":
-                return "Hazardous";*/
-            /*case "Books":
-            case "Clothes":*/
+                /*case "Packaging Boxes":
+                case "Papers":
+                case "Plastic Bottles":
+                    return "Recyclable Waste";
+                case "Batteries":
+                case "Electronic Devices":
+                case "Home Appliances":
+                    return "E-Waste";*/
                 case "Syringe":
                 case "Face Masks":
                     return "Infectious";
-            /*case "Animal":
-                return "Non-Biodegradable";*/
                 default:
                     return "Can't classify (Confidence too low)";
             }
         } else {
             switch (detectedObject) {
-            /*case "Plastic Cups":
-            case "Plastic Bag":
-            case "EcoBag":
-            case "Aluminum":
-            case "Juice Packs":*/
+                /*case "Glass":
+                case "Plastik na Basura":
+                case "Sanitary Napkins":
+                case "Styrofoam Type Waste"::*/
                 case "Plastic Utensils":
                 case "Plastic Bottle":
                     wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Hindi Nabubulok";
-            /*case "Papers":
-            case "Leaves":
-            case "Fruits":
-            case "Wood":
-            case "Organic Waste":*/
+                /*case "Environmental Waste":
+                case "Leftover Foods":
+                case "Organic Waste":*/
                 case "Foods":
                     wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Nabubulok";
-            /*case "Batteries":
-            case "Chemicals":
-            case "Face Masks":
-                return "Hazardous";*/
-            /*case "Books":
-            case "Clothes":*/
+                /*case "Packaging Boxes":
+                case "Papers":
+                case "Plastic Bottles":
+                    return "Recyclable Waste";
+                case "Baterya":
+                case "Electronic Devices":
+                case "Home Appliances":
+                    return "E-Waste";*/
                 case "Syringe":
                 case "Face Masks":
                     return "Nakakahawa";
-            /*case "Animal":
-                return "Non-Biodegradable";*/
                 default:
                     return "Hindi ma-klasipika";
             }
