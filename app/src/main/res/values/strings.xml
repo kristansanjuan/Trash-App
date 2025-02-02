@@ -67,6 +67,30 @@
         waste management!
     </string>
 
+    <string name="disposalIntro">
+        To Properly Dispose:
+    </string>
+
+    <string name="organicDescription1">
+        Organic waste refers to biodegradable materials that naturally decompose, such as food
+        scraps, yard trimmings, and other plant-based materials. When these materials end up in
+        landfills, they often cannot break down properly due to poor ventilation, temperature, and
+        humidity, which can lead to the production of harmful gases like methane. Proper disposal
+        or composting of organic waste helps recycle nutrients back into the environment and
+        reduces environmental impact.
+    </string>
+
+    <string name="organicDisposal1">
+        1. Gather vegetable peels, fruit peels, eggshells, and similar organic waste in a separate container.
+        2. Avoid mixing organic waste with plastics, paper, glass, or other non-biodegradable materials.
+        3. Place the organic waste in a biodegradable bag or a green bin labeled for organic waste.
+        4. If you have space, use the organic waste to create compost by placing it in a compost bin or pile and adding dry materials like dried leaves.
+        5. Do not throw organic waste into canals, rivers, or open areas to prevent pollution and flooding.
+        6. Ensure the organic waste is properly stored in covered bins to avoid attracting pests.
+        7. Coordinate with your local waste management service to have the organic waste collected on designated days.
+        8. If composting is not possible and collection services are unavailable, contact the local government for proper disposal instructions.
+    </string>
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
