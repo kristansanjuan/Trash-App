@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class DisposalGuideActivity {
 
-    private boolean isTagalog = true; // Default language is Tagalog
+    private boolean isTagalog = false; // Default language is English
 
     // Default guides for waste types
     private final Map<String, String[]> defaultGuides = new HashMap<>();
@@ -307,7 +307,11 @@ public class DisposalGuideActivity {
             return isTagalog ? defaultGuides.get(wasteType)[1] : defaultGuides.get(wasteType)[0];
         }
 
-        return "No disposal guide available for this waste type.";
+        boolean isTagalog1 = isTagalog;
+        if (!isTagalog1)
+            return "No disposal guide available for this waste type.";
+        else
+            return "Wala pang gabay ang nakasaad para sa ganitong uri ng basura.";
     }
 
     // Method to toggle language
