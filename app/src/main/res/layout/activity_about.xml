@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About the app"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#247D7F"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="EcoSort Logo"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ecosort_logo_styled"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EcoSort was created to provide a simple yet impactful solution to waste segregation challenges. By using image recognition and machine learning techniques, the app helps users classify household waste into biodegradable, non-biodegradable, recyclable, and electronic waste or more commonly known as e-waste categories with ease. This small step aims to inspire individuals to take part in sustainable waste management practices, showing that even the smallest actions can contribute to creating a cleaner and greener future."
+            android:textSize="14sp"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:padding="8dp"
+            android:lineSpacingExtra="8dp"
+            android:textColor="#666"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The Developers"
+            android:textColor="#247D7F"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="50dp"
+            android:paddingBottom="40dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingBottom="1dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingBottom="60dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/kristan" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kristan Aimar B. San Juan"
+                    android:textSize="16sp"
+                    android:textColor="#333"
+                    android:gravity="center"
+                    android:paddingTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2021104400@ms.bulsu.edu.ph"
+                    android:textSize="14sp"
+                    android:textColor="#888"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingBottom="60dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="Jomari T. Basario"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/jomari"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jomari T. Basario"
+                    android:textSize="16sp"
+                    android:textColor="#333"
+                    android:gravity="center"
+                    android:paddingTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2021100536@ms.bulsu.edu.ph"
+                    android:textSize="14sp"
+                    android:textColor="#888"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingBottom="60dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="Rey Albert M. De Zuñiga"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rey"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rey Albert M. De Zuñiga"
+                    android:textSize="16sp"
+                    android:textColor="#333"
+                    android:gravity="center"
+                    android:paddingTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2021101508@ms.bulsu.edu.ph"
+                    android:textSize="14sp"
+                    android:textColor="#888"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingBottom="60dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="Denzel Stewart S. Buluran"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/stewart"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Denzel Stewart S. Buluran"
+                    android:textSize="16sp"
+                    android:textColor="#333"
+                    android:gravity="center"
+                    android:paddingTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2021100766@ms.bulsu.edu.ph"
+                    android:textSize="14sp"
+                    android:textColor="#888"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ecosort mobile application\necosortmobileapp@gmail.com"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="#777"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+</ScrollView>

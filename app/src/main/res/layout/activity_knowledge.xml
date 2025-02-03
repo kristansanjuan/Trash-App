@@ -7,7 +7,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".KnowledgeActivity">
 
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
     <TextView
+        android:id="@+id/knowledgeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/generalsansregular"
@@ -22,6 +29,7 @@
         app:layout_constraintVertical_bias="0" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardContainer"
         android:layout_width="348dp"
         android:layout_height="587dp"
         app:cardBackgroundColor="@color/darkgray"
@@ -61,10 +69,6 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-    
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

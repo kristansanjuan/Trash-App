@@ -41,6 +41,7 @@
         <activity android:name=".ResultActivity" />
         <activity android:name=".KnowledgeActivity" android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".BaseActivity" />
+        <activity android:name=".AboutActivity" />
     </application>
 
 </manifest>

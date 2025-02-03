@@ -1,5 +1,6 @@
 package com.example.imageclassifier;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -43,14 +44,15 @@ public class BaseActivity extends AppCompatActivity {
             }
         });
 
-        NavigationView navigationView = findViewById(R.id.navMenu1);
+        NavigationView navigationView1 = findViewById(R.id.navMenu1);
+        NavigationView navigationView2 = findViewById(R.id.navMenu2);
 
-        View headerView = navigationView.getHeaderView(0);
+        View headerView = navigationView1.getHeaderView(0);
         closeMenuButton = headerView.findViewById(R.id.closeMenuButton);
 
         closeMenuButton.setOnClickListener(view -> drawerLayout.closeDrawer(GravityCompat.START));
 
-        navigationView.setNavigationItemSelectedListener(item -> {
+        navigationView1.setNavigationItemSelectedListener(item -> {
 
             if (item.getItemId() == R.id.navHome) {
                 startActivity(new Intent(this, MainActivity.class));
@@ -58,6 +60,20 @@ public class BaseActivity extends AppCompatActivity {
                 startActivity(new Intent(this, KnowledgeActivity.class));
             } else if (item.getItemId() == R.id.navHelp) {
                 startActivity(new Intent(this, OnboardingActivity.class));
+            } else {
+                return false;
+            }
+
+            drawerLayout.closeDrawer(GravityCompat.START);
+            return true;
+        });
+        
+        navigationView2.setNavigationItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.navAbout) {
+                startActivity(new Intent(this, AboutActivity.class));
+            } else if (item.getItemId() == R.id.navExit) {
+                finishAffinity();
+                System.exit(0);
             } else {
                 return false;
             }

@@ -1,11 +1,14 @@
 package com.example.imageclassifier;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
 
-
+import androidx.activity.OnBackPressedCallback;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +25,7 @@ public class KnowledgeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setActivityContent(R.layout.activity_knowledge);
 
-        //searchView = findViewById(R.id.searchBar);
+        searchView = findViewById(R.id.searchBar);
         listView = findViewById(R.id.listView);
         wasteList = new ArrayList<>();
 
@@ -65,7 +68,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.nonbiodegradable2, R.drawable.nonbiodegradable_bg, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteList.add(new ItemsClass("Styrofoam Type Waste", "Non-Biodegradable", "To Properly Dispose:",
-                "1. Check if the styrofoam is recyclable by looking for the recycling symbol. If not dispose it in Non-biodegrable bin \n" +
+                "1. Check if the styrofoam is recyclable by looking for the recycling symbol. If not dispose it in Non-biodegradable bin \n" +
                         "2. Clean the styrofoam, removing any tape or food residue.\n" +
                         "3. Find a local recycling center that accepts styrofoam.\n" +
                         "4. Consider reusing styrofoam for crafts, gardening, or insulation.\n" +
@@ -108,28 +111,56 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.e_waste2, R.drawable.electronic_waste_bg, ContextCompat.getColor(this, R.color.red)));
 
         wasteList.add(new ItemsClass("Electronic Devices", "E-Waste", "To Properly Dispose:",
-                "Reset the device to remove all personal data. \n" +
-                        "Safely remove any batteries and other detachable components.\n" +
-                        "Pack the device securely to avoid damage during transport.\n" +
-                        "Bring the device to SM E-waste collection bins or any other e-waste disposal collector.\n" +
-                        "If SM is not available, there are others like E-waste Management Philippines, E-waste Project UP or look for any accredited E-waste recycler or inquire with your LGU about collection points.\n" +
-                        "Avoid disposing of the device in regular trash bins or dumping it in open areas.",
+                "1. Reset the device to remove all personal data. \n" +
+                        "2. Safely remove any batteries and other detachable components.\n" +
+                        "3. Pack the device securely to avoid damage during transport.\n" +
+                        "4. Bring the device to SM E-waste collection bins or any other e-waste disposal collector.\n" +
+                        "5. If SM is not available, there are others like E-waste Management Philippines, E-waste Project UP or look for any accredited E-waste recycler or inquire with your LGU about collection points.\n" +
+                        "6. Avoid disposing of the device in regular trash bins or dumping it in open areas.",
                 R.drawable.e_waste2, R.drawable.electronic_waste_bg, ContextCompat.getColor(this, R.color.red)));
 
         wasteList.add(new ItemsClass("Home Appliance", "E-Waste", "To Properly Dispose:",
-                "Unplug the appliance and clean it thoroughly.\n" +
-                        "Safely remove any hazardous parts, such as batteries or fluids, if applicable.\n" +
-                        "Separate any recyclable components, like metal or plastic parts, if possible.\n" +
-                        "Transport the appliance to SM collection bins for E-waste or accredited recycling centers. \n" +
-                        "If SM is unavailable, coordinate with your LGU for proper disposal services.\n" +
-                        "Do not burn, bury, or dispose of appliances in landfills.\n" +
-                        "You can trade them, put for sale or either scrap them for additional money.",
+                "1. Unplug the appliance and clean it thoroughly.\n" +
+                        "2. Safely remove any hazardous parts, such as batteries or fluids, if applicable.\n" +
+                        "3. Separate any recyclable components, like metal or plastic parts, if possible.\n" +
+                        "4. Transport the appliance to SM collection bins for E-waste or accredited recycling centers. \n" +
+                        "5. If SM is unavailable, coordinate with your LGU for proper disposal services.\n" +
+                        "6. Do not burn, bury, or dispose of appliances in landfills.\n" +
+                        "7. You can trade them, put for sale or either scrap them for additional money.",
                 R.drawable.e_waste2, R.drawable.electronic_waste_bg, ContextCompat.getColor(this, R.color.red)));
 
         ItemsAdapter adapter = new ItemsAdapter(this, wasteList);
         listView.setAdapter(adapter);
 
-        /**searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            ItemsClass selectedItem = (ItemsClass) parent.getItemAtPosition(position);
+            WasteItemFragment fragment = WasteItemFragment.newInstance(selectedItem);
+
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragmentContainer, fragment)
+                    .addToBackStack(null)
+                    .commit();
+
+            findViewById(R.id.knowledgeTitle).setVisibility(View.GONE);
+            findViewById(R.id.cardContainer).setVisibility(View.GONE);
+            findViewById(R.id.fragmentContainer).setVisibility(View.VISIBLE);
+        });
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
+
+                if (fragment != null) {
+                    getSupportFragmentManager().popBackStack();
+                    findViewById(R.id.knowledgeTitle).setVisibility(View.VISIBLE);
+                    findViewById(R.id.cardContainer).setVisibility(View.VISIBLE);
+                    findViewById(R.id.fragmentContainer).setVisibility(View.GONE);
+                }
+            }
+        });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 adapter.getFilter().filter(query);
@@ -141,8 +172,20 @@ public class KnowledgeActivity extends BaseActivity {
                 adapter.getFilter().filter(newText);
                 return false;
             }
-        });**/
+        });
 
     }
+
+    /**@Override
+    public void onBackPressed() {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
+
+        if (fragment != null) {
+            getSupportFragmentManager().popBackStack();
+            findViewById(R.id.knowledgeTitle).setVisibility(View.VISIBLE);
+            findViewById(R.id.cardContainer).setVisibility(View.VISIBLE);
+            findViewById(R.id.fragmentContainer).setVisibility(View.GONE);
+        }
+    }**/
 
 }

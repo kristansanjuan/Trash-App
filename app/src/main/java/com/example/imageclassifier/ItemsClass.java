@@ -7,6 +7,9 @@ public class ItemsClass {
     //String description;
     String intro;
     String disposal;
+    String wasTypeTranslated;
+    String introTranslated;
+    String disposalTranslated;
     int imageId;
     int backgroundId;
     int colorId;
