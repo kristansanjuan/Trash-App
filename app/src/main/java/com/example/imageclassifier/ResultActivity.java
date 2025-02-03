@@ -50,6 +50,7 @@ public class ResultActivity extends AppCompatActivity {
 
     public void classifyImage(Bitmap image) {
         try {
+            Log.d("TAG", "classifyImage: ongoing");
             ModelUnquant model = ModelUnquant.newInstance(getApplicationContext());
 
             TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 224, 224, 3}, DataType.FLOAT32);
@@ -85,7 +86,6 @@ public class ResultActivity extends AppCompatActivity {
             }
 
             String[] classes = {"Foods", "Plastic Bottle", "Face Masks", "Plastic Utensils", "Syringe"};
-            //String[] classes = {"Plastic Cups", "Papers", "Batteries", "Fruits", "Flammable", "Wood", "Aluminum", "Animal", "EcoBag", "Plastic Bag", "Organic Waste", "Face Masks", "Chemicals", "Juice Packs", "Leaves", "Books", "Clothes"};
             String detectedObject = classes[maxPos];
 
             // Check if confidence is below 35%
@@ -104,7 +104,7 @@ public class ResultActivity extends AppCompatActivity {
             // Print the result to the console log
             Log.d("ClassificationResult", s);
 
-            model.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -112,7 +112,7 @@ public class ResultActivity extends AppCompatActivity {
 
     private String classifyObject(String detectedObject, boolean isEnglish, ImageView wasteIcon) {
         // Classify the detected object into categories
-        if (isEnglish){
+        if (!isEnglish){
             switch (detectedObject) {
                 /*case "Glass":
                 case "Plastic Type Waste":
@@ -208,7 +208,7 @@ public class ResultActivity extends AppCompatActivity {
             // Update the switch's text
             //languageSwitch.setText(isChecked ? "ENG" : "TAG");
 
-            if (isChecked) {
+            if (!isChecked) {
                 takeAnotherPictureButton.setText("Take Another Picture");
             } else {
                 takeAnotherPictureButton.setText("Kumuha ng Isa Pang Litrato");
@@ -238,7 +238,7 @@ public class ResultActivity extends AppCompatActivity {
 
         if ("Unknown".equals(detectedObject)) {
             // Update UI for unknown object
-            if (isEnglish) {
+            if (!isEnglish) {
                 wasteTypeTextView.setText("Can't classify (Confidence too low)");
                 classifiedTextView.setText("This is: " + detectedObject);
                 disposalGuideTitleTextView.setText("");
@@ -252,8 +252,8 @@ public class ResultActivity extends AppCompatActivity {
         } else {
             // Update UI for classified object
             wasteTypeTextView.setText(wasteCategory);
-            classifiedTextView.setText(isEnglish ? "This is: " + detectedObject : "Ito ay: " + detectedObject);
-            disposalGuideTitleTextView.setText(isEnglish
+            classifiedTextView.setText(!isEnglish ? "This is: " + detectedObject : "Ito ay: " + detectedObject);
+            disposalGuideTitleTextView.setText(!isEnglish
                     ? "To properly dispose of " + detectedObject + ", follow these steps:"
                     : "Para sa tamang pagtatapon ng " + detectedObject + ", sundin ang mga steps na ito:");
             disposalGuideContentsTextView.setText(disposalGuide);
