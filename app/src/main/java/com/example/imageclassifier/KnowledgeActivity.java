@@ -19,6 +19,7 @@ public class KnowledgeActivity extends BaseActivity {
     ListView listView;
     SearchView searchView;
     List<ItemsClass> wasteList;
+    List<ItemsClass> wasteListTranslated;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class KnowledgeActivity extends BaseActivity {
         searchView = findViewById(R.id.searchBar);
         listView = findViewById(R.id.listView);
         wasteList = new ArrayList<>();
+        wasteListTranslated = new ArrayList<>();
 
         wasteList.add(new ItemsClass("Organic Waste", "Biodegradable", "To Properly Dispose:",
                 "1. Gather vegetable peels, fruit peels, eggshells, and similar organic waste in a separate container.\n" +
@@ -68,7 +70,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.nonbiodegradable2, R.drawable.nonbiodegradable_bg, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteList.add(new ItemsClass("Styrofoam Type Waste", "Non-Biodegradable", "To Properly Dispose:",
-                "1. Check if the styrofoam is recyclable by looking for the recycling symbol. If not dispose it in Non-biodegradable bin \n" +
+                "1. Check if the styrofoam is recyclable by looking for the recycling symbol. If not dispose it in Non-biodegradable bin.\n" +
                         "2. Clean the styrofoam, removing any tape or food residue.\n" +
                         "3. Find a local recycling center that accepts styrofoam.\n" +
                         "4. Consider reusing styrofoam for crafts, gardening, or insulation.\n" +
@@ -80,7 +82,7 @@ public class KnowledgeActivity extends BaseActivity {
                 "1. Flatten packaging boxes to save space.\n" +
                         "2. Remove any non-recyclable items such as plastic liners or tape.\n" +
                         "3. Place the flattened boxes in the appropriate recycling bin.\n" +
-                        "4. If the box is contaminated with food or liquid, dispose of it in the non-recyclable waste bin. \n" +
+                        "4. If the box is contaminated with food or liquid, dispose of it in the non-recyclable waste bin.\n" +
                         "5. Avoid mixing packaging boxes with non-recyclable materials.",
                 R.drawable.recyclable2, R.drawable.recyclable_bg, ContextCompat.getColor(this, R.color.bluegreen)));
 
@@ -111,7 +113,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.e_waste2, R.drawable.electronic_waste_bg, ContextCompat.getColor(this, R.color.red)));
 
         wasteList.add(new ItemsClass("Electronic Devices", "E-Waste", "To Properly Dispose:",
-                "1. Reset the device to remove all personal data. \n" +
+                "1. Reset the device to remove all personal data.\n" +
                         "2. Safely remove any batteries and other detachable components.\n" +
                         "3. Pack the device securely to avoid damage during transport.\n" +
                         "4. Bring the device to SM E-waste collection bins or any other e-waste disposal collector.\n" +
@@ -129,12 +131,113 @@ public class KnowledgeActivity extends BaseActivity {
                         "7. You can trade them, put for sale or either scrap them for additional money.",
                 R.drawable.e_waste2, R.drawable.electronic_waste_bg, ContextCompat.getColor(this, R.color.red)));
 
+        wasteListTranslated.add(new ItemsClass("Organic Waste", "Nabubulok", "Para sa tamang pagtatapon:",
+                "1. Ipunin ang balat ng gulay, balat ng prutas, balat ng itlog, at iba pang katulad na nabubulok na basura sa hiwalay na lalagyan.\n" +
+                        "2. Iwasang paghaluin ang nabubulok na basura sa plastik, papel, bote, o iba pang hindi nabubulok na materyales.\n" +
+                        "3. Ilagay ang mga nabubulok na basura sa biodegradable na supot o sa berde na basurahan na may label na para sa nabubulok.\n" +
+                        "4. Kung may espasyo, gamitin ang mga nabubulok na basura para makagawa ng kompost sa pamamagitan ng paglalagay nito sa compost bin o compost pile at pagdagdag ng tuyong dahon.\n" +
+                        "5. Huwag itapon ang mga nabubulok na basura sa kanal, ilog, o bakanteng lugar upang maiwasan ang polusyon at pagbaha.\n" +
+                        "6. Siguraduhing maayos ang imbakan ng nabubulok na basura sa mga nakatakip na lalagyan upang hindi makaakit ng peste.\n" +
+                        "7. Makipag-ugnayan sa lokal na serbisyo ng pamamahala ng basura upang makolekta ang mga nabubulok na basura sa tamang araw ng koleksyon.\n" +
+                        "8. Kung hindi posible ang pag-kompost at walang koleksyon ng basura, humingi ng payo sa lokal na pamahalaan para sa tamang pagtapon ng basura.",
+                R.drawable.biodegradable2, R.drawable.biodegradable_bg, ContextCompat.getColor(this, R.color.green)));
+
+        wasteListTranslated.add(new ItemsClass("Food Waste", "Nabubulok", "Para sa tamang pagtatapon:",
+                "1. Ihiwalay ang mga tira-tirang pagkain sa ibang uri ng basura tulad ng plastik, bote, at papel. Ang mga tirang pagkain ay itapon bilang nabubulok o biodegradable.\n" +
+                        "2. Ilagay ang mga tirang pagkain sa lalagyan na para sa mga nabubulok. Karaniwan itong kulay berde o nakalabel na \"Biodegradable.\"\n" +
+                        "3. Kung may bakuran, maaari ring gamitin ang mga tirang pagkain para sa paggawa ng kompost na makakatulong sa lupa at mga halaman.\n" +
+                        "4. Huwag itapon ang mga tirang pagkain sa kanal o ilog dahil maaaring magdulot ito ng pagbaha at polusyon.\n" +
+                        "5. Siguraduhing ang mga tira-tirang pagkain ay kukunin ng lokal na pamahalaan o tagapag-kolekta ng basura sa tamang araw ng koleksyon.",
+                R.drawable.biodegradable2, R.drawable.biodegradable_bg, ContextCompat.getColor(this, R.color.green)));
+
+        wasteListTranslated.add(new ItemsClass("Environmental Waste", "Nabubulok", "Para sa tamang pagtatapon:",
+                "1. Ipunin ang mga tuyong dahon, damo, maliit na sanga, at katulad na nabubulok na basura sa isang lalagyan.\n" +
+                        "2. Iwasang paghaluin ito sa hindi nabubulok na basura tulad ng plastik o metal.\n" +
+                        "3. Ilagay sa compost bin o green waste bin kung mayroon.\n" +
+                        "4. Kung magko-kompost, ihalo ang mga ito sa ibang nabubulok na basura para mapabilis ang pagkabulok.\n" +
+                        "5. Kung walang composting, makipag-ugnayan sa lokal na pamahalaan para sa tamang pagtapon.\n" +
+                        "6. Huwag sunugin ang mga ito dahil nakakasama sa kalusugan at sa hangin.\n" +
+                        "7. Siguraduhing nakatago sa basurahan upang hindi makaakit ng peste.\n" +
+                        "8. I-verify ang koleksyon mula sa lokal na pamamahala ng basura.",
+                R.drawable.biodegradable2, R.drawable.biodegradable_bg, ContextCompat.getColor(this, R.color.green)));
+
+        wasteListTranslated.add(new ItemsClass("Plastic Type Waste", "Hindi Nabubulok", "Para sa tamang pagtatapon:",
+                "1. Ihiwalay ang mga plastik ayon sa uri (hal. PET, HDPE).\n" +
+                        "2. Banlawan ang mga tira-tirang pagkain at likido.\n"+
+                        "3. Alisin ang mga hindi pwedeng i-recycle tulad ng takip at label.\n" +
+                        "4. Suriin ang mga simbolo ng pag-recycle o mga tagubilin.\n" +
+                        "5. Ilagay sa tamang basurahan o lugar ng pag-iipon ng mga recyclable.",
+                R.drawable.nonbiodegradable2, R.drawable.nonbiodegradable_bg, ContextCompat.getColor(this, R.color.yellow)));
+
+        wasteListTranslated.add(new ItemsClass("Styrofoam Type Waste", "Hindi Nabubuok", "Para sa tamang pagtatapon:",
+                "1. Suriin kung maaaring irecycle ang styrofoam sa pamamagitan ng simbolo ng recycling. Kung hindi itapon ito sa di nabubulok na basurahan.\n" +
+                        "2. Linisin ang styrofoam at alisin ang mga tape o tira ng pagkain.\n" +
+                        "3. Maghanap ng lokal na recycling center na tumatanggap ng styrofoam.\n" +
+                        "4. Gamitin muli ang styrofoam para sa crafts, paghahardin, o insulation.\n" +
+                        "5. Makilahok sa mga community collection drives para sa tamang pagtatapon.\n" +
+                        "6. Hanapin ang mga drop-off points para sa espesyal na pagtatapon ng styrofoam.",
+                R.drawable.nonbiodegradable2, R.drawable.nonbiodegradable_bg, ContextCompat.getColor(this, R.color.yellow)));
+
+        wasteListTranslated.add(new ItemsClass("Packaging Boxes", "Recyclable", "Para sa tamang pagtatapon:",
+                "1. Tupiin ang mga kahon ng packaging para magtipid sa espasyo.\n" +
+                        "2. Alisin ang mga hindi maaaring i-recycle tulad ng plastik o tape.\n" +
+                        "3. Ilagay ang mga patag na kahon sa tamang recycling bin.\n" +
+                        "4. Kung marumi ang kahon ng packaging, ilagay ito sa basurahan ng hindi nabubulok.\n" +
+                        "5. Iwasang ihalo ang mga packaging boxes sa ibang hindi nabubulok na materyales.",
+                R.drawable.recyclable2, R.drawable.recyclable_bg, ContextCompat.getColor(this, R.color.bluegreen)));
+
+        wasteListTranslated.add(new ItemsClass("Paper Type Waste", "Recyclable", "Para sa tamang pagtatapon:",
+                "1. Ihiwalay ang mga papel sa ibang basura.\n" +
+                        "2. Patalasin ang mga kahon o karton na papel.\n" +
+                        "3. Alisin ang mga papel na basang dahil sa pagkain o likido at itapon ito sa basurahan ng hindi nabubulok.\n" +
+                        "4. Ilagay ang malinis at tuyong papel sa recycling bin.\n" +
+                        "5. Iwasang ihalo ang papel sa plastik o metal.",
+                R.drawable.recyclable2, R.drawable.recyclable_bg, ContextCompat.getColor(this, R.color.bluegreen)));
+
+        wasteListTranslated.add(new ItemsClass("Plastic Bottle", "Recyclable", "Para sa tamang pagtatapon:",
+                "1. Alisin ang laman ng plastik na bote at banlawan kung kinakailangan.\n" +
+                        "2. Alisin ang takip at label ng bote.\n" +
+                        "3. Ilagay ang plastik na bote sa tamang recycling bin.\n" +
+                        "4. Kung kontaminado ang bote ng pagkain o mapanganib na likido, itapon ito sa basurahan ng hindi nabubulok.\n" +
+                        "5. Iwasang durugin ang plastik na bote bago itapon sa recycling bin, dahil maaari nitong maka-apekto ang proseso ng pag-recycle.",
+                R.drawable.recyclable2, R.drawable.recyclable_bg, ContextCompat.getColor(this, R.color.bluegreen)));
+
+        wasteListTranslated.add(new ItemsClass("Batteries", "E-Waste", "Para sa tamang pagtatapon:",
+                "1. Huwag itapon ang mga ito sa basurahan ng bahay o sa mga basurahan para sa pagre-recycle sa gilid ng daan.\n" +
+                        "2. Dalhin ang mga ito sa mga lugar na tumatanggap ng baterya o sa mga pasilidad na tumatanggap ng mga mapanganib na basura sa bahay.\n" +
+                        "3. Tukuyin kung anong uri ng baterya (rechargeable o single-use).\n" +
+                        "4. Ganap na i-discharge ang mga rechargeable na baterya bago itapon.\n" +
+                        "5. Takpan ang mga terminal ng baterya ng electrical tape o plastik na takip.\n" +
+                        "6. Itabi ang mga baterya sa malamig, tuyong lugar, malayo sa init at sikat ng araw.\n" +
+                        "7. Panatilihin silang hiwalay sa iba pang basura at mga baterya.",
+                R.drawable.e_waste2, R.drawable.electronic_waste_bg, ContextCompat.getColor(this, R.color.red)));
+
+        wasteListTranslated.add(new ItemsClass("Electronic Devices", "E-Waste", "Para sa tamang pagtatapon:",
+                "1. I-reset ang device para mabura ang lahat ng personal na data.\n" +
+                        "2. Tanggalin nang maayos ang mga baterya at iba pang naaalis na bahagi.\n" +
+                        "3. Ibalot nang maayos ang device upang maiwasan ang pagkasira habang dinadala.\n" +
+                        "4. Dalhin ang device sa E-waste collection bins ng SM.\n" +
+                        "5. Kung walang SM, maghanap ng accredited E-waste recycler o magtanong sa LGU tungkol sa collection points.\n" +
+                        "6. Iwasang itapon ang device sa karaniwang basurahan o sa mga bukas na lugar.",
+                R.drawable.e_waste2, R.drawable.electronic_waste_bg, ContextCompat.getColor(this, R.color.red)));
+
+        wasteListTranslated.add(new ItemsClass("Home Appliance", "E-Waste", "Para sa tamang pagtatapon:",
+                "I-unplug ang appliance at linisin itong mabuti.\n" +
+                        "Tanggalin nang maayos ang mga mapanganib na bahagi tulad ng baterya o likido, kung mayroon.\n" +
+                        "Paghiwalayin ang mga recyclable na bahagi tulad ng metal o plastik kung posible.\n" +
+                        "Dalhin ang appliance sa SM collection bins para sa E-waste o sa mga accredited recycling centers.\n" +
+                        "Kung walang SM, makipag-ugnayan sa LGU para sa tamang disposal services.\n" +
+                        "Huwag sunugin, ibaon, o itapon ang appliance sa mga landfill.\n" +
+                        "Puwede mo itong ipangpalit sa iba, ibenta, o ibenta ang mga bahagi para sa dagdag pera.",
+                R.drawable.e_waste2, R.drawable.electronic_waste_bg, ContextCompat.getColor(this, R.color.red)));
+
         ItemsAdapter adapter = new ItemsAdapter(this, wasteList);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
             ItemsClass selectedItem = (ItemsClass) parent.getItemAtPosition(position);
-            WasteItemFragment fragment = WasteItemFragment.newInstance(selectedItem);
+            ItemsClass translatedItem = wasteListTranslated.get(position);
+            WasteItemFragment fragment = WasteItemFragment.newInstance(selectedItem, translatedItem);
 
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragmentContainer, fragment)

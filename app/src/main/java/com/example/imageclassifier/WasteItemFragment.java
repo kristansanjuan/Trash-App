@@ -5,12 +5,10 @@ import android.os.Bundle;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 public class WasteItemFragment extends Fragment {
@@ -20,18 +18,24 @@ public class WasteItemFragment extends Fragment {
     SwitchCompat translateSwitch;
 
     String itemText, categoryText, introText, disposalText;
+    String categoryTrans, introTrans, disposalTrans;
     int iconImage, backgroundType, categoryColor;
 
-    public static WasteItemFragment newInstance(ItemsClass item) {
+    public static WasteItemFragment newInstance(ItemsClass item, ItemsClass itemTranslated) {
         WasteItemFragment fragment = new WasteItemFragment();
         Bundle args = new Bundle();
         args.putString("wasteItem", item.getItemTitle());
         args.putString("wasteCategory", item.getWasteType());
         args.putString("introView", item.getIntro());
         args.putString("disposalView", item.getDisposal());
+
+        args.putString("categoryTranslated", itemTranslated.getWasteType());
+        args.putString("introTranslated", itemTranslated.getIntro());
+        args.putString("disposalTranslated", itemTranslated.getDisposal());
+
         args.putInt("iconImage", item.getImageId());
         args.putInt("backgroundType", item.getBackgroundId());
-        args.putInt("categoryCOlor", item.getColorId());
+        args.putInt("categoryColor", item.getColorId());
         fragment.setArguments(args);
         return fragment;
     }
@@ -53,19 +57,40 @@ public class WasteItemFragment extends Fragment {
             categoryText = getArguments().getString("wasteCategory");
             introText = getArguments().getString("introView");
             disposalText = getArguments().getString("disposalView");
+
+            categoryTrans = getArguments().getString("categoryTranslated");
+            introTrans = getArguments().getString("introTranslated");
+            disposalTrans = getArguments().getString("disposalTranslated");
+
             iconImage = getArguments().getInt("iconImage");
             backgroundType = getArguments().getInt("backgroundType");
             categoryColor = getArguments().getInt("categoryColor");
 
             wasteItem.setText(itemText);
-            wasteCategory.setText(categoryText);
-            introView.setText(introText);
-            disposalView.setText(disposalText);
+
             wasteIcon.setImageResource(iconImage);
             wasteIcon.setBackgroundResource(backgroundType);
             wasteCategory.setTextColor(categoryColor);
+
+            translateText(false);
         }
 
+        translateSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            translateText(isChecked);
+        });
+
         return view;
+    }
+
+    private void translateText(boolean isTranslated) {
+        if (isTranslated) {
+            wasteCategory.setText(categoryTrans);
+            introView.setText(introTrans);
+            disposalView.setText(disposalTrans);
+        } else {
+            wasteCategory.setText(categoryText);
+            introView.setText(introText);
+            disposalView.setText(disposalText);
+        }
     }
 }
