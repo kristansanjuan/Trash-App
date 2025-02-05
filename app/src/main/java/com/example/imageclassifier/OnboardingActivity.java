@@ -24,7 +24,7 @@ public class OnboardingActivity extends AppCompatActivity {
         adapter.addFragment(new FirstScreen());
         adapter.addFragment(new SecondScreen());
         adapter.addFragment(new ThirdScreen());
-        adapter.addFragment(new LocationScreen());
+        //adapter.addFragment(new LocationScreen());
 
         viewPager.setAdapter(adapter);
     }
