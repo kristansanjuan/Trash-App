@@ -14,11 +14,11 @@ import android.widget.TextView;
 public class WasteItemFragment extends Fragment {
 
     ImageView wasteIcon;
-    TextView wasteItem, wasteCategory, introView, disposalView;
+    TextView wasteItem, wasteCategory, descriptionView, introView, disposalView;
     SwitchCompat translateSwitch;
 
-    String itemText, categoryText, introText, disposalText;
-    String categoryTrans, introTrans, disposalTrans;
+    String itemText, categoryText, descriptionText, introText, disposalText;
+    String categoryTrans, descriptionTrans, introTrans, disposalTrans;
     int iconImage, backgroundType, categoryColor;
 
     public static WasteItemFragment newInstance(ItemsClass item, ItemsClass itemTranslated) {
@@ -26,10 +26,12 @@ public class WasteItemFragment extends Fragment {
         Bundle args = new Bundle();
         args.putString("wasteItem", item.getItemTitle());
         args.putString("wasteCategory", item.getWasteType());
+        args.putString("descriptionView", item.getDescription());
         args.putString("introView", item.getIntro());
         args.putString("disposalView", item.getDisposal());
 
         args.putString("categoryTranslated", itemTranslated.getWasteType());
+        args.putString("descriptionTranslated", itemTranslated.getDescription());
         args.putString("introTranslated", itemTranslated.getIntro());
         args.putString("disposalTranslated", itemTranslated.getDisposal());
 
@@ -48,6 +50,7 @@ public class WasteItemFragment extends Fragment {
         wasteIcon = view.findViewById(R.id.wasteIcon);
         wasteItem = view.findViewById(R.id.wasteItem);
         wasteCategory = view.findViewById(R.id.wasteCategory);
+        descriptionView = view.findViewById(R.id.descriptionView);
         introView = view.findViewById(R.id.introView);
         disposalView = view.findViewById(R.id.disposalView);
         translateSwitch = view.findViewById(R.id.translateLanguage);
@@ -55,10 +58,12 @@ public class WasteItemFragment extends Fragment {
         if (getArguments() != null) {
             itemText = getArguments().getString("wasteItem");
             categoryText = getArguments().getString("wasteCategory");
+            descriptionText = getArguments().getString("descriptionView");
             introText = getArguments().getString("introView");
             disposalText = getArguments().getString("disposalView");
 
             categoryTrans = getArguments().getString("categoryTranslated");
+            descriptionTrans = getArguments().getString("descriptionTranslated");
             introTrans = getArguments().getString("introTranslated");
             disposalTrans = getArguments().getString("disposalTranslated");
 
@@ -85,10 +90,12 @@ public class WasteItemFragment extends Fragment {
     private void translateText(boolean isTranslated) {
         if (isTranslated) {
             wasteCategory.setText(categoryTrans);
+            descriptionView.setText(descriptionTrans);
             introView.setText(introTrans);
             disposalView.setText(disposalTrans);
         } else {
             wasteCategory.setText(categoryText);
+            descriptionView.setText(descriptionText);
             introView.setText(introText);
             disposalView.setText(disposalText);
         }
