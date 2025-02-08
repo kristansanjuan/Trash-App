@@ -31,6 +31,10 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.animation.ObjectAnimator;
+import android.animation.AnimatorSet;
+
+
 public class MainActivity extends BaseActivity {
 
     ImageButton picture;
@@ -186,10 +190,13 @@ public class MainActivity extends BaseActivity {
         startCircularAnimation(wasteButtons);
     }
 
+
     private void onButtonClick(ImageButton button, int newIcon, int index, int titleId, int descriptionId) {
         if (selectedButton != null && selectedButton != button) {
             revertButtonChanges(selectedButton);
         }
+        animateButtonScale(button, 1.12f);
+
         button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), buttonColors[index])));
         button.setImageResource(newIcon);
         //ShapeDrawable shapeDrawable = new ShapeDrawable();
@@ -206,7 +213,18 @@ public class MainActivity extends BaseActivity {
         if (index != -1) {
             button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.gray)));
             button.setImageResource(oldIcon[index]);
+            animateButtonScale(button, 1.0f);
         }
+    }
+
+    private void animateButtonScale(View view, float scale) {
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(view, "scaleX", scale);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(view, "scaleY", scale);
+        scaleX.setDuration(200);
+        scaleY.setDuration(200);
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(scaleX, scaleY);
+        animatorSet.start();
     }
 
     private int getButtonIndex(ImageButton button) {

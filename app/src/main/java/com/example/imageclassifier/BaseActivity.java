@@ -55,9 +55,13 @@ public class BaseActivity extends AppCompatActivity {
         navigationView1.setNavigationItemSelectedListener(item -> {
 
             if (item.getItemId() == R.id.navHome) {
-                startActivity(new Intent(this, MainActivity.class));
+                if(!(this instanceof MainActivity)){
+                    startActivity(new Intent(this, MainActivity.class));
+                }
             } else if (item.getItemId() == R.id.navKnowledge) {
-                startActivity(new Intent(this, KnowledgeActivity.class));
+                if(!(this instanceof KnowledgeActivity)){
+                    startActivity(new Intent(this, KnowledgeActivity.class));
+                }
             } else if (item.getItemId() == R.id.navHelp) {
                 startActivity(new Intent(this, OnboardingActivity.class));
             } else {
@@ -70,7 +74,9 @@ public class BaseActivity extends AppCompatActivity {
         
         navigationView2.setNavigationItemSelectedListener(item -> {
             if (item.getItemId() == R.id.navAbout) {
-                startActivity(new Intent(this, AboutActivity.class));
+                if(!(this instanceof AboutActivity)){
+                    startActivity(new Intent(this, AboutActivity.class));
+                }
             } else if (item.getItemId() == R.id.navExit) {
                 finishAffinity();
                 System.exit(0);
