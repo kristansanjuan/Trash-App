@@ -7,21 +7,18 @@ public class ItemsClass {
     String description;
     String intro;
     String disposal;
-    String wasTypeTranslated;
-    String introTranslated;
-    String disposalTranslated;
     int imageId;
     int backgroundId;
     int colorId;
 
-    public ItemsClass(String itemTitle, String wasteType, String description, String intro, String disposal, int imageId, int backgroundId, int colorId) {
+    public ItemsClass(String itemTitle, String wasteType, String description, String intro, String disposal, int imageId, int colorId) {
         this.itemTitle = itemTitle;
         this.wasteType = wasteType;
         this.description = description;
         this.intro = intro;
         this.disposal = disposal;
         this.imageId = imageId;
-        this.backgroundId = backgroundId;
+        //this.backgroundId = backgroundId;
         this.colorId = colorId;
     }
 
@@ -31,7 +28,7 @@ public class ItemsClass {
     public String getIntro() { return intro; }
     public String getDisposal() { return disposal; }
     public int getImageId() { return imageId; }
-    public int getBackgroundId() { return backgroundId; }
+    //public int getBackgroundId() { return backgroundId; }
     public int getColorId() { return colorId; }
 
 }

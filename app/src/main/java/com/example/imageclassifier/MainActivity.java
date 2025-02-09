@@ -48,20 +48,22 @@ public class MainActivity extends BaseActivity {
     ImageButton selectedButton = null;
 
     int[] oldIcon = {
-            R.drawable.biodegradable1,
-            R.drawable.infectious1,
-            R.drawable.e_waste1,
-            R.drawable.recyclable1,
-            R.drawable.nonbiodegradable1
+            R.drawable.grey_biodegradable,
+            R.drawable.grey_recylable,
+            R.drawable.grey_ewaste,
+            R.drawable.grey_nonbiodegradable
+            //R.drawable.infectious1
+
+
     };
 
-    int[] buttonColors = {
+    /**int[] buttonColors = {
             R.color.green,
             R.color.orange,
             R.color.red,
             R.color.blue,
             R.color.yellow
-    };
+    };**/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,16 +128,18 @@ public class MainActivity extends BaseActivity {
         });**/
 
         ImageButton button1 = findViewById(R.id.biodegradableButton);
-        //ImageButton button2 = findViewById(R.id.infectiousButton);
-        ImageButton button2 = findViewById(R.id.ewasteButton);
-        ImageButton button3 = findViewById(R.id.recyclableButton);
+        ImageButton button2 = findViewById(R.id.recyclableButton);
+        ImageButton button3 = findViewById(R.id.ewasteButton);
         ImageButton button4 = findViewById(R.id.nonBiodegradableButton);
+        //ImageButton button2 = findViewById(R.id.infectiousButton);
 
-        button1.setOnClickListener(view -> onButtonClick(button1, R.drawable.biodegradable2, 0, R.string.biodegradableTitle, R.string.biodegradableDescription));
+        button1.setOnClickListener(view -> onButtonClick(button1, R.drawable.color_biodegradable,  R.string.biodegradableTitle, R.string.biodegradableDescription));
+        button2.setOnClickListener(view -> onButtonClick(button2, R.drawable.color_recyclable,  R.string.recyclableTitle, R.string.recyclableDescription));
+        button3.setOnClickListener(view -> onButtonClick(button3, R.drawable.color_ewaste,  R.string.ewasteTitle, R.string.ewasteDescription));
+        button4.setOnClickListener(view -> onButtonClick(button4, R.drawable.color_nonbiodegradable,  R.string.nonBiodegradableTitle, R.string.nonBiodegradableDescription));
+
         //button2.setOnClickListener(view -> onButtonClick(button2, R.drawable.infectious2, 1, R.string.infectiousTitle, R.string.infectiousDescription));
-        button2.setOnClickListener(view -> onButtonClick(button2, R.drawable.e_waste2, 2, R.string.ewasteTitle, R.string.ewasteDescription));
-        button3.setOnClickListener(view -> onButtonClick(button3, R.drawable.recyclable2, 3, R.string.recyclableTitle, R.string.recyclableDescription));
-        button4.setOnClickListener(view -> onButtonClick(button4, R.drawable.nonbiodegradable2, 4, R.string.nonBiodegradableTitle, R.string.nonBiodegradableDescription));
+
 
         /**openMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,27 +186,23 @@ public class MainActivity extends BaseActivity {
 
         List<ImageButton> wasteButtons = new ArrayList<>();
         wasteButtons.add(findViewById(R.id.biodegradableButton));
-        //wasteButtons.add(findViewById(R.id.infectiousButton));
-        wasteButtons.add(findViewById(R.id.ewasteButton));
         wasteButtons.add(findViewById(R.id.recyclableButton));
+        wasteButtons.add(findViewById(R.id.ewasteButton));
         wasteButtons.add(findViewById(R.id.nonBiodegradableButton));
+        //wasteButtons.add(findViewById(R.id.infectiousButton));
+
 
         startCircularAnimation(wasteButtons);
     }
 
-
-    private void onButtonClick(ImageButton button, int newIcon, int index, int titleId, int descriptionId) {
+    private void onButtonClick(ImageButton button, int newIcon, int titleId, int descriptionId) {
         if (selectedButton != null && selectedButton != button) {
             revertButtonChanges(selectedButton);
         }
-        animateButtonScale(button, 1.12f);
+        animateButtonScale(button, 1.10f);
 
-        button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), buttonColors[index])));
+        //button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), buttonColors[index])));
         button.setImageResource(newIcon);
-        //ShapeDrawable shapeDrawable = new ShapeDrawable();
-        //shapeDrawable.getPaint().setColor(Color.BLACK);
-        //shapeDrawable.getPaint().setStyle(Paint.Style.STROKE);
-        //shapeDrawable.getPaint().setStrokeWidth(1f);
         selectedButton = button;
 
         displayInfo(titleId, descriptionId);
@@ -211,7 +211,7 @@ public class MainActivity extends BaseActivity {
     private void revertButtonChanges(ImageButton button) {
         int index = getButtonIndex(button);
         if (index != -1) {
-            button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.gray)));
+            //button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.gray)));
             button.setImageResource(oldIcon[index]);
             animateButtonScale(button, 1.0f);
         }
@@ -230,15 +230,15 @@ public class MainActivity extends BaseActivity {
     private int getButtonIndex(ImageButton button) {
         if (button.getId() == R.id.biodegradableButton) {
             return 0;
-        //} else if (button.getId() == R.id.infectiousButton) {
-        //    return 1;
+        } else if (button.getId() == R.id.recyclableButton) {
+            return 1;
         } else if (button.getId() == R.id.ewasteButton) {
             return 2;
-        } else if (button.getId() == R.id.recyclableButton) {
-            return 3;
         } else if (button.getId() == R.id.nonBiodegradableButton) {
-            return 4;
+            return 3;
         }
+        //} else if (button.getId() == R.id.infectiousButton) {
+        //    return 1;
         return -1;
     }
 

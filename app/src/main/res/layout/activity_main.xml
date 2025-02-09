@@ -89,10 +89,10 @@
 
         <ImageButton
             android:id="@+id/biodegradableButton"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/grey_biodegradable"
             android:background="@drawable/round_button_bg"
-            android:src="@drawable/biodegradable1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="0"
@@ -103,10 +103,10 @@
 
         <ImageButton
             android:id="@+id/nonBiodegradableButton"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/grey_nonbiodegradable"
             android:background="@drawable/round_button_bg"
-            android:src="@drawable/nonbiodegradable1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="270"
@@ -117,10 +117,10 @@
 
         <ImageButton
             android:id="@+id/recyclableButton"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/grey_recylable"
             android:background="@drawable/round_button_bg"
-            android:src="@drawable/recyclable1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="90"
@@ -131,10 +131,10 @@
 
         <ImageButton
             android:id="@+id/ewasteButton"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/grey_ewaste"
             android:background="@drawable/round_button_bg"
-            android:src="@drawable/e_waste1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="180"
@@ -178,7 +178,7 @@
             android:layout_height="180dp"
             android:layout_marginTop="10dp"
             android:requiresFadingEdge="vertical"
-            android:fadingEdgeLength="100dp"
+            android:fadingEdgeLength="150dp"
             android:fadeScrollbars="false"
             android:scrollbarThumbVertical="@color/bluegreen"
             app:layout_constraintBottom_toTopOf="@+id/cameraButton"

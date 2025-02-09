@@ -84,11 +84,13 @@
                     android:paddingTop="8dp"/>
 
                 <TextView
+                    android:id="@+id/emailKristan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2021104400@ms.bulsu.edu.ph"
                     android:textSize="14sp"
                     android:textColor="#888"
+                    android:textIsSelectable="true"
                     android:gravity="center"/>
             </LinearLayout>
 
@@ -117,11 +119,13 @@
                     android:paddingTop="8dp"/>
 
                 <TextView
+                    android:id="@+id/emailJomari"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2021100536@ms.bulsu.edu.ph"
                     android:textSize="14sp"
                     android:textColor="#888"
+                    android:textIsSelectable="true"
                     android:gravity="center"/>
             </LinearLayout>
 
@@ -150,11 +154,13 @@
                     android:paddingTop="8dp"/>
 
                 <TextView
+                    android:id="@+id/emailRA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2021101508@ms.bulsu.edu.ph"
                     android:textSize="14sp"
                     android:textColor="#888"
+                    android:textIsSelectable="true"
                     android:gravity="center"/>
             </LinearLayout>
 
@@ -183,17 +189,20 @@
                     android:paddingTop="8dp"/>
 
                 <TextView
+                    android:id="@+id/emailStewart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2021100766@ms.bulsu.edu.ph"
                     android:textSize="14sp"
                     android:textColor="#888"
+                    android:textIsSelectable="true"
                     android:gravity="center"/>
             </LinearLayout>
         </LinearLayout>
 
 
         <TextView
+            android:id="@+id/ecosortEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ecosort mobile application\necosortmobileapp@gmail.com"
@@ -202,6 +211,7 @@
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
             android:textColor="#777"
+            android:textIsSelectable="true"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 </ScrollView>

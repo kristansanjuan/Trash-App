@@ -36,7 +36,7 @@ public class WasteItemFragment extends Fragment {
         args.putString("disposalTranslated", itemTranslated.getDisposal());
 
         args.putInt("iconImage", item.getImageId());
-        args.putInt("backgroundType", item.getBackgroundId());
+        //args.putInt("backgroundType", item.getBackgroundId());
         args.putInt("categoryColor", item.getColorId());
         fragment.setArguments(args);
         return fragment;
@@ -68,13 +68,13 @@ public class WasteItemFragment extends Fragment {
             disposalTrans = getArguments().getString("disposalTranslated");
 
             iconImage = getArguments().getInt("iconImage");
-            backgroundType = getArguments().getInt("backgroundType");
+            //backgroundType = getArguments().getInt("backgroundType");
             categoryColor = getArguments().getInt("categoryColor");
 
             wasteItem.setText(itemText);
 
             wasteIcon.setImageResource(iconImage);
-            wasteIcon.setBackgroundResource(backgroundType);
+            //wasteIcon.setBackgroundResource(backgroundType);
             wasteCategory.setTextColor(categoryColor);
 
             translateText(false);

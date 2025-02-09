@@ -63,6 +63,8 @@
                 android:divider="@android:color/transparent"
                 android:scrollbarThumbVertical="@color/bluegreen"
                 android:scrollbarTrackVertical="@color/gray"
+                android:requiresFadingEdge="vertical"
+                android:fadingEdgeLength="150dp"
                 tools:listitem="@layout/knowledge_items"
                 android:layout_marginBottom="20dp" />
 
