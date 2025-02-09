@@ -83,50 +83,6 @@ public class MainActivity extends BaseActivity {
         descriptionArea = findViewById(R.id.descriptionArea);
         //navigationView2 = findViewById(R.id.navMenu2);
 
-        //bale eto ung listener ng menu items, line 84-123
-        /**navigationView2.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                int id = item.getItemId();
-
-                if (id == R.id.navAbout) {
-                    Toast.makeText(MainActivity.this, "About is clicked!", Toast.LENGTH_SHORT).show();
-                //} else if (id == R.id.navContactUs) {
-                    //Toast.makeText(MainActivity.this, "Contact Us is clicked!", Toast.LENGTH_SHORT).show();
-                }
-
-                drawerLayout.close();
-
-                return false;
-            }
-        });
-
-        navigationView1.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-
-                if (id == R.id.navHome) {
-                    Toast.makeText(MainActivity.this, "Home is clicked!", Toast.LENGTH_SHORT).show();
-                //} else if (id == R.id.navCategories) {
-                    //Toast.makeText(MainActivity.this, "Categories is clicked!", Toast.LENGTH_SHORT).show();
-                } else if (id == R.id.navKnowledge) {
-                    //Toast.makeText(MainActivity.this, "Knowledge Us is clicked!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, KnowledgeActivity.class);
-                    startActivity(intent);
-                    return true;
-                } else if (id == R.id.navHelp) {
-                    Intent intent = new Intent(MainActivity.this, OnboardingActivity.class);
-                    startActivity(intent);
-                    return true;
-                }
-
-                drawerLayout.close();
-                return false;
-            }
-        });**/
-
         ImageButton button1 = findViewById(R.id.biodegradableButton);
         ImageButton button2 = findViewById(R.id.recyclableButton);
         ImageButton button3 = findViewById(R.id.ewasteButton);
@@ -140,35 +96,8 @@ public class MainActivity extends BaseActivity {
 
         //button2.setOnClickListener(view -> onButtonClick(button2, R.drawable.infectious2, 1, R.string.infectiousTitle, R.string.infectiousDescription));
 
-
-        /**openMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.open();
-            }
-        });**/
-        /**openMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(GravityCompat.START); // Opens the drawer from the start (left)
-            }
-        });**/
-
         //View headerView = navigationView1.getHeaderView(0);
         //closeButton = headerView.findViewById(R.id.closeMenuButton);
-
-        /**closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.close();
-            }
-        });**/
-        /**closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.closeDrawer(GravityCompat.START); // Closes the drawer from the start (left)
-            }
-        });**/
 
         picture.setOnClickListener(new View.OnClickListener() {
             @Override

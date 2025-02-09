@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -31,6 +33,7 @@ public class ResultActivity extends AppCompatActivity {
     private ImageView imageView;
     private TextView result;
     private int imageSize = 224;
+    private ImageView backButton;
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -40,12 +43,30 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         imageView = findViewById(R.id.imageView);
+        backButton = findViewById(R.id.backButton);
 
         byte[] byteArray = getIntent().getByteArrayExtra("image");
         Bitmap image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
 
         imageView.setImageBitmap(image);
         classifyImage(image);
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                goBack();
+            }
+        });
+
+        backButton.setOnClickListener(view -> goBack());
+    }
+
+    private void goBack() {
+        Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+
+        finish();
     }
 
     public void classifyImage(Bitmap image) {
@@ -283,7 +304,7 @@ public class ResultActivity extends AppCompatActivity {
 
     // In ResultActivity.java
 
-    @Override
+    /**@Override
     public void onBackPressed() {
         // Navigate to MainActivity (Home)
         super.onBackPressed();
@@ -293,6 +314,6 @@ public class ResultActivity extends AppCompatActivity {
 
         // Finish the current activity
         finish();
-    }
+    }**/
 
 }

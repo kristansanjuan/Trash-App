@@ -32,7 +32,7 @@ public class KnowledgeActivity extends BaseActivity {
         wasteListTranslated = new ArrayList<>();
 
         wasteList.add(new ItemsClass("Organic Waste", "Biodegradable",
-                "Organic waste refers to biodegradable materials that naturally decompose, such as food scraps, yard trimmings, and other plant-based materials. When these materials end up in landfills, they often cannot break down properly due to poor ventilation, temperature, and humidity, which can lead to the production of harmful gases like methane. Proper disposal or composting of organic waste helps recycle nutrients back into the environment and reduces environmental impact. ",
+                "Refers to biodegradable materials that naturally decompose, such as food scraps, yard trimmings, and other plant-based materials. When these materials end up in landfills, they often cannot break down properly due to poor ventilation, temperature, and humidity, which can lead to the production of harmful gases like methane. Proper disposal or composting of organic waste helps recycle nutrients back into the environment and reduces environmental impact. ",
                 "To Properly Dispose:",
                 "1. Gather vegetable peels, fruit peels, eggshells, and similar organic waste in a separate container.\n" +
                         "2. Avoid mixing organic waste with plastics, paper, glass, or other non-biodegradable materials.\n" +
@@ -45,7 +45,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
 
         wasteList.add(new ItemsClass("Food Waste", "Biodegradable",
-                "Food waste refers to discarded edible food that is lost at various stages of production, distribution, and consumption, contributing to environmental and economic challenges. It includes uneaten leftovers, spoiled produce, and excess food from farms, stores, and households. Reducing food waste involves better storage, mindful consumption, and sustainable food management practices to minimize resource depletion and greenhouse gas emissions.",
+                "Refers to discarded edible food that is lost at various stages of production, distribution, and consumption, contributing to environmental and economic challenges. It includes uneaten leftovers, spoiled produce, and excess food from farms, stores, and households. Reducing food waste involves better storage, mindful consumption, and sustainable food management practices to minimize resource depletion and greenhouse gas emissions.",
                 "To Properly dispose:",
                 "1. Separate leftover food from other types of waste such as plastics, bottles, and paper. Leftover food should be disposed of as biodegradable waste.\n" +
                         "2. Place the leftover food in the bin labeled for biodegradable waste. These bins are usually green or marked \"Biodegradable.\"\n" +
@@ -55,7 +55,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
 
         wasteList.add(new ItemsClass("Environmental Waste", "Biodegradable",
-                "Environmental waste refers to any waste material that negatively impacts the environment, including hazardous, industrial, chemical, and non-biodegradable waste. It encompasses pollutants from manufacturing, construction, and everyday human activities that contribute to land, air, and water contamination. Proper environmental waste management involves reducing, recycling, and safely disposing of waste to minimize ecological harm and promote sustainability.",
+                "Refers to any waste material that negatively impacts the environment, including hazardous, industrial, chemical, and non-biodegradable waste. It encompasses pollutants from manufacturing, construction, and everyday human activities that contribute to land, air, and water contamination. Proper environmental waste management involves reducing, recycling, and safely disposing of waste to minimize ecological harm and promote sustainability.",
                 "To Properly Dispose:",
                 "1. Gather dry leaves, grass clippings, small branches, and similar organic waste.\n" +
                         "2. Avoid mixing with non-biodegradable waste like plastics or metals.\n" +
@@ -68,7 +68,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
 
         wasteList.add(new ItemsClass("Plastic Type Waste", "Non-Biodegradable",
-                "Plastic waste refers to discarded plastic materials that accumulate in the environment, posing significant ecological risks due to their non-biodegradable nature. It includes various types, such as PET (polyethylene terephthalate) used in bottles, HDPE (high-density polyethylene) found in containers, and PVC (polyvinyl chloride) used in pipes and packaging. Managing plastic waste effectively requires recycling, reducing single-use plastics, and adopting sustainable alternatives to mitigate pollution.",
+                "Refers to discarded plastic materials that accumulate in the environment, posing significant ecological risks due to their non-biodegradable nature. It includes various types, such as PET (polyethylene terephthalate) used in bottles, HDPE (high-density polyethylene) found in containers, and PVC (polyvinyl chloride) used in pipes and packaging. Managing plastic waste effectively requires recycling, reducing single-use plastics, and adopting sustainable alternatives to mitigate pollution.",
                 "To Properly Dispose:",
                 "1. Separate plastics by type (e.g., PET, HDPE).\n" +
                         "2. Rinse off food and liquid residues.\n" +
@@ -78,7 +78,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteList.add(new ItemsClass("Styrofoam Type Waste", "Non-Biodegradable",
-                "Styrofoam waste refers to discarded products made from expanded polystyrene foam (EPS), commonly known as Styrofoam. These items include packaging materials, disposable food containers, and insulation products. Styrofoam is not biodegradable, is resistant to photo-oxidization, and is difficult to recycle, making it a significant environmental pollutant.",
+                "Refers to discarded products made from expanded polystyrene foam (EPS), commonly known as Styrofoam. These items include packaging materials, disposable food containers, and insulation products. Styrofoam is not biodegradable, is resistant to photo-oxidization, and is difficult to recycle, making it a significant environmental pollutant.",
                 "To Properly Dispose:",
                 "1. Check if the styrofoam is recyclable by looking for the recycling symbol. If not dispose it in Non-biodegradable bin.\n" +
                         "2. Clean the styrofoam, removing any tape or food residue.\n" +
@@ -89,7 +89,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteList.add(new ItemsClass("Packaging Boxes", "Recyclable",
-                "A packaging box is a container made from materials like cardboard, corrugated fiberboard, or plastic, designed to store, protect, and transport goods. It serves both functional and branding purposes, ensuring product safety while often featuring custom designs for marketing. Packaging boxes come in various types, including folding cartons, rigid boxes, and corrugated boxes, depending on durability and usage needs.",
+                "Are containers made from materials like cardboard, corrugated fiberboard, or plastic, designed to store, protect, and transport goods. It serves both functional and branding purposes, ensuring product safety while often featuring custom designs for marketing. Packaging boxes come in various types, including folding cartons, rigid boxes, and corrugated boxes, depending on durability and usage needs.",
                 "To Properly Dispose:",
                 "1. Flatten packaging boxes to save space.\n" +
                         "2. Remove any non-recyclable items such as plastic liners or tape.\n" +
@@ -99,7 +99,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
         wasteList.add(new ItemsClass("Paper Type Waste", "Recyclable",
-                "Paper waste refers to discarded paper materials that are no longer useful, including newspapers, magazines, office documents, cardboard, and packaging. It is one of the most recyclable waste types and can be repurposed into new paper products to reduce environmental impact. Proper paper waste management involves recycling, reducing paper usage, and opting for digital alternatives to minimize deforestation and waste accumulation.",
+                "Refers to discarded paper materials that are no longer useful, including newspapers, magazines, office documents, cardboard, and packaging. It is one of the most recyclable waste types and can be repurposed into new paper products to reduce environmental impact. Proper paper waste management involves recycling, reducing paper usage, and opting for digital alternatives to minimize deforestation and waste accumulation.",
                 "To Properly Dispose:",
                 "1. Separate paper waste from other trash.\n" +
                         "2. Flatten any paper items like boxes or cardboard.\n" +
@@ -109,7 +109,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
         wasteList.add(new ItemsClass("Plastic Bottle", "Recyclable",
-                "A plastic bottle is a lightweight, durable container made primarily from polymers like PET (polyethylene terephthalate) or HDPE (high-density polyethylene), commonly used for storing liquids such as water, soda, and household products. These bottles are widely produced due to their cost-effectiveness and versatility but contribute significantly to plastic waste and pollution. Recycling and reusing plastic bottles help reduce environmental impact and promote sustainable waste management.",
+                "Is a lightweight, durable container made primarily from polymers like PET (polyethylene terephthalate) or HDPE (high-density polyethylene), commonly used for storing liquids such as water, soda, and household products. These bottles are widely produced due to their cost-effectiveness and versatility but contribute significantly to plastic waste and pollution. Recycling and reusing plastic bottles help reduce environmental impact and promote sustainable waste management.",
                 "To Properly Dispose:",
                 "1. Empty the plastic bottle and rinse it if necessary.\n" +
                         "2. Remove any caps or labels.\n" +
@@ -119,7 +119,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
         wasteList.add(new ItemsClass("Batteries", "E-Waste",
-                "A battery is a device that stores and converts chemical energy into electrical energy to power electronic devices and machinery. It consists of one or more electrochemical cells with positive (cathode) and negative (anode) terminals, allowing the flow of electric current. Batteries come in various types, including rechargeable (e.g., lithium-ion) and non-rechargeable (e.g., alkaline), playing a crucial role in modern technology and energy storage.",
+                "Are devices that stores and converts chemical energy into electrical energy to power electronic devices and machinery. It consists of one or more electrochemical cells with positive (cathode) and negative (anode) terminals, allowing the flow of electric current. Batteries come in various types, including rechargeable (e.g., lithium-ion) and non-rechargeable (e.g., alkaline), playing a crucial role in modern technology and energy storage.",
                 "To Properly Dispose:",
                 "1. Do not place them in household trash or curbside recycling bins.\n" +
                         "2. Take them to battery collection sites or household hazardous waste collection facilities.\n" +
@@ -131,7 +131,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
 
         wasteList.add(new ItemsClass("Electronic Devices", "E-Waste",
-                "Electronic devices are gadgets that operate using electrical circuits to process, transmit, or store information. These devices include smartphones, computers, televisions, and sensors, which rely on semiconductor components like transistors and integrated circuits. They play a crucial role in modern communication, entertainment, healthcare, and industrial automation.",
+                "Are gadgets that operate using electrical circuits to process, transmit, or store information. These devices include smartphones, computers, televisions, and sensors, which rely on semiconductor components like transistors and integrated circuits. They play a crucial role in modern communication, entertainment, healthcare, and industrial automation.",
                 "To Properly Dispose:",
                 "1. Reset the device to remove all personal data.\n" +
                         "2. Safely remove any batteries and other detachable components.\n" +
@@ -142,7 +142,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
 
         wasteList.add(new ItemsClass("Home Appliance", "E-Waste",
-                "A home appliance refers to a household device designed to perform specific tasks that improve comfort, convenience, and efficiency in daily life. These appliances include cooking devices (like ovens and microwaves), cleaning equipment (such as washing machines and vacuums), and other tools (like refrigerators and air conditioners) that utilize electricity or gas to operate. Home appliances are essential in modern homes for simplifying routine chores and maintaining a ",
+                "Refers to a household device designed to perform specific tasks that improve comfort, convenience, and efficiency in daily life. These appliances include cooking devices (like ovens and microwaves), cleaning equipment (such as washing machines and vacuums), and other tools (like refrigerators and air conditioners) that utilize electricity or gas to operate. Home appliances are essential in modern homes for simplifying routine chores and maintaining a ",
                 "To Properly Dispose:",
                 "1. Unplug the appliance and clean it thoroughly.\n" +
                         "2. Safely remove any hazardous parts, such as batteries or fluids, if applicable.\n" +
