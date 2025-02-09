@@ -172,12 +172,37 @@ public class MainActivity extends BaseActivity {
     }
 
     public void displayInfo(int titleId, int descriptionId) {
-        titleArea.setText(getString(titleId));
-        descriptionArea.setText(getString(descriptionId));
+        String newTitle = getString(titleId);
+        String newDescription = getString(descriptionId);
+
+        // Check if the text is already set to prevent re-animating
+        if (!titleArea.getText().toString().equals(newTitle)) {
+            titleArea.setText(newTitle);
+            animateText(titleArea);
+        }
+
+        if (!descriptionArea.getText().toString().equals(newDescription)) {
+            descriptionArea.setText(newDescription);
+            animateText(descriptionArea);
+        }
 
         titleArea.setVisibility(View.VISIBLE);
         descriptionArea.setVisibility(View.VISIBLE);
     }
+
+
+    private void animateText(View view) {
+        view.setAlpha(0f);
+        view.setTranslationY(20f);
+
+        view.animate()
+                .alpha(1f)
+                .translationY(0f)
+                .setDuration(500)
+                .setInterpolator(new LinearInterpolator())
+                .start();
+    }
+
 
     public void startCircularAnimation(List<ImageButton> buttons) {
         ValueAnimator animator = ValueAnimator.ofFloat(0f, 360f);

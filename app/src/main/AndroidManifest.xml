@@ -9,16 +9,18 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:hardwareAccelerated="false"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="false"
         android:icon="@drawable/app_logo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/app_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.ImageClassifier"
         tools:targetApi="31">
+
+
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
@@ -33,13 +35,18 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity android:name=".ResultActivity" />
-        <activity android:name=".KnowledgeActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".KnowledgeActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".AboutActivity" />
     </application>

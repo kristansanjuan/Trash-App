@@ -175,7 +175,7 @@
 
         <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="180dp"
+            android:layout_height="230dp"
             android:layout_marginTop="10dp"
             android:requiresFadingEdge="vertical"
             android:fadingEdgeLength="150dp"
