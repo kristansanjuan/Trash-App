@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".WasteItemFragment">
 
     <ScrollView
@@ -91,13 +92,13 @@
                 android:id="@+id/descriptionView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/generalsansregular"
-                android:text="@string/organicDescription1"
-                android:textColor="#706666"
-                android:textSize="17sp"
                 android:layout_margin="20sp"
+                android:fontFamily="@font/generalsansregular"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/organicDescription1"
                 android:textAlignment="center"
-                android:lineSpacingExtra="4dp"/>
+                android:textColor="#706666"
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/introView"
