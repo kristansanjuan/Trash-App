@@ -136,7 +136,7 @@ public class ResultActivity extends AppCompatActivity {
         // Classify the detected object into categories
         if (!isEnglish){
             switch (detectedObject) {
-                /*case "Glass":
+                /*case "Glass Type Waste":
                 case "Plastic Type Waste":
                 case "Sanitary Napkins":
                 case "Glass"
@@ -167,26 +167,26 @@ public class ResultActivity extends AppCompatActivity {
             }
         } else {
             switch (detectedObject) {
-                /*case "Glass":
-                case "Plastik na Basura":
+                /*case "Basurang Salamin":
+                case "Basurang plastik":
                 case "Sanitary Napkins":
-                case "Styrofoam Type Waste"::*/
+                case "Basurang Styrofoam"::*/
                 case "Plastic Utensils":
                 case "Plastic Bottle":
                     wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Hindi Nabubulok";
                 /*case "Environmental Waste":
-                case "Leftover Foods":
-                case "Organic Waste":*/
+                case "Tiratirang Pagkain":
+                case "Organik na basura":*/
                 case "Foods":
                     wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Nabubulok";
                 /*case "Packaging Boxes":
-                case "Papers":
-                case "Plastic Bottles":
+                case "Basurang Papel":
+                case "Boteng Plastik":
                     return "Recyclable Waste";
                 case "Baterya":
-                case "Electronic Devices":
+                case "Electronic na Gamit":
                 case "Home Appliances":
                     return "E-Waste";*/
                 case "Syringe":
