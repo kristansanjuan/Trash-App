@@ -32,7 +32,7 @@ public class KnowledgeActivity extends BaseActivity {
         wasteListTranslated = new ArrayList<>();
 
         wasteList.add(new ItemsClass("Organic Waste", "Biodegradable",
-                "Refers to biodegradable materials that naturally decompose, such as food scraps, yard trimmings, and other plant-based materials. When these materials end up in landfills, they often cannot break down properly due to poor ventilation, temperature, and humidity, which can lead to the production of harmful gases like methane. Proper disposal or composting of organic waste helps recycle nutrients back into the environment and reduces environmental impact. ",
+                "Organic waste consists of biodegradable materials such as vegetable and fruit scraps, eggshell, and rotten vegetable and fruit scraps that decompose naturally. As of now, EcoSort is designed to classify only these as organic waste and will not classify other objects.",
                 "To Properly Dispose:",
                 "1. Gather vegetable peels, fruit peels, eggshells, and similar organic waste in a separate container.\n" +
                         "2. Avoid mixing organic waste with plastics, paper, glass, or other non-biodegradable materials.\n" +
@@ -44,7 +44,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "8. If composting is not possible and collection services are unavailable, contact the local government for proper disposal instructions.",
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
 
-        wasteList.add(new ItemsClass("Food Waste", "Biodegradable",
+        /*wasteList.add(new ItemsClass("Food Waste", "Biodegradable",
                 "Refers to discarded edible food that is lost at various stages of production, distribution, and consumption, contributing to environmental and economic challenges. It includes uneaten leftovers, spoiled produce, and excess food from farms, stores, and households. Reducing food waste involves better storage, mindful consumption, and sustainable food management practices to minimize resource depletion and greenhouse gas emissions.",
                 "To Properly dispose:",
                 "1. Separate leftover food from other types of waste such as plastics, bottles, and paper. Leftover food should be disposed of as biodegradable waste.\n" +
@@ -52,10 +52,10 @@ public class KnowledgeActivity extends BaseActivity {
                         "3. If space allows, leftover food can be used to create compost, which is beneficial for soil and plants.\n" +
                         "4. Do not throw leftover food into drains or rivers as this can cause flooding and pollution.\n" +
                         "5. Ensure that leftover food waste is collected by the local government or waste collectors on the designated collection days.",
-                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
+                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));*/
 
         wasteList.add(new ItemsClass("Environmental Waste", "Biodegradable",
-                "Refers to any waste material that negatively impacts the environment, including hazardous, industrial, chemical, and non-biodegradable waste. It encompasses pollutants from manufacturing, construction, and everyday human activities that contribute to land, air, and water contamination. Proper environmental waste management involves reducing, recycling, and safely disposing of waste to minimize ecological harm and promote sustainability.",
+                "Environmental waste includes items like branches, flowers, grass, and leaves. As of now, EcoSort is designed to classify only these as environmental waste and will not classify other objects.",
                 "To Properly Dispose:",
                 "1. Gather dry leaves, grass clippings, small branches, and similar organic waste.\n" +
                         "2. Avoid mixing with non-biodegradable waste like plastics or metals.\n" +
@@ -66,6 +66,16 @@ public class KnowledgeActivity extends BaseActivity {
                         "7. Ensure it's stored in a covered bin to avoid pests.\n" +
                         "8. Confirm collection with local waste management.",
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
+
+        wasteList.add(new ItemsClass("Glass Type Waste", "Non-Biodegradable",
+                "Glass waste refers to discarded glass materials such as bottles, jars, windows, mirrors, and drinkware. It can be recycled into new glass products, but broken or contaminated glass should be disposed of properly to prevent hazards.",
+                "To Properly Dispose:",
+                "1. If the glass is unbroken (bottles, jars), rinse and place it in the recycling bin.\n" +
+                        "2. For broken glass, wear gloves and carefully collect the shards.\n" +
+                        "3. Wrap the broken glass in newspaper or place it inside a sturdy cardboard box.\n" +
+                        "4. Label the package as 'Broken Glass' to alert waste collectors.\n" +
+                        "5. Dispose of broken glass in the regular trash, not in recycling.\n",
+                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
 
         wasteList.add(new ItemsClass("Plastic Type Waste", "Non-Biodegradable",
                 "Refers to discarded plastic materials that accumulate in the environment, posing significant ecological risks due to their non-biodegradable nature. It includes various types, such as PET (polyethylene terephthalate) used in bottles, HDPE (high-density polyethylene) found in containers, and PVC (polyvinyl chloride) used in pipes and packaging. Managing plastic waste effectively requires recycling, reducing single-use plastics, and adopting sustainable alternatives to mitigate pollution.",
@@ -89,7 +99,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteList.add(new ItemsClass("Packaging Boxes", "Recyclable",
-                "Are containers made from materials like cardboard, corrugated fiberboard, or plastic, designed to store, protect, and transport goods. It serves both functional and branding purposes, ensuring product safety while often featuring custom designs for marketing. Packaging boxes come in various types, including folding cartons, rigid boxes, and corrugated boxes, depending on durability and usage needs.",
+                "Packaging Boxes are containers made from materials like cardboard, corrugated fiberboard, or plastic, designed to store, protect, and transport goods. It serves both functional and branding purposes, ensuring product safety while often featuring custom designs for marketing. Packaging boxes come in various types, including folding cartons, rigid boxes, and corrugated boxes, depending on durability and usage needs.",
                 "To Properly Dispose:",
                 "1. Flatten packaging boxes to save space.\n" +
                         "2. Remove any non-recyclable items such as plastic liners or tape.\n" +
@@ -141,7 +151,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "6. Avoid disposing of the device in regular trash bins or dumping it in open areas.",
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
 
-        wasteList.add(new ItemsClass("Home Appliance", "E-Waste",
+        /*wasteList.add(new ItemsClass("Home Appliance", "E-Waste",
                 "Refers to a household device designed to perform specific tasks that improve comfort, convenience, and efficiency in daily life. These appliances include cooking devices (like ovens and microwaves), cleaning equipment (such as washing machines and vacuums), and other tools (like refrigerators and air conditioners) that utilize electricity or gas to operate. Home appliances are essential in modern homes for simplifying routine chores and maintaining a ",
                 "To Properly Dispose:",
                 "1. Unplug the appliance and clean it thoroughly.\n" +
@@ -151,12 +161,10 @@ public class KnowledgeActivity extends BaseActivity {
                         "5. If SM is unavailable, coordinate with your LGU for proper disposal services.\n" +
                         "6. Do not burn, bury, or dispose of appliances in landfills.\n" +
                         "7. You can trade them, put for sale or either scrap them for additional money.",
-                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
+                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));*/
 
-        wasteListTranslated.add(new ItemsClass("Organic Waste", "Nabubulok",
-                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+        wasteListTranslated.add(new ItemsClass("Organik na Basura", "Nabubulok",
+                "Ang mga organik na basura ay binubuo ng mga nabubulok na materyales tulad ng mga tirang gulay at prutas, balat ng itlog, at mga bulok na gulay at prutas na natural na nabubulok. Sa ngayon, ang EcoSort ay idinisenyo upang tukuyin lamang ang mga ito bilang mga organikong basura at hindi tutukoy pa ng iba pang mga bagay.",
                 "Para sa tamang pagtatapon:",
                 "1. Ipunin ang balat ng gulay, balat ng prutas, balat ng itlog, at iba pang katulad na nabubulok na basura sa hiwalay na lalagyan.\n" +
                         "2. Iwasang paghaluin ang nabubulok na basura sa plastik, papel, bote, o iba pang hindi nabubulok na materyales.\n" +
@@ -168,22 +176,18 @@ public class KnowledgeActivity extends BaseActivity {
                         "8. Kung hindi posible ang pag-kompost at walang koleksyon ng basura, humingi ng payo sa lokal na pamahalaan para sa tamang pagtapon ng basura.",
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
 
-        wasteListTranslated.add(new ItemsClass("Food Waste", "Nabubulok",
-                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+        /*wasteListTranslated.add(new ItemsClass("Food Waste", "Nabubulok",
+                "Kasama sa mga basura sa kapaligiran ang mga bagay tulad ng mga sanga, bulaklak, damo, at dahon. Sa ngayon, ang EcoSort ay idinisenyo upang uriin lamang ang mga ito bilang mga basura sa kapaligiran at hindi mag-uuri ng iba pang mga bagay.",
                 "Para sa tamang pagtatapon:",
                 "1. Ihiwalay ang mga tira-tirang pagkain sa ibang uri ng basura tulad ng plastik, bote, at papel. Ang mga tirang pagkain ay itapon bilang nabubulok o biodegradable.\n" +
                         "2. Ilagay ang mga tirang pagkain sa lalagyan na para sa mga nabubulok. Karaniwan itong kulay berde o nakalabel na \"Biodegradable.\"\n" +
                         "3. Kung may bakuran, maaari ring gamitin ang mga tirang pagkain para sa paggawa ng kompost na makakatulong sa lupa at mga halaman.\n" +
                         "4. Huwag itapon ang mga tirang pagkain sa kanal o ilog dahil maaaring magdulot ito ng pagbaha at polusyon.\n" +
                         "5. Siguraduhing ang mga tira-tirang pagkain ay kukunin ng lokal na pamahalaan o tagapag-kolekta ng basura sa tamang araw ng koleksyon.",
-                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
+                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));*/
 
         wasteListTranslated.add(new ItemsClass("Environmental Waste", "Nabubulok",
-                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+                "Kasama sa mga basura sa kapaligiran ang mga bagay tulad ng mga sanga, bulaklak, damo, at dahon. Sa ngayon, ang EcoSort ay idinisenyo upang uriin lamang ang mga ito bilang mga basura sa kapaligiran at hindi mag-uuri ng iba pang mga bagay.",
                 "Para sa tamang pagtatapon:",
                 "1. Ipunin ang mga tuyong dahon, damo, maliit na sanga, at katulad na nabubulok na basura sa isang lalagyan.\n" +
                         "2. Iwasang paghaluin ito sa hindi nabubulok na basura tulad ng plastik o metal.\n" +
@@ -195,10 +199,19 @@ public class KnowledgeActivity extends BaseActivity {
                         "8. I-verify ang koleksyon mula sa lokal na pamamahala ng basura.",
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
 
-        wasteListTranslated.add(new ItemsClass("Plastic Type Waste", "Hindi Nabubulok",
-                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+        wasteList.add(new ItemsClass("Basurang Salamin", "Hindi Nabubulok",
+                "Ang basurang salamin ay tumutukoy sa mga itinapon na materyales na salamin tulad ng mga bote, garapon, bintana, salamin, at inumin. Maaari itong i-recycle sa mga bagong produktong salamin, ngunit ang basag o kontaminadong salamin ay dapat na itapon nang maayos upang maiwasan ang mga panganib.",
+                "Para sa tamang pagtatapon:",
+                "1. Kung buo pa ang salamin (bote, garapon), hugasan at ilagay sa recycling bin.\n" +
+                        "2. Kung basag ang salamin, magsuot ng guwantes at maingat na tipunin ang mga piraso.\n" +
+                        "3. Balutin ang basag na salamin sa diyaryo o ilagay sa matibay na kahon.\n" +
+                        "4. Lagyan ng label na 'Basag na Salamin' upang malaman ng mga tagakolekta ng basura.\n" +
+                        "5. Itapon ang basag na salamin sa regular na basura, hindi sa recycling bin.\n",
+                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
+
+
+        wasteListTranslated.add(new ItemsClass("Basurang Plastik", "Hindi Nabubulok",
+                "Tumutukoy ito sa mga itinatapong plastik na naiipon sa kapaligiran at nagdudulot ng matinding panganib dahil hindi ito madaling nabubulok. Kasama rito ang iba’t ibang uri ng plastik gaya ng PET na ginagamit sa bote, HDPE na makikita sa mga lalagyan, at PVC na karaniwang ginagamit sa tubo at balot ng produkto. Para mabawasan ang polusyon mula sa plastik, kailangang pagtuunan ng pansin ang pag-recycle, pagbawas sa paggamit ng single-use plastics, at paghahanap ng mas eco-friendly na alternatibo.",
                 "Para sa tamang pagtatapon:",
                 "1. Ihiwalay ang mga plastik ayon sa uri (hal. PET, HDPE).\n" +
                         "2. Banlawan ang mga tira-tirang pagkain at likido.\n"+
@@ -207,10 +220,8 @@ public class KnowledgeActivity extends BaseActivity {
                         "5. Ilagay sa tamang basurahan o lugar ng pag-iipon ng mga recyclable.",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
-        wasteListTranslated.add(new ItemsClass("Styrofoam Type Waste", "Hindi Nabubuok",
-                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+        wasteListTranslated.add(new ItemsClass("Basurang Styrofoam", "Hindi Nabubulok",
+                "Tumutukoy ito sa mga itinatapong plastik na naiipon sa kapaligiran at nagdudulot ng matinding panganib dahil hindi ito madaling nabubulok. Kasama rito ang iba’t ibang uri ng plastik gaya ng PET na ginagamit sa bote, HDPE na makikita sa mga lalagyan, at PVC na karaniwang ginagamit sa tubo at balot ng produkto. Para mabawasan ang polusyon mula sa plastik, kailangang pagtuunan ng pansin ang pag-recycle, pagbawas sa paggamit ng single-use plastics, at paghahanap ng mas eco-friendly na alternatibo.",
                 "Para sa tamang pagtatapon:",
                 "1. Suriin kung maaaring irecycle ang styrofoam sa pamamagitan ng simbolo ng recycling. Kung hindi itapon ito sa di nabubulok na basurahan.\n" +
                         "2. Linisin ang styrofoam at alisin ang mga tape o tira ng pagkain.\n" +
@@ -221,9 +232,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteListTranslated.add(new ItemsClass("Packaging Boxes", "Recyclable",
-                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+                "Ito ay lalagyan na gawa sa mga materyales tulad ng karton, corrugated fiberboard, o plastik, na ginagamit para paglagyan ng mga produkto. Bukod sa pagiging praktikal, nagsisilbi rin ito bilang bahagi ng branding dahil madalas itong may custom na disenyo para sa marketing. May iba’t ibang uri ng packaging boxes, tulad ng folding cartons, rigid boxes, at corrugated boxes, depende sa tibay at gamit na kinakailangan.",
                 "Para sa tamang pagtatapon:",
                 "1. Tupiin ang mga kahon ng packaging para magtipid sa espasyo.\n" +
                         "2. Alisin ang mga hindi maaaring i-recycle tulad ng plastik o tape.\n" +
@@ -232,10 +241,8 @@ public class KnowledgeActivity extends BaseActivity {
                         "5. Iwasang ihalo ang mga packaging boxes sa ibang hindi nabubulok na materyales.",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
-        wasteListTranslated.add(new ItemsClass("Paper Type Waste", "Recyclable",
-                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+        wasteListTranslated.add(new ItemsClass("Basurang Papel", "Recyclable",
+                "Tumutukoy sa mga itinapon na papel o mga bagay na gawa sa papel na hindi na kapaki-pakinabang, kabilang ang mga pahayagan, magasin, dokumento sa opisina, karton, at packaging. Ito ay isa sa mga pinaka-nare-recycle na uri ng basura at maaaring gawing bagong mga produktong papel upang mabawasan ang epekto sa kapaligiran.",
                 "Para sa tamang pagtatapon:",
                 "1. Ihiwalay ang mga papel sa ibang basura.\n" +
                         "2. Patalasin ang mga kahon o karton na papel.\n" +
@@ -244,10 +251,8 @@ public class KnowledgeActivity extends BaseActivity {
                         "5. Iwasang ihalo ang papel sa plastik o metal.",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
-        wasteListTranslated.add(new ItemsClass("Plastic Bottle", "Recyclable",
-                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+        wasteListTranslated.add(new ItemsClass("Boteng Plastik", "Recyclable",
+                "Ito ay isang magaan, matibay na lalagyan na pangunahing ginawa mula sa mga polymer tulad ng PET (polyethylene terephthalate) o HDPE (high-density polyethylene), na karaniwang ginagamit para sa pag-iimbak ng mga likido gaya ng tubig, soda, at mga produktong pambahay. Ang mga bote na ito ay malawakang ginawa dahil sa kanilang pagiging epektibo sa gastos at kakayahang magamit ngunit malaki ang kontribusyon sa mga basurang plastik at polusyon. Ang pag-recycle at muling paggamit ng mga plastik na bote ay nakakatulong na mabawasan ang epekto sa kapaligiran.",
                 "Para sa tamang pagtatapon:",
                 "1. Alisin ang laman ng plastik na bote at banlawan kung kinakailangan.\n" +
                         "2. Alisin ang takip at label ng bote.\n" +
@@ -256,10 +261,8 @@ public class KnowledgeActivity extends BaseActivity {
                         "5. Iwasang durugin ang plastik na bote bago itapon sa recycling bin, dahil maaari nitong maka-apekto ang proseso ng pag-recycle.",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
-        wasteListTranslated.add(new ItemsClass("Batteries", "E-Waste",
-                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+        wasteListTranslated.add(new ItemsClass("Baterya", "E-Waste",
+                "Gamit na nag-iimbak at nagko-convert ng kemikal na enerhiya sa elektrikal na enerhiya upang mapagana ang mga elektronikong kagamitan at makinarya. Binubuo ito ng isa o higit pang mga electrochemical cell na may mga terminal na positibo (cathode) at negatibo (anode), na nagpapahintulot sa daloy ng electric current. Ang mga baterya ay may iba't ibang uri, kabilang ang rechargeable (hal., lithium-ion) at hindi rechargeable (hal., alkaline)",
                 "Para sa tamang pagtatapon:",
                 "1. Huwag itapon ang mga ito sa basurahan ng bahay o sa mga basurahan para sa pagre-recycle sa gilid ng daan.\n" +
                         "2. Dalhin ang mga ito sa mga lugar na tumatanggap ng baterya o sa mga pasilidad na tumatanggap ng mga mapanganib na basura sa bahay.\n" +
@@ -270,10 +273,8 @@ public class KnowledgeActivity extends BaseActivity {
                         "7. Panatilihin silang hiwalay sa iba pang basura at mga baterya.",
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
 
-        wasteListTranslated.add(new ItemsClass("Electronic Devices", "E-Waste",
-                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+        wasteListTranslated.add(new ItemsClass("Electronic na Gamit", "E-Waste",
+                "Ang mga gadget na gumagana gamit ang mga de-koryenteng circuit upang magproseso, magpadala, o mag-imbak ng impormasyon. Kasama sa mga device na ito ang mga smartphone, computer, telebisyon, at sensor, na umaasa sa mga bahagi ng semiconductor tulad ng mga transistor at integrated circuit. Mahalaga ang papel nila sa modernong komunikasyon, kasiyahan, pangangalaga sa kalusugan, at pagpapabilis ng trabaho.",
                 "Para sa tamang pagtatapon:",
                 "1. I-reset ang device para mabura ang lahat ng personal na data.\n" +
                         "2. Tanggalin nang maayos ang mga baterya at iba pang naaalis na bahagi.\n" +
@@ -283,7 +284,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "6. Iwasang itapon ang device sa karaniwang basurahan o sa mga bukas na lugar.",
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
 
-        wasteListTranslated.add(new ItemsClass("Home Appliance", "E-Waste",
+        /*wasteListTranslated.add(new ItemsClass("Home Appliance", "E-Waste",
                 "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
                         "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
                         "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
@@ -295,7 +296,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "Kung walang SM, makipag-ugnayan sa LGU para sa tamang disposal services.\n" +
                         "Huwag sunugin, ibaon, o itapon ang appliance sa mga landfill.\n" +
                         "Puwede mo itong ipangpalit sa iba, ibenta, o ibenta ang mga bahagi para sa dagdag pera.",
-                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
+                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));*/
 
         ItemsAdapter adapter = new ItemsAdapter(this, wasteList);
         listView.setAdapter(adapter);
