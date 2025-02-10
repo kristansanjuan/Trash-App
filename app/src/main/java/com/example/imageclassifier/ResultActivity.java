@@ -107,7 +107,7 @@ public class ResultActivity extends AppCompatActivity {
             }
 
             String[] classes = {"Foods", "Plastic Bottle", "Face Masks", "Plastic Utensils", "Syringe"};
-            /*String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass", "Packaging Boxes", "Paper Type Waste", "Plastic Bottle", "Batteries", "Electronic Devices", };*/
+            /*String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass", "Packaging Boxes", "Paper Type Waste", "Plastic Bottle", "Batteries", "Electronic Devices", "Styrofoam Type Waste", Paper Type Waste", "Plastic Bottle"};*/
             String detectedObject = classes[maxPos];
 
             // Check if confidence is below 35%
