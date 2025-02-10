@@ -75,7 +75,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "3. Wrap the broken glass in newspaper or place it inside a sturdy cardboard box.\n" +
                         "4. Label the package as 'Broken Glass' to alert waste collectors.\n" +
                         "5. Dispose of broken glass in the regular trash, not in recycling.\n",
-                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
+                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteList.add(new ItemsClass("Plastic Type Waste", "Non-Biodegradable",
                 "Refers to discarded plastic materials that accumulate in the environment, posing significant ecological risks due to their non-biodegradable nature. It includes various types, such as PET (polyethylene terephthalate) used in bottles, HDPE (high-density polyethylene) found in containers, and PVC (polyvinyl chloride) used in pipes and packaging. Managing plastic waste effectively requires recycling, reducing single-use plastics, and adopting sustainable alternatives to mitigate pollution.",
@@ -199,7 +199,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "8. I-verify ang koleksyon mula sa lokal na pamamahala ng basura.",
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
 
-        wasteList.add(new ItemsClass("Basurang Salamin", "Hindi Nabubulok",
+        wasteListTranslated.add(new ItemsClass("Basurang Salamin", "Hindi Nabubulok",
                 "Ang basurang salamin ay tumutukoy sa mga itinapon na materyales na salamin tulad ng mga bote, garapon, bintana, salamin, at inumin. Maaari itong i-recycle sa mga bagong produktong salamin, ngunit ang basag o kontaminadong salamin ay dapat na itapon nang maayos upang maiwasan ang mga panganib.",
                 "Para sa tamang pagtatapon:",
                 "1. Kung buo pa ang salamin (bote, garapon), hugasan at ilagay sa recycling bin.\n" +
@@ -207,7 +207,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "3. Balutin ang basag na salamin sa diyaryo o ilagay sa matibay na kahon.\n" +
                         "4. Lagyan ng label na 'Basag na Salamin' upang malaman ng mga tagakolekta ng basura.\n" +
                         "5. Itapon ang basag na salamin sa regular na basura, hindi sa recycling bin.\n",
-                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
+                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
 
         wasteListTranslated.add(new ItemsClass("Basurang Plastik", "Hindi Nabubulok",
@@ -221,7 +221,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteListTranslated.add(new ItemsClass("Basurang Styrofoam", "Hindi Nabubulok",
-                "Tumutukoy ito sa mga itinatapong plastik na naiipon sa kapaligiran at nagdudulot ng matinding panganib dahil hindi ito madaling nabubulok. Kasama rito ang iba’t ibang uri ng plastik gaya ng PET na ginagamit sa bote, HDPE na makikita sa mga lalagyan, at PVC na karaniwang ginagamit sa tubo at balot ng produkto. Para mabawasan ang polusyon mula sa plastik, kailangang pagtuunan ng pansin ang pag-recycle, pagbawas sa paggamit ng single-use plastics, at paghahanap ng mas eco-friendly na alternatibo.",
+                "Tumutukoy ito sa mga itinapong produkto na gawa sa expanded polystyrene foam (EPS), o mas kilala bilang Styrofoam. Kabilang dito ang mga packaging materials, disposable na food containers, at insulation products. Ang Styrofoam ay hindi nabubulok, matibay laban sa sikat ng araw, at mahirap i-recycle, kaya isa ito sa mga pangunahing sanhi ng polusyon sa kapaligiran.",
                 "Para sa tamang pagtatapon:",
                 "1. Suriin kung maaaring irecycle ang styrofoam sa pamamagitan ng simbolo ng recycling. Kung hindi itapon ito sa di nabubulok na basurahan.\n" +
                         "2. Linisin ang styrofoam at alisin ang mga tape o tira ng pagkain.\n" +

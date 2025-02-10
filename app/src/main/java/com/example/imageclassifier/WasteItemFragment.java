@@ -18,7 +18,7 @@ public class WasteItemFragment extends Fragment {
     SwitchCompat translateSwitch;
 
     String itemText, categoryText, descriptionText, introText, disposalText;
-    String categoryTrans, descriptionTrans, introTrans, disposalTrans;
+    String itemTrans, categoryTrans, descriptionTrans, introTrans, disposalTrans;
     int iconImage, backgroundType, categoryColor;
 
     public static WasteItemFragment newInstance(ItemsClass item, ItemsClass itemTranslated) {
@@ -30,6 +30,7 @@ public class WasteItemFragment extends Fragment {
         args.putString("introView", item.getIntro());
         args.putString("disposalView", item.getDisposal());
 
+        args.putString("itemTranslated", itemTranslated.getItemTitle());
         args.putString("categoryTranslated", itemTranslated.getWasteType());
         args.putString("descriptionTranslated", itemTranslated.getDescription());
         args.putString("introTranslated", itemTranslated.getIntro());
@@ -62,6 +63,7 @@ public class WasteItemFragment extends Fragment {
             introText = getArguments().getString("introView");
             disposalText = getArguments().getString("disposalView");
 
+            itemTrans = getArguments().getString("itemTranslated");
             categoryTrans = getArguments().getString("categoryTranslated");
             descriptionTrans = getArguments().getString("descriptionTranslated");
             introTrans = getArguments().getString("introTranslated");
@@ -89,11 +91,13 @@ public class WasteItemFragment extends Fragment {
 
     private void translateText(boolean isTranslated) {
         if (isTranslated) {
+            wasteItem.setText(itemTrans);
             wasteCategory.setText(categoryTrans);
             descriptionView.setText(descriptionTrans);
             introView.setText(introTrans);
             disposalView.setText(disposalTrans);
         } else {
+            wasteItem.setText(itemText);
             wasteCategory.setText(categoryText);
             descriptionView.setText(descriptionText);
             introView.setText(introText);

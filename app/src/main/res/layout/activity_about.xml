@@ -205,7 +205,7 @@
             android:id="@+id/ecosortEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ecosort mobile application\necosortmobileapp@gmail.com"
+            android:text="Ecosort mobile application\necosortwaste@gmail.com"
             android:textSize="14sp"
             android:textAlignment="center"
             android:paddingTop="16dp"
