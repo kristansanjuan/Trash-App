@@ -109,6 +109,28 @@ public class DisposalGuideActivity {
                         "5. Ilagay sa tamang basurahan o lugar ng pag-iipon ng mga recyclable.\n"
         });*/
 
+        /*defaultGuides.put("Glass Type Waste", new String[] {
+                // English
+                "Should You Recycle or Trash Glass?\n" +
+                        "Recycle: Glass bottles and jars—rinse them and place them in the recycling bin.\n" +
+                        "Trash: Broken glass, windows, mirrors, and drinkware—wrap securely, label as 'Broken Glass,' and dispose of in regular trash.\n\n" +
+                        "1. If the glass is unbroken (bottles, jars), rinse and place it in the recycling bin.\n" +
+                        "2. For broken glass, wear gloves and carefully collect the shards.\n" +
+                        "3. Wrap the broken glass in newspaper or place it inside a sturdy cardboard box.\n" +
+                        "4. Label the package as 'Broken Glass' to alert waste collectors.\n" +
+                        "5. Dispose of broken glass in the regular trash, not in recycling.\n",
+
+                // Tagalog
+                "Dapat Bang I-recycle o Itapon ang Salamin?\n" +
+                        "Recycle: Ang mga bote at garapon ng salamin—hugasan at ilagay sa recycling bin.\n" +
+                        "Trash: Ang basag na salamin, bintana, salamin sa dingding, at mga baso—balutin nang maayos, lagyan ng label na 'Basag na Salamin,' at itapon sa regular na basura.\n\n" +
+                        "1. Kung buo pa ang salamin (bote, garapon), hugasan at ilagay sa recycling bin.\n" +
+                        "2. Kung basag ang salamin, magsuot ng guwantes at maingat na tipunin ang mga piraso.\n" +
+                        "3. Balutin ang basag na salamin sa diyaryo o ilagay sa matibay na kahon.\n" +
+                        "4. Lagyan ng label na 'Basag na Salamin' upang malaman ng mga tagakolekta ng basura.\n" +
+                        "5. Itapon ang basag na salamin sa regular na basura, hindi sa recycling bin.\n"
+        });*/
+
         /*defaultGuides.put("Styrofoam Type Waste", new String[] {
                 // English
                 "1. Check if the styrofoam is recyclable by looking for the recycling symbol. If not, dispose of it in the non-biodegradable bin.\n" +
