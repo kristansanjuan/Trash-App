@@ -17,6 +17,9 @@
     <string name="infectiousTitle">Infectious</string>
     <string name="ewasteTitle">E-waste</string>
 
+    <string name="segregationMatters">Why Waste Segregation Matters?</string>
+    <string name="segregationDialogue">Waste segregation helps keep the environment clean by reducing pollution and making recycling more effective. By separating waste properly, you prevent harmful materials from mixing with recyclables, reduce landfill waste, and conserve natural resources. So what are you waiting for? Be a part of the solution—start segregating today! </string>
+
     <string name="biodegradableDescription">
         Biodegradable waste is material that breaks down naturally through
         microorganisms and environmental factors, such as food scraps, dry leaves, and organic

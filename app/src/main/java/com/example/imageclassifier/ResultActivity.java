@@ -136,22 +136,24 @@ public class ResultActivity extends AppCompatActivity {
             switch (detectedObject) {
                 case "Glass Type Waste":
                 case "Plastic Type Waste":
-                    wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
+                    wasteIcon.setImageResource(R.drawable.icon_nonbiodegradable);
                     return "Non-Biodegradable";
 
                 case "Environmental Waste":
                 case "Organic Waste":
-                    wasteIcon.setImageResource(R.drawable.biodegradable1);
+                    wasteIcon.setImageResource(R.drawable.icon_biodegradable);
                     return "Biodegradable";
 
                 case "Packaging Boxes":
                 case "Paper Type Waste":
                 case "Plastic Bottles":
                 case "Aluminum Type Waste":
+                    wasteIcon.setImageResource(R.drawable.icon_recylable);
                     return "Recyclable Waste";
 
                 case "Batteries":
                 case "Electronic Devices":
+                    wasteIcon.setImageResource(R.drawable.icon_ewaste);
                     return "E-Waste";
 
                 default:
@@ -161,22 +163,24 @@ public class ResultActivity extends AppCompatActivity {
             switch (detectedObject) {
                 case "Glass Type Waste":
                 case "Plastic Type Waste":
-                    wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
+                    wasteIcon.setImageResource(R.drawable.icon_nonbiodegradable);
                     return "Hindi Nabubulok";
 
                 case "Environmental Waste":
                 case "Organic Waste":
-                    /*wasteIcon.setImageResource(R.drawable.nonbiodegradable1);*/
+                    wasteIcon.setImageResource(R.drawable.icon_biodegradable);
                     return "Nabubulok";
 
                 case "Packaging Boxes":
                 case "Paper Type Waste":
                 case "Plastic Bottles":
                 case "Aluminum Type Waste":
+                    wasteIcon.setImageResource(R.drawable.icon_recylable);
                     return "Recyclable Waste";
 
                 case "Batteries":
                 case "Electronic Devices":
+                    wasteIcon.setImageResource(R.drawable.icon_ewaste);
                     return "E-Waste";
 
                 default:
