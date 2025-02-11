@@ -87,15 +87,12 @@ public class KnowledgeActivity extends BaseActivity {
                         "5. Place in the designated recycling bin or drop-off center.",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
-        wasteList.add(new ItemsClass("Styrofoam Type Waste", "Non-Biodegradable",
-                "Refers to discarded products made from expanded polystyrene foam (EPS), commonly known as Styrofoam. These items include packaging materials, disposable food containers, and insulation products. Styrofoam is not biodegradable, is resistant to photo-oxidization, and is difficult to recycle, making it a significant environmental pollutant.",
+        wasteList.add(new ItemsClass("Aluminum Type Waste", "Non-Biodegradable",
+                "Aluminum waste consists of discarded aluminum materials, including industrial scrap, consumer products, and manufacturing by-products. It is highly recyclable, making it valuable for both economic and environmental sustainability. ",
                 "To Properly Dispose:",
-                "1. Check if the styrofoam is recyclable by looking for the recycling symbol. If not dispose it in Non-biodegradable bin.\n" +
-                        "2. Clean the styrofoam, removing any tape or food residue.\n" +
-                        "3. Find a local recycling center that accepts styrofoam.\n" +
-                        "4. Consider reusing styrofoam for crafts, gardening, or insulation.\n" +
-                        "5. Participate in community collection drives for proper disposal.\n" +
-                        "6. Look for drop-off points for specialized styrofoam disposal.",
+                "1. Keep aluminum waste separate from other materials like plastic or glass, remove the label if possible.\n" +
+                        "2. If possible, crush the cans or fold the foil to save space.\n" +
+                        "3. Then, place the aluminum waste in its designated recycling bin.",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteList.add(new ItemsClass("Packaging Boxes", "Recyclable",
@@ -220,15 +217,12 @@ public class KnowledgeActivity extends BaseActivity {
                         "5. Ilagay sa tamang basurahan o lugar ng pag-iipon ng mga recyclable.",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
-        wasteListTranslated.add(new ItemsClass("Basurang Styrofoam", "Hindi Nabubulok",
-                "Tumutukoy ito sa mga itinapong produkto na gawa sa expanded polystyrene foam (EPS), o mas kilala bilang Styrofoam. Kabilang dito ang mga packaging materials, disposable na food containers, at insulation products. Ang Styrofoam ay hindi nabubulok, matibay laban sa sikat ng araw, at mahirap i-recycle, kaya isa ito sa mga pangunahing sanhi ng polusyon sa kapaligiran.",
+        wasteListTranslated.add(new ItemsClass("Basurang Aluminum", "Hindi Nabubulok",
+                "Ito ay tumutukoy sa mga itinapong materyales na gawa sa aluminum, kabilang ang industrial scrap, mga produktong consumer, at mga by-product mula sa paggawa. Madali itong i-recycle, kaya’t mahalaga ito hindi lang sa ekonomiya kundi pati na rin sa pangangalaga ng kalikasan. ",
                 "Para sa tamang pagtatapon:",
-                "1. Suriin kung maaaring irecycle ang styrofoam sa pamamagitan ng simbolo ng recycling. Kung hindi itapon ito sa di nabubulok na basurahan.\n" +
-                        "2. Linisin ang styrofoam at alisin ang mga tape o tira ng pagkain.\n" +
-                        "3. Maghanap ng lokal na recycling center na tumatanggap ng styrofoam.\n" +
-                        "4. Gamitin muli ang styrofoam para sa crafts, paghahardin, o insulation.\n" +
-                        "5. Makilahok sa mga community collection drives para sa tamang pagtatapon.\n" +
-                        "6. Hanapin ang mga drop-off points para sa espesyal na pagtatapon ng styrofoam.",
+                "1. Ihiwalay ang basura na aluminum mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari. \n" +
+                        "2. Kung maaari, durugin ang lata o tiklupin ang foil upang makatipid sa espasyo. \n" +
+                        "3. Pagkatapos, ilagay ang basura na aluminum sa recycling bin. ",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteListTranslated.add(new ItemsClass("Packaging Boxes", "Recyclable",
