@@ -16,7 +16,7 @@ public class DisposalGuideActivity {
     }
 
     private void initializeGuides() {
-        defaultGuides.put("Food Waste", new String[]{
+        /*defaultGuides.put("Food Waste", new String[]{
                 // English
                 "1. Separate leftover food from other types of waste such as plastics, bottles, and paper. Leftover food should be disposed of as biodegradable waste.\n" +
                         "2. Place the leftover food in the bin labeled for biodegradable waste. These bins are usually green or marked \"Biodegradable\".\n" +
@@ -30,9 +30,9 @@ public class DisposalGuideActivity {
                         "3. Kung may bakuran, maaari ring gamitin ang mga tirang pagkain para sa paggawa ng kompost na makakatulong sa lupa at mga halaman.\n" +
                         "4. Huwag itapon ang mga tirang pagkain sa kanal o ilog dahil maaaring magdulot ito ng pagbaha at polusyon.\n" +
                         "5. Siguraduhing ang basura ay kukunin ng lokal na pamahalaan o tagapag-kolekta ng basura sa tamang araw ng koleksyon.\n"
-        });
+        });*/
 
-        /*defaultGuides.put("Organic Waste", new String[]{
+        defaultGuides.put("Organic Waste", new String[]{
                 // English
                 "1. Gather vegetable peels, fruit peels, eggshells, and similar organic waste in a separate container.\n" +
                         "2. Avoid mixing organic waste with plastics, paper, glass, or other non-biodegradable materials.\n" +
@@ -52,7 +52,7 @@ public class DisposalGuideActivity {
                         "6. Siguraduhing maayos ang imbakan ng nabubulok na basura sa mga nakatakip na lalagyan upang hindi makaakit ng peste.\n" +
                         "7. Makipag-ugnayan sa lokal na serbisyo ng pamamahala ng basura upang makolekta ang mga nabubulok na basura sa tamang araw ng koleksyon.\n" +
                         "8. Kung hindi posible ang pag-kompost at walang koleksyon ng basura, humingi ng payo sa lokal na pamahalaan para sa tamang pagtapon ng basura.\n"
-        });*/
+        });
 
         /*defaultGuides.put("Food Waste", new String[] {
                 // English
@@ -70,7 +70,7 @@ public class DisposalGuideActivity {
                         "5. Siguraduhing ang mga tira-tirang pagkain ay kukunin ng lokal na pamahalaan o tagapag-kolekta ng basura sa tamang araw ng koleksyon.\n"
         });*/
 
-        /*defaultGuides.put("Environmental Waste", new String[] {
+        defaultGuides.put("Environmental Waste", new String[] {
                 // English
                 "1. Gather dry leaves, grass clippings, small branches, and similar organic waste.\n" +
                         "2. Avoid mixing with non-biodegradable waste like plastics or metals.\n" +
@@ -90,9 +90,9 @@ public class DisposalGuideActivity {
                         "6. Huwag sunugin ang mga ito dahil nakakasama sa kalusugan at sa hangin.\n" +
                         "7. Siguraduhing nakatago sa basurahan upang hindi makaakit ng peste.\n" +
                         "8. I-verify ang koleksyon mula sa lokal na pamamahala ng basura.\n"
-        });*/
+        });
 
-        /*defaultGuides.put("Plastic Type Waste", new String[] {
+        defaultGuides.put("Plastic Type Waste", new String[] {
                 // English
                 "To properly dispose of plastic items, follow these steps:\n" +
                         "1. Separate plastics by type (e.g., PET, HDPE).\n" +
@@ -107,9 +107,9 @@ public class DisposalGuideActivity {
                         "3. Alisin ang mga hindi pwedeng i-recycle tulad ng takip at label.\n" +
                         "4. Suriin ang mga simbolo ng pag-recycle o mga tagubilin.\n" +
                         "5. Ilagay sa tamang basurahan o lugar ng pag-iipon ng mga recyclable.\n"
-        });*/
+        });
 
-        /*defaultGuides.put("Glass Type Waste", new String[] {
+        defaultGuides.put("Glass Type Waste", new String[] {
                 // English
                 "Should You Recycle or Trash Glass?\n" +
                         "Recycle: Glass bottles and jars—rinse them and place them in the recycling bin.\n" +
@@ -129,9 +129,9 @@ public class DisposalGuideActivity {
                         "3. Balutin ang basag na salamin sa diyaryo o ilagay sa matibay na kahon.\n" +
                         "4. Lagyan ng label na 'Basag na Salamin' upang malaman ng mga tagakolekta ng basura.\n" +
                         "5. Itapon ang basag na salamin sa regular na basura, hindi sa recycling bin.\n"
-        });*/
+        });
 
-        /*defaultGuides.put("Aluminum Type Waste", new String[] {
+        defaultGuides.put("Aluminum Type Waste", new String[] {
                 // English
                 "1. Keep aluminum waste separate from other materials like plastic or glass, remove the label if possible.\n" +
                         "2. If possible, crush the cans or fold the foil to save space. \n" +
@@ -141,10 +141,10 @@ public class DisposalGuideActivity {
                 // Tagalog
                 "1. Ihiwalay ang basura na aluminum mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari.\n" +
                         "2. Kung maaari, durugin ang lata o tiklupin ang foil upang makatipid sa espasyo.\n" +
-                        "3. Pagkatapos, ilagay ang basura na aluminum sa recycling bin.\n" +
-        });*/
+                        "3. Pagkatapos, ilagay ang basura na aluminum sa recycling bin.\n"
+        });
 
-        /*defaultGuides.put("Packaging Boxes", new String[] {
+        defaultGuides.put("Packaging Boxes", new String[] {
                 // English
                 "1. Flatten packaging boxes to save space.\n" +
                         "2. Remove any non-recyclable items such as plastic liners or tape.\n" +
@@ -158,9 +158,9 @@ public class DisposalGuideActivity {
                         "3. Ilagay ang mga patag na kahon sa tamang recycling bin.\n" +
                         "4. Kung marumi ang kahon ng packaging, ilagay ito sa basurahan ng hindi nabubulok.\n" +
                         "5. Iwasang ihalo ang mga packaging boxes sa ibang hindi nabubulok na materyales.\n"
-        });*/
+        });
 
-        /*defaultGuides.put("Paper Type Waste", new String[] {
+        defaultGuides.put("Paper Type Waste", new String[] {
                 // English
                 "1. Separate paper waste from other trash.\n" +
                         "2. Flatten any paper items like boxes or cardboard.\n" +
@@ -174,9 +174,9 @@ public class DisposalGuideActivity {
                         "3. Alisin ang mga papel na basang dahil sa pagkain o likido at itapon ito sa basurahan ng hindi nabubulok.\n" +
                         "4. Ilagay ang malinis at tuyong papel sa recycling bin.\n" +
                         "5. Iwasang ihalo ang papel sa plastik o metal.\n"
-        });*/
+        });
 
-        /*defaultGuides.put("Plastic Bottle", new String[] {
+        defaultGuides.put("Plastic Bottle", new String[] {
                 // English
                 "1. Empty the plastic bottle and rinse it if necessary.\n" +
                         "2. Remove any caps or labels.\n" +
@@ -190,9 +190,9 @@ public class DisposalGuideActivity {
                         "3. Ilagay ang plastik na bote sa tamang recycling bin.\n" +
                         "4. Kung kontaminado ang bote ng pagkain o mapanganib na likido, itapon ito sa basurahan ng hindi nabubulok.\n" +
                         "5. Iwasang durugin ang plastik na bote bago itapon sa recycling bin, dahil maaari nitong maka-apekto ang proseso ng pag-recycle.\n"
-        });*/
+        });
 
-        /*defaultGuides.put("Batteries", new String[]{
+        defaultGuides.put("Batteries", new String[]{
                 // English
                 "To properly dispose of lithium batteries, follow these steps:\n" +
                         "1. Do not place them in household trash or curbside recycling bins.\n" +
@@ -212,9 +212,9 @@ public class DisposalGuideActivity {
                         "5. Takpan ang mga terminal ng baterya ng electrical tape o plastik na takip.\n" +
                         "6. Itabi ang mga baterya sa malamig, tuyong lugar, malayo sa init at sikat ng araw.\n" +
                         "7. Panatilihin silang hiwalay sa iba pang basura at mga baterya.\n"
-        });*/
+        });
 
-        /*defaultGuides.put("Electronic Devices", new String[]{
+        defaultGuides.put("Electronic Devices", new String[]{
                 // English
                 "To properly dispose of electronic devices, follow these steps:\n" +
                         "1. Reset the device to remove all personal data.\n" +
@@ -232,7 +232,7 @@ public class DisposalGuideActivity {
                         "4. Dalhin ang device sa E-waste collection bins ng SM.\n" +
                         "5. Kung walang SM, maghanap ng accredited E-waste recycler o magtanong sa LGU tungkol sa collection points.\n" +
                         "6. Iwasang itapon ang device sa karaniwang basurahan o sa mga bukas na lugar.\n"
-        });*/
+        });
 
         /*defaultGuides.put("Home Appliances", new String[]{
                 // English
@@ -257,7 +257,7 @@ public class DisposalGuideActivity {
         });*/
 
 
-        defaultGuides.put("Plastic Bottle", new String[]{
+        /*defaultGuides.put("Plastic Bottle", new String[]{
                 // English
                 "1. Pick-up the Plastic Bottle and find a trashbin.\n" +
                         "2. Look for the bin saying recyclable or .\n" +
@@ -269,9 +269,9 @@ public class DisposalGuideActivity {
                         "2. Hanapin ang tapunan na nagsasabing recycle.\n" +
                         "3. Ilagay ang bote sa tamang recycling bin.\n" +
                         "4. Iwasang sunugin ang plastik dahil naglalabas ito ng mapanganib na mga kemikal."
-        });
+        });/*
 
-        defaultGuides.put("Face Masks", new String[]{
+        /*defaultGuides.put("Face Masks", new String[]{
                 // English
                 "1. Get something you may use as a glove to pick up the mask.\n" +
                         "2. Place the used mask in a plastic bag or a sealed container.\n" +
@@ -283,9 +283,9 @@ public class DisposalGuideActivity {
                         "2. Ilagay ang nagamit na mask sa isang plastic bag o sealed na lalagyan.\n" +
                         "3. Itapon ito sa basurahan para sa di-nabubulok na basura.\n" +
                         "4. Hugasan ang iyong mga kamay gamit ang sabon at tubig pagkatapos itapon ang mask."
-        });
+        });*/
 
-        defaultGuides.put("Plastic Utensils", new String[]{
+        /*defaultGuides.put("Plastic Utensils", new String[]{
                 // English
                 "1. Get something you may use as a glove to pick up the plastic utensil.\n" +
                         "2. Check if the utensils are recyclable (look for recycling symbols).\n" +
@@ -297,9 +297,9 @@ public class DisposalGuideActivity {
                         "2. Suriin kung ang kubyertos ay maaaring i-recycle (hanapin ang recycling symbol).\n" +
                         "3. Kung maaaring i-recycle, ilagay ito sa recycling bin. Kung hindi, itapon ito sa basurahan para sa di-nabubulok.\n" +
                         "4. Iwasang gamitin muli ang disposable na kubyertos para sa kaligtasan at kalinisan."
-        });
+        });*/
 
-        defaultGuides.put("Syringe", new String[]{
+        /*defaultGuides.put("Syringe", new String[]{
                 // English
                 "1. Use a puncture-resistant sharps container to store used syringes. If an FDA-approved container is unavailable, use a sturdy plastic jug.\n" +
                         "2. Do not attempt to recap the syringe to avoid accidental injury.\n" +
@@ -315,7 +315,7 @@ public class DisposalGuideActivity {
                         "4. Selyuhan ang lalagyan kapag puno na at lagyan ng label na 'Sharps Waste.'\n" +
                         "5. Itapon ang iyong sharps container sa dropbox ng inyong komunidad kung mayroon, o makipag-ugnayan sa inyong lokal na serbisyo para sa pamamahala ng basura o ospital para sa ligtas na pagtatapon.\n" +
                         "6. Hugasan nang maigi ang iyong mga kamay pagkatapos hawakan ang syringe."
-        });
+        });*/
     }
 
     // Method to get the disposal guide
@@ -328,7 +328,7 @@ public class DisposalGuideActivity {
         if (!isTagalog1)
             return "No disposal guide available for this waste type.";
         else
-            return "Wala pang gabay ang nakasaad para sa ganitong uri ng basura.";
+            return "Wala pang maibibigay na gabay para sa ganitong uri ng basura.";
     }
 
     // Method to toggle language
