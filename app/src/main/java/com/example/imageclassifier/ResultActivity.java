@@ -3,12 +3,9 @@ package com.example.imageclassifier;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,7 +21,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import java.io.IOException;
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
-import org.w3c.dom.Text;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -110,7 +106,7 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
 
-            String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottle", "Paper Type Waste", "Aluminum Type Waste"};
+            String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottle", "Aluminum Type Waste"} /*"Paper Type Waste",*/;
             String detectedObject = classes[maxPos];
 
             // Check if confidence is below 35%
@@ -163,28 +159,82 @@ public class ResultActivity extends AppCompatActivity {
             }
         } else {
             switch (detectedObject) {
-                case "Basurang Salamin":
-                case "Basurang plastik":
+                case "Glass Type Waste":
+                case "Plastic Type Waste":
                     wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Hindi Nabubulok";
 
                 case "Environmental Waste":
-                case "Organik na basura":
-                    wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
+                case "Organic Waste":
+                    /*wasteIcon.setImageResource(R.drawable.nonbiodegradable1);*/
                     return "Nabubulok";
 
                 case "Packaging Boxes":
-                case "Basurang Papel":
-                case "Boteng Plastik":
-                case "Basurang Aluminum":
+                case "Paper Type Waste":
+                case "Plastic Bottles":
+                case "Aluminum Type Waste":
                     return "Recyclable Waste";
 
-                case "Baterya":
-                case "Electronic na Gamit":
+                case "Batteries":
+                case "Electronic Devices":
                     return "E-Waste";
 
                 default:
                     return "Hindi ma-klasipika";
+            }
+        }
+    }
+
+    private String wasteName(String detectedObject, boolean isEnglish){
+        if (!isEnglish){
+            switch (detectedObject) {
+                case "Glass Type Waste":
+                    return "Glass Type Waste";
+                case "Plastic Type Waste":
+                    return "Plastic Type Waste";
+                case "Environmental Waste":
+                    return "Environmental Waste";
+                case "Organic Waste":
+                    return "Organic Waste";
+                case "Packaging Boxes":
+                    return "Packaging Boxes";
+                case "Paper Type Waste":
+                    return "Paper Type Waste";
+                case "Plastic Bottles":
+                    return "Plastic Bottles";
+                case "Aluminum Type Waste":
+                    return "Aluminum Type Waste";
+                case "Batteries":
+                    return "Batteries";
+                case "Electronic Devices":
+                    return "Electronic Devices";
+                default:
+                    return "Unknown object detected";
+            }
+        } else {
+            switch (detectedObject) {
+            case "Glass Type Waste":
+                return "Basurang Salamin";
+            case "Plastic Type Waste":
+                return "Basurang Plastik";
+            case "Environmental Waste":
+                return "Environmental Waste";
+            case "Organic Waste":
+                return "Organik na Basura";
+            case "Packaging Boxes":
+                return "Packaging Boxes";
+            case "Paper Type Waste":
+                return "Basurang Papel";
+            case "Plastic Bottles":
+                return "Basurang Plastik";
+            case "Aluminum Type Waste":
+                return "Basurang Aluminum";
+            case "Batteries":
+                return "Baterya";
+            case "Electronic Devices":
+                return "Electronic na Gamit";
+            default:
+                return "Hindi kilala";
             }
         }
     }
@@ -251,27 +301,28 @@ public class ResultActivity extends AppCompatActivity {
     private void updateLanguageUI(String detectedObject, boolean isEnglish, TextView wasteTypeTextView, ImageView wasteTypeImageView, TextView classifiedTextView, TextView disposalGuideTitleTextView, TextView disposalGuideContentsTextView, DisposalGuideActivity disposalGuideActivity) {
         String wasteCategory = classifyObject(detectedObject, isEnglish, wasteTypeImageView);
         String disposalGuide = disposalGuideActivity.getGuide(detectedObject);
+        String engtag_objectname = wasteName(detectedObject, isEnglish);
 
         if ("Unknown".equals(detectedObject)) {
             // Update UI for unknown object
             if (!isEnglish) {
-                wasteTypeTextView.setText("Can't classify (Confidence too low)");
-                classifiedTextView.setText("This is: " + detectedObject);
+                wasteTypeTextView.setText("Can't classify");
+                classifiedTextView.setText(engtag_objectname);
                 disposalGuideTitleTextView.setText("");
                 disposalGuideContentsTextView.setText("");
             } else {
-                wasteTypeTextView.setText("Hindi ma-klasipika (Masyadong mababa ang kumpiyansa)");
-                classifiedTextView.setText("Ito ay: " + detectedObject);
+                wasteTypeTextView.setText("Hindi ma-klasipika");
+                classifiedTextView.setText(engtag_objectname);
                 disposalGuideTitleTextView.setText("");
                 disposalGuideContentsTextView.setText("");
             }
         } else {
             // Update UI for classified object
             wasteTypeTextView.setText(wasteCategory);
-            classifiedTextView.setText(!isEnglish ? "This is: " + detectedObject : "Ito ay: " + detectedObject);
+            classifiedTextView.setText(!isEnglish ? "This is: " + engtag_objectname : "Ito ay: " + engtag_objectname);
             disposalGuideTitleTextView.setText(!isEnglish
-                    ? "To properly dispose of " + detectedObject + ", follow these steps:"
-                    : "Para sa tamang pagtatapon ng " + detectedObject + ", sundin ang mga steps na ito:");
+                    ? "To properly dispose of " + engtag_objectname + ", follow these steps:"
+                    : "Para sa tamang pagtatapon ng " + engtag_objectname + ", sundin ang mga steps na ito:");
             disposalGuideContentsTextView.setText(disposalGuide);
         }
 
