@@ -110,12 +110,11 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
 
-            String[] classes = {"Foods", "Plastic Bottle", "Face Masks", "Plastic Utensils", "Syringe"};
-            /*String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass", "Packaging Boxes", "Paper Type Waste", "Plastic Bottle", "Batteries", "Electronic Devices", "Styrofoam Type Waste", Paper Type Waste", "Plastic Bottle"};*/
+            String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottle", "Paper Type Waste", "Aluminum Type Waste"};
             String detectedObject = classes[maxPos];
 
             // Check if confidence is below 35%
-            if (maxConfidence <= 0.55f) {
+            if (maxConfidence <= 0.60f) {
                 // Show a "Can't classify" message if confidence is low
                 detectedObject = "Unknown";
             }
@@ -130,7 +129,6 @@ public class ResultActivity extends AppCompatActivity {
             // Print the result to the console log
             Log.d("ClassificationResult", s);
 
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -140,62 +138,51 @@ public class ResultActivity extends AppCompatActivity {
         // Classify the detected object into categories
         if (!isEnglish){
             switch (detectedObject) {
-                /*case "Glass Type Waste":
+                case "Glass Type Waste":
                 case "Plastic Type Waste":
-                case "Sanitary Napkins":
-                case "Glass"
-                case "Aluminum Type Waste"::*/
-                case "Plastic Utensils":
-                case "Plastic Bottle":
                     wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Non-Biodegradable";
-                /*case "Environmental Waste":
-                case "Leftover Foods":
-                case "Organic Waste":*/
-                case "Foods":
+
+                case "Environmental Waste":
+                case "Organic Waste":
                     wasteIcon.setImageResource(R.drawable.biodegradable1);
                     return "Biodegradable";
-                /*case "Packaging Boxes":
-                case "Papers":
+
+                case "Packaging Boxes":
+                case "Paper Type Waste":
                 case "Plastic Bottles":
+                case "Aluminum Type Waste":
                     return "Recyclable Waste";
+
                 case "Batteries":
                 case "Electronic Devices":
-                case "Home Appliances":
-                    return "E-Waste";*/
-                case "Syringe":
-                case "Face Masks":
-                    return "Infectious";
+                    return "E-Waste";
+
                 default:
-                    return "Can't classify (Confidence too low)";
+                    return "Unknown object detected";
             }
         } else {
             switch (detectedObject) {
-                /*case "Basurang Salamin":
+                case "Basurang Salamin":
                 case "Basurang plastik":
-                case "Sanitary Napkins":
-                case "Basurang Aluminum"::*/
-                case "Plastic Utensils":
-                case "Plastic Bottle":
                     wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Hindi Nabubulok";
-                /*case "Environmental Waste":
-                case "Tiratirang Pagkain":
-                case "Organik na basura":*/
-                case "Foods":
+
+                case "Environmental Waste":
+                case "Organik na basura":
                     wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
                     return "Nabubulok";
-                /*case "Packaging Boxes":
+
+                case "Packaging Boxes":
                 case "Basurang Papel":
                 case "Boteng Plastik":
+                case "Basurang Aluminum":
                     return "Recyclable Waste";
+
                 case "Baterya":
                 case "Electronic na Gamit":
-                case "Home Appliances":
-                    return "E-Waste";*/
-                case "Syringe":
-                case "Face Masks":
-                    return "Nakakahawa";
+                    return "E-Waste";
+
                 default:
                     return "Hindi ma-klasipika";
             }
