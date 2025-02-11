@@ -135,8 +135,7 @@ public class DisposalGuideActivity {
                 // English
                 "1. Keep aluminum waste separate from other materials like plastic or glass, remove the label if possible.\n" +
                         "2. If possible, crush the cans or fold the foil to save space. \n" +
-                        "3. Find a local recycling center that accepts styrofoam.\n" +
-                        "4. Then, place the aluminum waste in its designated recycling bin.\n",
+                        "3. Then, place the aluminum waste in its designated recycling bin.\n",
 
                 // Tagalog
                 "1. Ihiwalay ang basura na aluminum mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari.\n" +
