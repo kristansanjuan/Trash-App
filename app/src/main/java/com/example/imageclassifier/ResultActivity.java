@@ -144,7 +144,7 @@ public class ResultActivity extends AppCompatActivity {
                 case "Plastic Type Waste":
                 case "Sanitary Napkins":
                 case "Glass"
-                case "Styrofoam Type Waste"::*/
+                case "Aluminum Type Waste"::*/
                 case "Plastic Utensils":
                 case "Plastic Bottle":
                     wasteIcon.setImageResource(R.drawable.nonbiodegradable1);
@@ -174,7 +174,7 @@ public class ResultActivity extends AppCompatActivity {
                 /*case "Basurang Salamin":
                 case "Basurang plastik":
                 case "Sanitary Napkins":
-                case "Basurang Styrofoam"::*/
+                case "Basurang Aluminum"::*/
                 case "Plastic Utensils":
                 case "Plastic Bottle":
                     wasteIcon.setImageResource(R.drawable.nonbiodegradable1);

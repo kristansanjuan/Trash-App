@@ -218,7 +218,7 @@ public class KnowledgeActivity extends BaseActivity {
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteListTranslated.add(new ItemsClass("Basurang Aluminum", "Hindi Nabubulok",
-                "Ito ay tumutukoy sa mga itinapong materyales na gawa sa aluminum, kabilang ang industrial scrap, mga produktong consumer, at mga by-product mula sa paggawa. Madali itong i-recycle, kaya’t mahalaga ito hindi lang sa ekonomiya kundi pati na rin sa pangangalaga ng kalikasan. ",
+                "Ito ay tumutukoy sa mga itinapong materyales na gawa sa aluminum, kabilang ang industrial scrap, mga produktong consumer, at mga by-product mula sa pagmamanupaktura. Madali itong i-recycle, kaya’t mahalaga ito hindi lang sa ekonomiya kundi pati na rin sa pangangalaga ng kalikasan. ",
                 "Para sa tamang pagtatapon:",
                 "1. Ihiwalay ang basura na aluminum mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari. \n" +
                         "2. Kung maaari, durugin ang lata o tiklupin ang foil upang makatipid sa espasyo. \n" +

@@ -131,22 +131,17 @@ public class DisposalGuideActivity {
                         "5. Itapon ang basag na salamin sa regular na basura, hindi sa recycling bin.\n"
         });*/
 
-        /*defaultGuides.put("Styrofoam Type Waste", new String[] {
+        /*defaultGuides.put("Aluminum Type Waste", new String[] {
                 // English
-                "1. Check if the styrofoam is recyclable by looking for the recycling symbol. If not, dispose of it in the non-biodegradable bin.\n" +
-                        "2. Clean the styrofoam, removing any tape or food residue.\n" +
+                "1. Keep aluminum waste separate from other materials like plastic or glass, remove the label if possible.\n" +
+                        "2. If possible, crush the cans or fold the foil to save space. \n" +
                         "3. Find a local recycling center that accepts styrofoam.\n" +
-                        "4. Consider reusing styrofoam for crafts, gardening, or insulation.\n" +
-                        "5. Participate in community collection drives for proper disposal.\n" +
-                        "6. Look for drop-off points for specialized styrofoam disposal.\n",
+                        "4. Then, place the aluminum waste in its designated recycling bin.\n",
 
                 // Tagalog
-                "1. Suriin kung maaaring irecycle ang styrofoam sa pamamagitan ng simbolo ng recycling. Kung hindi, itapon ito sa di nabubulok na basurahan.\n" +
-                        "2. Linisin ang styrofoam at alisin ang mga tape o tira ng pagkain.\n" +
-                        "3. Maghanap ng lokal na recycling center na tumatanggap ng styrofoam.\n" +
-                        "4. Gamitin muli ang styrofoam para sa crafts, paghahardin, o insulation.\n" +
-                        "5. Makilahok sa mga community collection drives para sa tamang pagtatapon.\n" +
-                        "6. Hanapin ang mga drop-off points para sa espesyal na pagtatapon ng styrofoam.\n"
+                "1. Ihiwalay ang basura na aluminum mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari.\n" +
+                        "2. Kung maaari, durugin ang lata o tiklupin ang foil upang makatipid sa espasyo.\n" +
+                        "3. Pagkatapos, ilagay ang basura na aluminum sa recycling bin.\n" +
         });*/
 
         /*defaultGuides.put("Packaging Boxes", new String[] {
