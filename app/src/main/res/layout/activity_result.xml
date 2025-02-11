@@ -17,8 +17,9 @@
         android:id="@+id/backButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:src="@drawable/back_button"
-        android:background="#00000000"
+        android:src="@drawable/back_arrow"
+        android:background="@drawable/round_button_bg"
+        android:backgroundTint="@color/white"
         android:layout_marginTop="40dp"
         android:layout_marginStart="20dp" />
 

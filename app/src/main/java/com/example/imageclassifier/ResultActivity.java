@@ -8,6 +8,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -54,20 +56,22 @@ public class ResultActivity extends AppCompatActivity {
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                goBack();
+                Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
-        backButton.setOnClickListener(view -> goBack());
+        backButton.setOnClickListener(view -> getOnBackPressedDispatcher().onBackPressed());
     }
 
-    private void goBack() {
+    /**private void goBack() {
         Intent intent = new Intent(ResultActivity.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
 
         finish();
-    }
+    }**/
 
     public void classifyImage(Bitmap image) {
         try {
@@ -201,6 +205,8 @@ public class ResultActivity extends AppCompatActivity {
     private void showBottomSheet(String detectedObject, float confidence) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null);
+
+        bottomSheetDialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 
         DisposalGuideActivity disposalGuideActivity = new DisposalGuideActivity();
 
