@@ -180,7 +180,7 @@
             android:requiresFadingEdge="vertical"
             android:fadingEdgeLength="150dp"
             android:fadeScrollbars="false"
-            android:scrollbarThumbVertical="@color/bluegreen"
+            android:scrollbarThumbVertical="@color/lightblue"
             app:layout_constraintBottom_toTopOf="@+id/cameraButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

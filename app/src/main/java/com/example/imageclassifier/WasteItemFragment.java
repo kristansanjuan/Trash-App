@@ -1,5 +1,6 @@
 package com.example.imageclassifier;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.SwitchCompat;
@@ -8,10 +9,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class WasteItemFragment extends Fragment {
+
+    ImageButton backButton;
 
     ImageView wasteIcon;
     TextView wasteItem, wasteCategory, descriptionView, introView, disposalView;
@@ -55,6 +59,10 @@ public class WasteItemFragment extends Fragment {
         introView = view.findViewById(R.id.introView);
         disposalView = view.findViewById(R.id.disposalView);
         translateSwitch = view.findViewById(R.id.translateLanguage);
+
+        backButton = view.findViewById(R.id.buttonBack);
+
+        backButton.setOnClickListener(view1 -> requireActivity().getOnBackPressedDispatcher().onBackPressed());
 
         if (getArguments() != null) {
             itemText = getArguments().getString("wasteItem");
