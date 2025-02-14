@@ -13,6 +13,10 @@
             android:title="About"
             android:icon="@drawable/about_icon" />
 
+        <item
+            android:id="@+id/navUpdateApp"
+            android:title="Check for Update"
+            android:icon="@drawable/ecosort_logo1" />
         <!--<item
             android:id="@+id/navContactUs"
             android:title="Contact Us"

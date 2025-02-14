@@ -77,6 +77,10 @@ public class BaseActivity extends AppCompatActivity {
                 if(!(this instanceof AboutActivity)){
                     startActivity(new Intent(this, AboutActivity.class));
                 }
+            } else if (item.getItemId() == R.id.navUpdateApp) {
+                if (!(this instanceof UpdateActivity)) {
+                    startActivity(new Intent(this, UpdateActivity.class));
+                }
             } else if (item.getItemId() == R.id.navExit) {
                 finishAffinity();
                 System.exit(0);
