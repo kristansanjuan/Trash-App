@@ -193,8 +193,7 @@ public class DisposalGuideActivity {
 
         defaultGuides.put("Batteries", new String[]{
                 // English
-                "To properly dispose of lithium batteries, follow these steps:\n" +
-                        "1. Do not place them in household trash or curbside recycling bins.\n" +
+                "1. Do not place them in household trash or curbside recycling bins.\n" +
                         "2. Take them to battery collection sites or household hazardous waste collection facilities.\n" +
                         "3. Identify the type of battery (rechargeable or single use).\n" +
                         "4. Discharge rechargeable batteries completely before disposal.\n" +
@@ -203,8 +202,7 @@ public class DisposalGuideActivity {
                         "7. Keep them separate from other waste and batteries.\n",
 
                 // Tagalog
-                "Para sa tamang pagtapon ng mga lithium batteries, sundin ang mga hakbang na ito:\n" +
-                        "1. Huwag itapon ang mga ito sa basurahan ng bahay o sa mga basurahan para sa pagre-recycle sa gilid ng daan.\n" +
+                "1. Huwag itapon ang mga ito sa basurahan ng bahay o sa mga basurahan para sa pagre-recycle sa gilid ng daan.\n" +
                         "2. Dalhin ang mga ito sa mga lugar na tumatanggap ng baterya o sa mga pasilidad na tumatanggap ng mga mapanganib na basura sa bahay.\n" +
                         "3. Tukuyin kung anong uri ng baterya (rechargeable o single-use).\n" +
                         "4. Ganap na i-discharge ang mga rechargeable na baterya bago itapon.\n" +
@@ -215,8 +213,7 @@ public class DisposalGuideActivity {
 
         defaultGuides.put("Electronic Devices", new String[]{
                 // English
-                "To properly dispose of electronic devices, follow these steps:\n" +
-                        "1. Reset the device to remove all personal data.\n" +
+                "1. Reset the device to remove all personal data.\n" +
                         "2. Safely remove any batteries and other detachable components.\n" +
                         "3. Pack the device securely to avoid damage during transport.\n" +
                         "4. Bring the device to SM E-waste collection bins or any other e-waste disposal collector.\n" +
@@ -224,8 +221,7 @@ public class DisposalGuideActivity {
                         "6. Avoid disposing of the device in regular trash bins or dumping it in open areas.\n",
 
                 // Tagalog
-                "Para sa tamang pagtapon ng mga electronic devices, sundin ang mga hakbang na ito:\n" +
-                        "1. I-reset ang device para mabura ang lahat ng personal na data.\n" +
+                "1. I-reset ang device para mabura ang lahat ng personal na data.\n" +
                         "2. Tanggalin nang maayos ang mga baterya at iba pang naaalis na bahagi.\n" +
                         "3. Ibalot nang maayos ang device upang maiwasan ang pagkasira habang dinadala.\n" +
                         "4. Dalhin ang device sa E-waste collection bins ng SM.\n" +
