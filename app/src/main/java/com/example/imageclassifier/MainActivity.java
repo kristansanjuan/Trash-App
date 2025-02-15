@@ -122,6 +122,19 @@ public class MainActivity extends BaseActivity {
 
 
         startCircularAnimation(wasteButtons);
+
+        if (getIntent().getBooleanExtra("EXTRA_START_CAMERA", false)) {
+            openCamera();
+        }
+    }
+
+    private void openCamera() {
+        if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(cameraIntent, 1);
+        } else {
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, 100);
+        }
     }
 
     private void onButtonClick(ImageButton button, int newIcon, int titleId, int descriptionId) {
@@ -279,11 +292,8 @@ public class MainActivity extends BaseActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 100) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted, you can now use the camera
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, 1);
+                openCamera(); // If permission is granted, open the camera
             } else {
-                // Permission denied, show a message
                 Toast.makeText(this, "Camera permission is required to capture image", Toast.LENGTH_SHORT).show();
             }
         }
