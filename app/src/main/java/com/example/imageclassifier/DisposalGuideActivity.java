@@ -175,7 +175,7 @@ public class DisposalGuideActivity {
                         "5. Iwasang ihalo ang papel sa plastik o metal.\n"
         });
 
-        defaultGuides.put("Plastic Bottle", new String[] {
+        defaultGuides.put("Plastic Bottles", new String[] {
                 // English
                 "1. Empty the plastic bottle and rinse it if necessary.\n" +
                         "2. Remove any caps or labels.\n" +
