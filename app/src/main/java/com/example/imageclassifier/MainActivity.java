@@ -203,7 +203,6 @@ public class MainActivity extends BaseActivity {
         descriptionArea.setVisibility(View.VISIBLE);
     }
 
-
     private void animateText(View view) {
         view.setAlpha(0f);
         view.setTranslationY(20f);
@@ -215,7 +214,6 @@ public class MainActivity extends BaseActivity {
                 .setInterpolator(new LinearInterpolator())
                 .start();
     }
-
 
     public void startCircularAnimation(List<ImageButton> buttons) {
         ValueAnimator animator = ValueAnimator.ofFloat(0f, 360f);
