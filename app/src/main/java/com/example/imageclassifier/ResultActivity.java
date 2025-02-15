@@ -335,6 +335,7 @@ public class ResultActivity extends AppCompatActivity {
         disposalGuideContentsTextView.setText(disposalGuide);
     }
 
+    /*
     // Handle the result of the new picture taken
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -351,7 +352,7 @@ public class ResultActivity extends AppCompatActivity {
             // Classify the new image
             classifyImage(imageBitmap);
         }
-    }
+    }*/
 
     // In ResultActivity.java
 
