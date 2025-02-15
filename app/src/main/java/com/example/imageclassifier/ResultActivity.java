@@ -106,7 +106,7 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
 
-            String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottle", "Aluminum Type Waste"} /*"Paper Type Waste",*/;
+            String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottles", "Paper Type Waste" , "Aluminum Type Waste"} /**/;
             String detectedObject = classes[maxPos];
 
             // Check if confidence is below 35%
@@ -230,7 +230,7 @@ public class ResultActivity extends AppCompatActivity {
             case "Paper Type Waste":
                 return "Basurang Papel";
             case "Plastic Bottles":
-                return "Basurang Plastik";
+                return "Platik na Bote";
             case "Aluminum Type Waste":
                 return "Basurang Aluminum";
             case "Batteries":
@@ -290,11 +290,12 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Relaunch the camera intent
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (cameraIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivityForResult(cameraIntent, 1);
-                }
                 bottomSheetDialog.dismiss(); // Close the Bottom Sheet dialog
+                Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+                intent.putExtra("EXTRA_START_CAMERA", true);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
             }
         });
 
