@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.Manifest;
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
@@ -22,9 +23,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.getkeepsafe.taptargetview.TapTarget;
+import com.getkeepsafe.taptargetview.TapTargetSequence;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.ByteArrayOutputStream;
@@ -83,11 +87,15 @@ public class MainActivity extends BaseActivity {
         descriptionArea = findViewById(R.id.descriptionArea);
         //navigationView2 = findViewById(R.id.navMenu2);
 
+
         ImageButton button1 = findViewById(R.id.biodegradableButton);
         ImageButton button2 = findViewById(R.id.recyclableButton);
         ImageButton button3 = findViewById(R.id.ewasteButton);
         ImageButton button4 = findViewById(R.id.nonBiodegradableButton);
         //ImageButton button2 = findViewById(R.id.infectiousButton);
+       //View center = findViewById(R.id.centerPoint);
+
+
 
         button1.setOnClickListener(view -> onButtonClick(button1, R.drawable.color_biodegradable,  R.string.biodegradableTitle, R.string.biodegradableDescription));
         button2.setOnClickListener(view -> onButtonClick(button2, R.drawable.color_recyclable,  R.string.recyclableTitle, R.string.recyclableDescription));
@@ -126,7 +134,89 @@ public class MainActivity extends BaseActivity {
         if (getIntent().getBooleanExtra("EXTRA_START_CAMERA", false)) {
             openCamera();
         }
+
+        SharedPreferences prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        boolean isFirstLaunch = prefs.getBoolean("isFirstLaunch", true);
+
+        if (isFirstLaunch) {
+            startTutorial();
+
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("isFirstLaunch", false);
+            editor.apply();
+        }
+
     }
+
+    private void startTutorial() {
+        // Pause animation before TapTarget starts
+        pauseCircularAnimation();
+
+        new TapTargetSequence(this)
+                .targets(
+                        // Welcome prompt
+                        TapTarget.forView(findViewById(R.id.centerPoint),
+                                        "Welcome!", "This is the EcoSort home screen. Tap the logo to continue. To skip the tutorial, tap outside the circle.")
+                                .outerCircleColor(R.color.lightblue)
+                                .targetCircleColor(R.color.white)
+                                .dimColor(android.R.color.darker_gray)
+                                .textColor(R.color.white)
+                                .cancelable(true)
+                                .transparentTarget(true),
+
+                        // Category buttons
+                        TapTarget.forView(findViewById(R.id.ewasteButton),
+                                        "Waste Categories", "Tap a category to learn more about it. The description will appear below.")
+                                .outerCircleColor(R.color.yellow)
+                                .targetCircleColor(R.color.white)
+                                .dimColor(android.R.color.darker_gray)
+                                .textColor(R.color.white)
+                                .cancelable(true)
+                                .transparentTarget(true),
+
+                        TapTarget.forView(findViewById(R.id.openMenuButton),
+                                        "Menu Button", "Tap here to navigate through the app.")
+                                .outerCircleColor(R.color.green)
+                                .targetCircleColor(R.color.white)
+                                .dimColor(android.R.color.darker_gray)
+                                .textColor(R.color.white)
+                                .cancelable(true)
+                                .transparentTarget(true),
+
+                        // Camera button
+                        TapTarget.forView(findViewById(R.id.cameraButton),
+                                        "Take a Picture", "Tap here to take a picture of the waste you want to classify.")
+                                .outerCircleColor(R.color.bluegreen)
+                                .targetCircleColor(R.color.white)
+                                .dimColor(android.R.color.darker_gray)
+                                .textColor(R.color.white)
+                                .cancelable(true)
+                                .transparentTarget(true)
+                )
+                .listener(new TapTargetSequence.Listener() {
+                    @Override
+                    public void onSequenceFinish() {
+                        // Resume animation after tutorial completion
+                        resumeCircularAnimation();
+                    }
+
+                    @Override
+                    public void onSequenceStep(TapTarget lastTarget, boolean targetClicked) {
+
+                    }
+
+                    @Override
+                    public void onSequenceCanceled(TapTarget lastTarget) {
+                        // Resume animation if user cancels tutorial
+                        resumeCircularAnimation();
+                    }
+                })
+                .start();
+    }
+
+
+
+
 
     private void openCamera() {
         if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
@@ -215,8 +305,10 @@ public class MainActivity extends BaseActivity {
                 .start();
     }
 
+    private ValueAnimator animator; // Store animator globally to control it
+
     public void startCircularAnimation(List<ImageButton> buttons) {
-        ValueAnimator animator = ValueAnimator.ofFloat(0f, 360f);
+        animator = ValueAnimator.ofFloat(0f, 360f);
         animator.setDuration(18000);
         animator.setRepeatCount(ValueAnimator.INFINITE);
         animator.setInterpolator(new LinearInterpolator());
@@ -239,6 +331,19 @@ public class MainActivity extends BaseActivity {
         animator.start();
     }
 
+    // 🛑 Pause Animation
+    private void pauseCircularAnimation() {
+        if (animator != null && animator.isRunning()) {
+            animator.pause(); // Pause animation
+        }
+    }
+
+    // ▶ Resume Animation
+    private void resumeCircularAnimation() {
+        if (animator != null && animator.isPaused()) {
+            animator.resume(); // Resume animation
+        }
+    }
     private void showError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
