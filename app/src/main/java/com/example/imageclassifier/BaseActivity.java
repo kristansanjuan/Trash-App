@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -78,9 +79,10 @@ public class BaseActivity extends AppCompatActivity {
                     startActivity(new Intent(this, AboutActivity.class));
                 }
             } else if (item.getItemId() == R.id.navUpdateApp) {
-                if (!(this instanceof UpdateActivity)) {
+                Toast.makeText(this, "Oops! Sorry This Section Is Unavailable For This Version. :(", Toast.LENGTH_SHORT).show();
+                /*if (!(this instanceof UpdateActivity)) {
                     startActivity(new Intent(this, UpdateActivity.class));
-                }
+                }*/
             } else if (item.getItemId() == R.id.navExit) {
                 finishAffinity();
                 System.exit(0);
