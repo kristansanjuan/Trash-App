@@ -267,7 +267,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "7. Panatilihin silang hiwalay sa iba pang basura at mga baterya.",
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
 
-        wasteListTranslated.add(new ItemsClass("Electronic na Gamit", "E-Waste",
+        wasteListTranslated.add(new ItemsClass("Electronik na Gamit", "E-Waste",
                 "Ang mga gadget na gumagana gamit ang mga de-koryenteng circuit upang magproseso, magpadala, o mag-imbak ng impormasyon. Kasama sa mga device na ito ang mga smartphone, computer, telebisyon, at sensor, na umaasa sa mga bahagi ng semiconductor tulad ng mga transistor at integrated circuit. Mahalaga ang papel nila sa modernong komunikasyon, kasiyahan, pangangalaga sa kalusugan, at pagpapabilis ng trabaho.",
                 "Para sa tamang pagtatapon:",
                 "1. I-reset ang device para mabura ang lahat ng personal na data.\n" +
@@ -297,7 +297,8 @@ public class KnowledgeActivity extends BaseActivity {
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
             ItemsClass selectedItem = (ItemsClass) parent.getItemAtPosition(position);
-            ItemsClass translatedItem = wasteListTranslated.get(position);
+            int originalIndex = wasteList.indexOf(selectedItem);
+            ItemsClass translatedItem = wasteListTranslated.get(originalIndex);
             WasteItemFragment fragment = WasteItemFragment.newInstance(selectedItem, translatedItem);
 
             getSupportFragmentManager().beginTransaction()
@@ -311,6 +312,23 @@ public class KnowledgeActivity extends BaseActivity {
             findViewById(R.id.segregationTitle).setVisibility(View.GONE);
             findViewById(R.id.segregationDesc).setVisibility(View.GONE);
         });
+
+        /*listView.setOnItemClickListener((parent, view, position, id) -> {
+            ItemsClass selectedItem = (ItemsClass) parent.getItemAtPosition(position);
+            ItemsClass translatedItem = wasteListTranslated.get(position);
+            WasteItemFragment fragment = WasteItemFragment.newInstance(selectedItem, translatedItem);
+
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragmentContainer, fragment)
+                    .addToBackStack(null)
+                    .commit();
+
+            findViewById(R.id.knowledgeTitle).setVisibility(View.GONE);
+            findViewById(R.id.cardContainer).setVisibility(View.GONE);
+            findViewById(R.id.fragmentContainer).setVisibility(View.VISIBLE);
+            findViewById(R.id.segregationTitle).setVisibility(View.GONE);
+            findViewById(R.id.segregationDesc).setVisibility(View.GONE);
+        });*/
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
