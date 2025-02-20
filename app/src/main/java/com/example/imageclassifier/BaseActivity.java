@@ -1,7 +1,10 @@
 package com.example.imageclassifier;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -15,7 +18,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class BaseActivity extends AppCompatActivity {
+
+    private static final String CURRENT_VERSION = "1.0.2";
 
     DrawerLayout drawerLayout;
     ImageButton openMenuButton;
@@ -79,10 +90,7 @@ public class BaseActivity extends AppCompatActivity {
                     startActivity(new Intent(this, AboutActivity.class));
                 }
             } else if (item.getItemId() == R.id.navUpdateApp) {
-                Toast.makeText(this, "Oops! Sorry This Section Is Unavailable For This Version. :(", Toast.LENGTH_SHORT).show();
-                /*if (!(this instanceof UpdateActivity)) {
-                    startActivity(new Intent(this, UpdateActivity.class));
-                }*/
+                checkForUpdate();
             } else if (item.getItemId() == R.id.navExit) {
                 finishAffinity();
                 System.exit(0);
@@ -93,7 +101,48 @@ public class BaseActivity extends AppCompatActivity {
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });
+    }
 
+    private void checkForUpdate() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://raw.githubusercontent.com/kristansanjuan/")  // GitHub base URL
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        VersionAPI versionAPI = retrofit.create(VersionAPI.class);
+        Call<VersionResponse> call = versionAPI.getVersion();
+
+        call.enqueue(new Callback<VersionResponse>() {
+            @Override
+            public void onResponse(Call<VersionResponse> call, Response<VersionResponse> response) {
+                if (response.isSuccessful()) {
+                    VersionResponse versionResponse = response.body();
+                    if (versionResponse != null && !versionResponse.getVersion().equals(CURRENT_VERSION)) {
+                        showUpdateDialog(versionResponse.getUrl());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<VersionResponse> call, Throwable t) {
+                Toast.makeText(BaseActivity.this, "Failed to check for updates", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void showUpdateDialog(String downloadUrl) {
+        new AlertDialog.Builder(this)
+                .setTitle("Update Available")
+                .setMessage("A new version of the app is available. Do you want to update?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(downloadUrl));
+                        startActivity(browserIntent);
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 
     protected void setActivityContent(int layoutId) {
