@@ -2,6 +2,7 @@ package com.example.imageclassifier.onboarding;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -12,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import com.example.imageclassifier.MainActivity;
 import com.example.imageclassifier.R;
@@ -33,6 +36,16 @@ public class ThirdScreen extends Fragment {
             startActivity(intent);
             getActivity().finish();
         });
+
+        VideoView videoView = view.findViewById(R.id.videoWalkthrough);
+        Uri videoUri = Uri.parse("android.resource://" + requireContext().getPackageName() + "/" + R.raw.ecosort_walkthrough);
+        videoView.setVideoURI(videoUri);
+
+        MediaController mediaController = new MediaController(requireContext());
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
+
+        videoView.start();
 
         return view;
     }

@@ -99,7 +99,8 @@
             app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="Biodegradable"/>
 
         <ImageButton
             android:id="@+id/nonBiodegradableButton"
@@ -113,7 +114,8 @@
             app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="Non-Biodegradable" />
 
         <ImageButton
             android:id="@+id/recyclableButton"
@@ -127,7 +129,8 @@
             app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="Recyclable" />
 
         <ImageButton
             android:id="@+id/ewasteButton"
@@ -141,7 +144,8 @@
             app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="E-waste" />
 
         <!--<ImageButton
             android:id="@+id/infectiousButton"
@@ -222,7 +226,8 @@
             android:src="@drawable/camera_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="open camera" />
 
         <TextView
             android:id="@+id/textView"

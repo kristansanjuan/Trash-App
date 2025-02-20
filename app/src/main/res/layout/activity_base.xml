@@ -29,7 +29,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:src="@drawable/menu_icon" />
+                android:src="@drawable/menu_icon"
+                android:contentDescription="open menu"/>
 
         </androidx.appcompat.widget.Toolbar>
 
