@@ -1,10 +1,12 @@
 package com.example.imageclassifier;
 
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 
@@ -38,6 +40,14 @@ public class KnowledgeActivity extends BaseActivity {
 
         if (searchEditText != null) {
             searchEditText.setTextColor(Color.BLACK);
+            searchEditText.setHintTextColor(Color.BLACK);
+        }
+
+        int searchIconId = searchView.getContext().getResources().getIdentifier("android:id/search_mag_icon", null, null);
+        ImageView searchIcon = searchView.findViewById(searchIconId);
+
+        if (searchIcon != null) {
+            searchIcon.setColorFilter(Color.parseColor("#247D7F"), PorterDuff.Mode.SRC_IN);
         }
 
         wasteList.add(new ItemsClass("Organic Waste", "Biodegradable",
