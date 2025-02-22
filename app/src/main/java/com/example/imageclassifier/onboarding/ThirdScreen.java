@@ -41,11 +41,15 @@ public class ThirdScreen extends Fragment {
         Uri videoUri = Uri.parse("android.resource://" + requireContext().getPackageName() + "/" + R.raw.ecosort_walkthrough);
         videoView.setVideoURI(videoUri);
 
+        videoView.setOnPreparedListener(mp -> {
+            videoView.start();
+        });
+
         MediaController mediaController = new MediaController(requireContext());
         mediaController.setAnchorView(videoView);
         videoView.setMediaController(mediaController);
 
-        videoView.start();
+        //videoView.start();
 
         return view;
     }
