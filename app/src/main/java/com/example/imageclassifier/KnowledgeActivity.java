@@ -33,6 +33,13 @@ public class KnowledgeActivity extends BaseActivity {
         wasteList = new ArrayList<>();
         wasteListTranslated = new ArrayList<>();
 
+        int searchEditTextId = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+        EditText searchEditText = searchView.findViewById(searchEditTextId);
+
+        if (searchEditText != null) {
+            searchEditText.setTextColor(Color.BLACK);
+        }
+
         wasteList.add(new ItemsClass("Organic Waste", "Biodegradable",
                 "Organic waste consists of biodegradable materials such as vegetable and fruit scraps, eggshell, and rotten vegetable and fruit scraps that decompose naturally. As of now, EcoSort is designed to classify only these as organic waste and will not classify other objects.",
                 "To Properly Dispose:",
