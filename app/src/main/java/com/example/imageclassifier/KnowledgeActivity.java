@@ -35,8 +35,11 @@ public class KnowledgeActivity extends BaseActivity {
         wasteList = new ArrayList<>();
         wasteListTranslated = new ArrayList<>();
 
+
+
         int searchEditTextId = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
         EditText searchEditText = searchView.findViewById(searchEditTextId);
+
 
         if (searchEditText != null) {
             searchEditText.setTextColor(Color.BLACK);

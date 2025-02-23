@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="About the app"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="#247D7F"
             android:layout_marginBottom="10dp"/>
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="EcoSort was created to provide a simple yet impactful solution to waste segregation challenges. By using image recognition and machine learning techniques, the app helps users classify household waste into biodegradable, non-biodegradable, recyclable, and electronic waste or more commonly known as e-waste categories with ease. This small step aims to inspire individuals to take part in sustainable waste management practices, showing that even the smallest actions can contribute to creating a cleaner and greener future."
-            android:textSize="14sp"
+            android:textSize="18sp"
             android:layout_gravity="center_horizontal"
             android:textAlignment="center"
             android:padding="8dp"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:text="The Developers"
             android:textColor="#247D7F"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:paddingTop="50dp"
@@ -80,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Kristan Aimar B. San Juan"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     android:textColor="#333"
                     android:gravity="center"
                     android:paddingTop="8dp"/>
@@ -89,9 +89,19 @@
                     android:id="@+id/emailKristan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2021104400@ms.bulsu.edu.ph"
-                    android:textSize="14sp"
-                    android:textColor="#888"
+                    android:text="kristanaimarsanjuan.hs@gmail.com"
+                    android:textSize="18sp"
+                    android:textColor="#333"
+                    android:textIsSelectable="true"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/numberKristan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="09774528049"
+                    android:textSize="18sp"
+                    android:textColor="#333"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
             </LinearLayout>
@@ -115,7 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Jomari T. Basario"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     android:textColor="#333"
                     android:gravity="center"
                     android:paddingTop="8dp"/>
@@ -124,9 +134,19 @@
                     android:id="@+id/emailJomari"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2021100536@ms.bulsu.edu.ph"
-                    android:textSize="14sp"
-                    android:textColor="#888"
+                    android:text="jomarit.basario@gmail.com"
+                    android:textSize="18sp"
+                    android:textColor="#333"
+                    android:textIsSelectable="true"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/numberJomari"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="09773942793"
+                    android:textSize="18sp"
+                    android:textColor="#333"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
             </LinearLayout>
@@ -150,7 +170,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rey Albert M. De Zuñiga"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     android:textColor="#333"
                     android:gravity="center"
                     android:paddingTop="8dp"/>
@@ -159,11 +179,22 @@
                     android:id="@+id/emailRA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2021101508@ms.bulsu.edu.ph"
-                    android:textSize="14sp"
-                    android:textColor="#888"
+                    android:text="reyalbertdezuniga@gmail.com"
+                    android:textSize="18sp"
+                    android:textColor="#333"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/numberRA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="09633945115"
+                    android:textSize="18sp"
+                    android:textColor="#333"
+                    android:textIsSelectable="true"
+                    android:gravity="center"/>
+
             </LinearLayout>
 
 
@@ -185,7 +216,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Denzel Stewart S. Buluran"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     android:textColor="#333"
                     android:gravity="center"
                     android:paddingTop="8dp"/>
@@ -194,9 +225,19 @@
                     android:id="@+id/emailStewart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2021100766@ms.bulsu.edu.ph"
-                    android:textSize="14sp"
-                    android:textColor="#888"
+                    android:text="denzelstewartbuluran.hs@gmail.com"
+                    android:textSize="18sp"
+                    android:textColor="#333"
+                    android:textIsSelectable="true"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/numberStewart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="09549916948"
+                    android:textSize="18sp"
+                    android:textColor="#333"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
             </LinearLayout>
@@ -207,13 +248,14 @@
             android:id="@+id/ecosortEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ecosort mobile application\nEcoSortWaste@gmail.com   "
-            android:textSize="14sp"
+            android:text="EcoSort\nEcoSortWaste@gmail.com\n09192279023  "
+            android:textSize="18sp"
             android:textAlignment="center"
             android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:textColor="#777"
+            android:paddingBottom="0dp"
+            android:textColor="#333"
             android:textIsSelectable="true"
             android:layout_gravity="center_horizontal"/>
+
     </LinearLayout>
 </ScrollView>

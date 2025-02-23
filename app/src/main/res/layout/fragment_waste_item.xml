@@ -94,7 +94,7 @@
                 android:fontFamily="@font/generalsansregular"
                 android:text="Translate"
                 android:textColor="@color/black"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:switchMinWidth="56sp"
                 app:switchPadding="10sp"
                 app:thumbTint="@drawable/thumb"
@@ -121,6 +121,7 @@
                 android:textColor="@color/black"
                 android:text="@string/disposalIntro"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_marginStart="20sp"/>
 
             <TextView
