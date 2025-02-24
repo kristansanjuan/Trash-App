@@ -106,11 +106,11 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
 
-            String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottles", "Paper Type Waste" , "Aluminum Type Waste"} /**/;
+            String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottles", "Paper Type Waste" , "Aluminum Type Waste", "Unkown"} /**/;
             String detectedObject = classes[maxPos];
 
-            // Check if confidence is below 85%
-            if (maxConfidence <= 0.85f) {
+            // Check if confidence is below 90%
+            if (maxConfidence <= 0.90f) {
                 // Show a "Can't classify" message if confidence is low
                 detectedObject = "Unknown";
             }
@@ -155,6 +155,7 @@ public class ResultActivity extends AppCompatActivity {
                 case "Electronic Devices":
                     wasteIcon.setImageResource(R.drawable.icon_ewaste);
                     return "E-Waste";
+                case "Unknown":
 
                 default:
                     return "Unknown object detected";
@@ -182,6 +183,8 @@ public class ResultActivity extends AppCompatActivity {
                 case "Electronic Devices":
                     wasteIcon.setImageResource(R.drawable.icon_ewaste);
                     return "E-Waste";
+
+                case "Unknown":
 
                 default:
                     return "Hindi ma-klasipika";
@@ -212,6 +215,8 @@ public class ResultActivity extends AppCompatActivity {
                     return "Batteries";
                 case "Electronic Devices":
                     return "Electronic Devices";
+
+                case "Unknown":
                 default:
                     return "Unknown object detected";
             }
@@ -237,6 +242,7 @@ public class ResultActivity extends AppCompatActivity {
                 return "Baterya";
             case "Electronic Devices":
                 return "Electronic na Gamit";
+            case "Unknown":
             default:
                 return "Hindi kilala";
             }
