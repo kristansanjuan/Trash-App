@@ -106,11 +106,11 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
 
-            String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottles", "Paper Type Waste" , "Aluminum Type Waste", "Unkown"} /**/;
+            String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottles", "Paper Type Waste" , "Aluminum Type Waste", "Unknown Object"} /**/;
             String detectedObject = classes[maxPos];
 
-            // Check if confidence is below 90%
-            if (maxConfidence <= 0.90f) {
+            // Check if confidence is below 93%
+            if (maxConfidence <= 0.93f) {
                 // Show a "Can't classify" message if confidence is low
                 detectedObject = "Unknown";
             }
@@ -155,7 +155,7 @@ public class ResultActivity extends AppCompatActivity {
                 case "Electronic Devices":
                     wasteIcon.setImageResource(R.drawable.icon_ewaste);
                     return "E-Waste";
-                case "Unknown":
+                case "Unknown Object":
 
                 default:
                     return "Unknown object detected";
@@ -184,7 +184,7 @@ public class ResultActivity extends AppCompatActivity {
                     wasteIcon.setImageResource(R.drawable.icon_ewaste);
                     return "E-Waste";
 
-                case "Unknown":
+                case "Unknown Object":
 
                 default:
                     return "Hindi ma-klasipika";
@@ -216,7 +216,7 @@ public class ResultActivity extends AppCompatActivity {
                 case "Electronic Devices":
                     return "Electronic Devices";
 
-                case "Unknown":
+                case "Unknown Object":
                 default:
                     return "Unknown object detected";
             }
@@ -242,7 +242,7 @@ public class ResultActivity extends AppCompatActivity {
                 return "Baterya";
             case "Electronic Devices":
                 return "Electronic na Gamit";
-            case "Unknown":
+            case "Unknown Object":
             default:
                 return "Hindi kilala";
             }
@@ -314,7 +314,7 @@ public class ResultActivity extends AppCompatActivity {
         String disposalGuide = disposalGuideActivity.getGuide(detectedObject);
         String engtag_objectname = wasteName(detectedObject, isEnglish);
 
-        if ("Unknown".equals(detectedObject)) {
+        if ("Unknown".equals(detectedObject) || "Unknown Object".equals(detectedObject)) {
             // Update UI for unknown object
             if (!isEnglish) {
                 wasteTypeTextView.setText("Can't classify");
