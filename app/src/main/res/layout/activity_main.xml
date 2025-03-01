@@ -37,6 +37,7 @@
                 android:src="@drawable/menu_icon" />
 
         </androidx.appcompat.widget.Toolbar>-->
+      
 
         <ImageView
             android:id="@+id/cicle1"
@@ -79,7 +80,6 @@
             android:id="@+id/centerPoint"
             android:layout_width="49dp"
             android:layout_height="49dp"
-            android:src="@drawable/ecosort_logo1"
             android:layout_marginTop="150dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

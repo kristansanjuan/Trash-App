@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="About the app"
+            android:text="About EcoSort"
             android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="#247D7F"
@@ -46,7 +46,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="The Developers"
+            android:text="Developers"
             android:textColor="#247D7F"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -113,6 +113,7 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 android:paddingBottom="60dp">
+
 
                 <ImageView
                     android:layout_width="100dp"
