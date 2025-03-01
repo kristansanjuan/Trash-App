@@ -138,7 +138,7 @@ public class DisposalGuideActivity {
                         "3. Then, place the aluminum can in its designated recycling bin.\n",
 
                 // Tagalog
-                "1. Ihiwalay ang latang aluminums mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari.\n" +
+                "1. Ihiwalay ang latang aluminum mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari.\n" +
                         "2. Kung maaari, durugin ang lata upang makatipid sa espasyo.\n" +
                         "3. Pagkatapos, ilagay ang latang aluminum sa recycling bin.\n"
         });
