@@ -1,0 +1,46 @@
+
+        /*wasteListTranslated.add(new ItemsClass("Food Waste", "Nabubulok",
+        "Kasama sa mga basura sa kapaligiran ang mga bagay tulad ng mga sanga, bulaklak, damo, at dahon. Sa ngayon, ang EcoSort ay idinisenyo upang uriin lamang ang mga ito bilang mga basura sa kapaligiran at hindi mag-uuri ng iba pang mga bagay.",
+        "Para sa tamang pagtatapon:",
+        "1. Ihiwalay ang mga tira-tirang pagkain sa ibang uri ng basura tulad ng plastik, bote, at papel. Ang mga tirang pagkain ay itapon bilang nabubulok o biodegradable.\n" +
+                "2. Ilagay ang mga tirang pagkain sa lalagyan na para sa mga nabubulok. Karaniwan itong kulay berde o nakalabel na \"Biodegradable.\"\n" +
+                "3. Kung may bakuran, maaari ring gamitin ang mga tirang pagkain para sa paggawa ng kompost na makakatulong sa lupa at mga halaman.\n" +
+                "4. Huwag itapon ang mga tirang pagkain sa kanal o ilog dahil maaaring magdulot ito ng pagbaha at polusyon.\n" +
+                "5. Siguraduhing ang mga tira-tirang pagkain ay kukunin ng lokal na pamahalaan o tagapag-kolekta ng basura sa tamang araw ng koleksyon.",
+        R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));*/
+
+         /*wasteList.add(new ItemsClass("Food Waste", "Biodegradable",
+        "Refers to discarded edible food that is lost at various stages of production, distribution, and consumption, contributing to environmental and economic challenges. It includes uneaten leftovers, spoiled produce, and excess food from farms, stores, and households. Reducing food waste involves better storage, mindful consumption, and sustainable food management practices to minimize resource depletion and greenhouse gas emissions.",
+        "To Properly dispose:",
+        "1. Separate leftover food from other types of waste such as plastics, bottles, and paper. Leftover food should be disposed of as biodegradable waste.\n" +
+                "2. Place the leftover food in the bin labeled for biodegradable waste. These bins are usually green or marked \"Biodegradable.\"\n" +
+                "3. If space allows, leftover food can be used to create compost, which is beneficial for soil and plants.\n" +
+                "4. Do not throw leftover food into drains or rivers as this can cause flooding and pollution.\n" +
+                "5. Ensure that leftover food waste is collected by the local government or waste collectors on the designated collection days.",
+        R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));*/
+
+        /*wasteList.add(new ItemsClass("Home Appliance", "E-Waste",
+                "Refers to a household device designed to perform specific tasks that improve comfort, convenience, and efficiency in daily life. These appliances include cooking devices (like ovens and microwaves), cleaning equipment (such as washing machines and vacuums), and other tools (like refrigerators and air conditioners) that utilize electricity or gas to operate. Home appliances are essential in modern homes for simplifying routine chores and maintaining a ",
+                "To Properly Dispose:",
+                "1. Unplug the appliance and clean it thoroughly.\n" +
+                        "2. Safely remove any hazardous parts, such as batteries or fluids, if applicable.\n" +
+                        "3. Separate any recyclable components, like metal or plastic parts, if possible.\n" +
+                        "4. Transport the appliance to SM collection bins for E-waste or accredited recycling centers. \n" +
+                        "5. If SM is unavailable, coordinate with your LGU for proper disposal services.\n" +
+                        "6. Do not burn, bury, or dispose of appliances in landfills.\n" +
+                        "7. You can trade them, put for sale or either scrap them for additional money.",
+                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));*/
+
+        /*wasteListTranslated.add(new ItemsClass("Home Appliance", "E-Waste",
+                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
+                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
+                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+                "Para sa tamang pagtatapon:",
+                "I-unplug ang appliance at linisin itong mabuti.\n" +
+                        "Tanggalin nang maayos ang mga mapanganib na bahagi tulad ng baterya o likido, kung mayroon.\n" +
+                        "Paghiwalayin ang mga recyclable na bahagi tulad ng metal o plastik kung posible.\n" +
+                        "Dalhin ang appliance sa SM collection bins para sa E-waste o sa mga accredited recycling centers.\n" +
+                        "Kung walang SM, makipag-ugnayan sa LGU para sa tamang disposal services.\n" +
+                        "Huwag sunugin, ibaon, o itapon ang appliance sa mga landfill.\n" +
+                        "Puwede mo itong ipangpalit sa iba, ibenta, o ibenta ang mga bahagi para sa dagdag pera.",
+                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));*/
