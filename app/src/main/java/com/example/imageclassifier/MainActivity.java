@@ -38,8 +38,19 @@ import java.util.List;
 import android.animation.ObjectAnimator;
 import android.animation.AnimatorSet;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import android.app.AlertDialog;
+import android.net.Uri;
+import android.os.AsyncTask;
+
+
 
 public class MainActivity extends BaseActivity {
+
+    private static final String VERSION_URL = "https://raw.githubusercontent.com/kristansanjuan/Trash-version/refs/heads/main/version.txt";
 
     ImageButton picture;
     DrawerLayout drawerLayout;
@@ -146,6 +157,51 @@ public class MainActivity extends BaseActivity {
             editor.apply();
         }
 
+
+        /*new CheckForUpdateTask().execute(VERSION_URL);*/
+    }
+
+    /*private class CheckForUpdateTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... urls) {
+            try {
+                URL url = new URL(urls[0]);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String latestVersion = reader.readLine().trim();
+                reader.close();
+                return latestVersion;
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String latestVersion) {
+            if (latestVersion != null) {
+                int currentVersion = BuildConfig.versionCode;
+                int latestVersionCode = Integer.parseInt(latestVersion);
+
+                if (currentVersion < latestVersionCode) {
+                    showUpdateDialog();
+                }
+            }
+        }
+    }*/
+
+    private void showUpdateDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Update Available");
+        builder.setMessage("A new version is available. Download now?");
+        builder.setPositiveButton("Update", (dialog, which) -> {
+            String updateUrl = "https://ecosort.en.uptodown.com/android";
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(updateUrl)));
+        });
+        builder.setNegativeButton("Later", (dialog, which) -> dialog.dismiss());
+        builder.setCancelable(false);
+        builder.show();
     }
 
     private void startTutorial() {
