@@ -212,12 +212,12 @@ public class MainActivity extends BaseActivity {
                 .targets(
                         // Welcome prompt
                         TapTarget.forView(findViewById(R.id.centerPoint),
-                                        "Welcome!", "This is the EcoSort home screen. Tap the logo to continue. To skip the tutorial, tap outside the circle.")
+                                        "Welcome!", "This is the EcoSort home screen. Tap to continue. Tap outside to skip the next tutorial .")
                                 .outerCircleColor(R.color.lightblue)
                                 .targetCircleColor(R.color.white)
                                 .dimColor(android.R.color.darker_gray)
                                 .textColor(R.color.white)
-                                .cancelable(true)
+                                .cancelable(false)
                                 .transparentTarget(true),
 
                         // Category buttons
