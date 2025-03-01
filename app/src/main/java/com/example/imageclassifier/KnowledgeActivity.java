@@ -54,6 +54,7 @@ public class KnowledgeActivity extends BaseActivity {
         }
 
         String properWasteDisposal = "Proper Waste Disposal";
+        String tagproperWasteDisposal = "Tamang Pagtatapon";
 
         wasteList.add(new ItemsClass("Organic Waste", "Biodegradable",
                 "Organic waste includes biodegradable materials like vegetable and fruit scraps, eggshells, and rotten produce that decompose naturally.",
@@ -154,111 +155,93 @@ public class KnowledgeActivity extends BaseActivity {
 
         //Tagalog//
         wasteListTranslated.add(new ItemsClass("Organik na Basura", "Nabubulok",
-                "Ang mga organik na basura ay binubuo ng mga nabubulok na materyales tulad ng mga tirang gulay at prutas, balat ng itlog, at mga bulok na gulay at prutas na natural na nabubulok. Sa ngayon, ang EcoSort ay idinisenyo upang tukuyin lamang ang mga ito bilang mga organikong basura at hindi tutukoy pa ng iba pang mga bagay.",
-                "Para sa tamang pagtatapon:",
-                "1. Ipunin ang balat ng gulay, balat ng prutas, balat ng itlog, at iba pang katulad na nabubulok na basura sa hiwalay na lalagyan.\n" +
-                        "2. Iwasang paghaluin ang nabubulok na basura sa plastik, papel, bote, o iba pang hindi nabubulok na materyales.\n" +
-                        "3. Ilagay ang mga nabubulok na basura sa biodegradable na supot o sa berde na basurahan na may label na para sa nabubulok.\n" +
-                        "4. Kung may espasyo, gamitin ang mga nabubulok na basura para makagawa ng kompost sa pamamagitan ng paglalagay nito sa compost bin o compost pile at pagdagdag ng tuyong dahon.\n" +
-                        "5. Huwag itapon ang mga nabubulok na basura sa kanal, ilog, o bakanteng lugar upang maiwasan ang polusyon at pagbaha.\n" +
-                        "6. Siguraduhing maayos ang imbakan ng nabubulok na basura sa mga nakatakip na lalagyan upang hindi makaakit ng peste.\n" +
-                        "7. Makipag-ugnayan sa lokal na serbisyo ng pamamahala ng basura upang makolekta ang mga nabubulok na basura sa tamang araw ng koleksyon.\n" +
-                        "8. Kung hindi posible ang pag-kompost at walang koleksyon ng basura, humingi ng payo sa lokal na pamahalaan para sa tamang pagtapon ng basura.",
+                "Mga nabubulok na bagay tulad ng balat ng gulay at prutas, balat ng itlog, at mga sirang pagkain.",
+                tagproperWasteDisposal,
+                "1. Itapon sa berdeng basurahan o compost bin.\n" +
+                        "2. Ang paghalo ng tuyong dahon ay nakakatulong sa composting.\n" +
+                        "3. Iwasang iwanang bukas ang basura upang hindi makapagdulot ng peste.\n" +
+                        "4. Ang pagtatapon sa kanal ay nagdudulot ng polusyon.\n",
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
 
         wasteListTranslated.add(new ItemsClass("Environmental Waste", "Nabubulok",
-                "Kasama sa mga basura sa kapaligiran ang mga bagay tulad ng mga sanga, bulaklak, damo, at dahon. Sa ngayon, ang EcoSort ay idinisenyo upang uriin lamang ang mga ito bilang mga basura sa kapaligiran at hindi mag-uuri ng iba pang mga bagay.",
-                "Para sa tamang pagtatapon:",
-                "1. Ipunin ang mga tuyong dahon, damo, maliit na sanga, at katulad na nabubulok na basura sa isang lalagyan.\n" +
-                        "2. Iwasang paghaluin ito sa hindi nabubulok na basura tulad ng plastik o metal.\n" +
-                        "3. Ilagay sa compost bin o green waste bin kung mayroon.\n" +
-                        "4. Kung magko-kompost, ihalo ang mga ito sa ibang nabubulok na basura para mapabilis ang pagkabulok.\n" +
-                        "5. Kung walang composting, makipag-ugnayan sa lokal na pamahalaan para sa tamang pagtapon.\n" +
-                        "6. Huwag sunugin ang mga ito dahil nakakasama sa kalusugan at sa hangin.\n" +
-                        "7. Siguraduhing nakatago sa basurahan upang hindi makaakit ng peste.\n" +
-                        "8. I-verify ang koleksyon mula sa lokal na pamamahala ng basura.",
+                "Mga basura mula sa halaman tulad ng sanga, bulaklak, damo, at dahon.",
+                tagproperWasteDisposal,
+                "1. Itapon sa compost bin o green waste bin.\n" +
+                        "2. Paghahalo ng organic waste ay nakakatulong sa mabilisang pagkabulok.\n" +
+                        "3. Ang pagsusunog ng basura ay naglalabas ng nakakasamang polusyon sa hangin.\n" +
+                        "4. Kung magko-kompost, ihalo ang mga ito sa ibang nabubulok na basura para mapabilis ang pagkabulok.\n",
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
 
         wasteListTranslated.add(new ItemsClass("Basurang Salamin", "Hindi Nabubulok",
-                "Ang basurang salamin ay tumutukoy sa mga itinapon na materyales na salamin tulad ng mga bote, garapon, bintana, salamin, at inumin. Maaari itong i-recycle sa mga bagong produktong salamin, ngunit ang basag o kontaminadong salamin ay dapat na itapon nang maayos upang maiwasan ang mga panganib.",
-                "Para sa tamang pagtatapon:",
-                "1. Kung buo pa ang salamin (bote, garapon), hugasan at ilagay sa recycling bin.\n" +
-                        "2. Kung basag ang salamin, magsuot ng guwantes at maingat na tipunin ang mga piraso.\n" +
-                        "3. Balutin ang basag na salamin sa diyaryo o ilagay sa matibay na kahon.\n" +
-                        "4. Lagyan ng label na 'Basag na Salamin' upang malaman ng mga tagakolekta ng basura.\n" +
-                        "5. Itapon ang basag na salamin sa regular na basura, hindi sa recycling bin.\n",
+                "Mga basurang babasagin katulad ng bote, garapon, bintana, salamin, at baso.",
+                tagproperWasteDisposal,
+                "1. Ang mga boteng baso at garapon ay dapat ilagay sa recycling bin.\n" +
+                        "2. Balutin nang maayos ang basag na salamin upang maiwasan ang pinsala.\n" +
+                        "3. Lagyan ng label na “Basag na Salamin” upang mapanatili ang kaligtasan.\n" +
+                        "4. Itapon ang basag na salamin sa tamang non-biodegradable bin.\n",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
-
         wasteListTranslated.add(new ItemsClass("Basurang Plastik", "Hindi Nabubulok",
-                "Tumutukoy ito sa mga itinatapong plastik na naiipon sa kapaligiran at nagdudulot ng matinding panganib dahil hindi ito madaling nabubulok. Kasama rito ang iba’t ibang uri ng plastik gaya ng PET na ginagamit sa bote, HDPE na makikita sa mga lalagyan, at PVC na karaniwang ginagamit sa tubo at balot ng produkto. Para mabawasan ang polusyon mula sa plastik, kailangang pagtuunan ng pansin ang pag-recycle, pagbawas sa paggamit ng single-use plastics, at paghahanap ng mas eco-friendly na alternatibo.",
-                "Para sa tamang pagtatapon:",
-                "1. Ihiwalay ang mga plastik ayon sa uri (hal. PET, HDPE).\n" +
-                        "2. Banlawan ang mga tira-tirang pagkain at likido.\n"+
-                        "3. Alisin ang mga hindi pwedeng i-recycle tulad ng takip at label.\n" +
-                        "4. Suriin ang mga simbolo ng pag-recycle o mga tagubilin.\n" +
-                        "5. Ilagay sa tamang basurahan o lugar ng pag-iipon ng mga recyclable.",
+                "Mga plastik tulad ng PET bottles, HDPE containers, at PVC packaging.",
+                tagproperWasteDisposal,
+                "1. Siguraduhing malinis at walang tira-tirang laman bago itapon.\n" +
+                        "2. Ang hindi nare-recycle na bahagi ay nagpapahirap sa pagpoproseso.\n"+
+                        "3. Sumunod sa tamang patakaran ng recycling upang maging epektibo ito.\n" +
+                        "4. Itapon sa tamang recycling bin.\n",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteListTranslated.add(new ItemsClass("Latang Aluminum", "Hindi Nabubulok",
-                "Ito ay tumutukoy sa mga latang aluminum, kabilang ang industrial scrap, mga produktong consumer, at mga by-product mula sa pagmamanupaktura. Madali itong i-recycle, kaya’t mahalaga ito hindi lang sa ekonomiya kundi pati na rin sa pangangalaga ng kalikasan. ",
-                "Para sa tamang pagtatapon:",
-                "1. Ihiwalay ang basura na lata mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari. \n" +
-                        "2. Kung maaari, durugin ang lata upang makatipid sa espasyo. \n" +
-                        "3. Pagkatapos, ilagay ang latang aluminum sa recycling bin. ",
+                "Magagaan, madaling i-recycle na lalagyan para sa inumin at pagkain.",
+                tagproperWasteDisposal,
+                "1. Hiwalayin ito mula sa plastik at salamin.\n" +
+                        "2. Durugin o tupiin ang lata upang makatipid sa espasyo.\n" +
+                        "3. Itapon sa tamang recycling bin para sa aluminyo.",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteListTranslated.add(new ItemsClass("Packaging Boxes", "Recyclable",
-                "Ito ay lalagyan na gawa sa mga materyales tulad ng karton, corrugated fiberboard, o plastik, na ginagamit para paglagyan ng mga produkto. Bukod sa pagiging praktikal, nagsisilbi rin ito bilang bahagi ng branding dahil madalas itong may custom na disenyo para sa marketing. May iba’t ibang uri ng packaging boxes, tulad ng folding cartons, rigid boxes, at corrugated boxes, depende sa tibay at gamit na kinakailangan.",
-                "Para sa tamang pagtatapon:",
-                "1. Tupiin ang mga kahon ng packaging para magtipid sa espasyo.\n" +
-                        "2. Alisin ang mga hindi maaaring i-recycle tulad ng plastik o tape.\n" +
-                        "3. Ilagay ang mga patag na kahon sa tamang recycling bin.\n" +
-                        "4. Kung marumi ang kahon ng packaging, ilagay ito sa basurahan ng hindi nabubulok.\n" +
-                        "5. Iwasang ihalo ang mga packaging boxes sa ibang hindi nabubulok na materyales.",
+                "Mga kahon mula sa karton, corrugated fiberboard, o plastik.",
+                tagproperWasteDisposal,
+                "1. Tupiin ang mga kahon upang makatipid ng espasyo.\n" +
+                        "2. Alisin ang hindi nare-recycle na bagay tulad ng plastik na balot o tape.\n" +
+                        "3. Ilagay sa recycling bin ang malinis na packaging boxes.\n" +
+                        "4. Ang mga kahong marumi sa pagkain o likido ay hindi na maaaring i-recycle.\n",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
         wasteListTranslated.add(new ItemsClass("Basurang Papel", "Recyclable",
-                "Tumutukoy sa mga itinapon na papel o mga bagay na gawa sa papel na hindi na kapaki-pakinabang, kabilang ang mga pahayagan, magasin, dokumento sa opisina, karton, at packaging. Ito ay isa sa mga pinaka-nare-recycle na uri ng basura at maaaring gawing bagong mga produktong papel upang mabawasan ang epekto sa kapaligiran.",
-                "Para sa tamang pagtatapon:",
-                "1. Ihiwalay ang mga papel sa ibang basura.\n" +
-                        "2. Patalasin ang mga kahon o karton na papel.\n" +
-                        "3. Alisin ang mga papel na basang dahil sa pagkain o likido at itapon ito sa basurahan ng hindi nabubulok.\n" +
-                        "4. Ilagay ang malinis at tuyong papel sa recycling bin.\n" +
-                        "5. Iwasang ihalo ang papel sa plastik o metal.",
+                "Mga papel tulad ng diyaryo, magasin, dokumento, at packaging.",
+                tagproperWasteDisposal,
+                "1. Panatilihing tuyo at malinis ang papel para sa maayos na pag-recycle.\n" +
+                        "2. Iwasang itapon ang basang papel sa recycling bin.\n" +
+                        "3. Ilagay ang papel sa recycling bin upang muling magamit.\n" +
+                        "4. Huwag ihalo ang papel sa plastik o metal upang mapanatili ang kalidad ng recycling.\n",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
         wasteListTranslated.add(new ItemsClass("Boteng Plastik", "Recyclable",
-                "Ito ay isang magaan, matibay na lalagyan na pangunahing ginawa mula sa mga polymer tulad ng PET (polyethylene terephthalate) o HDPE (high-density polyethylene), na karaniwang ginagamit para sa pag-iimbak ng mga likido gaya ng tubig, soda, at mga produktong pambahay. Ang mga bote na ito ay malawakang ginawa dahil sa kanilang pagiging epektibo sa gastos at kakayahang magamit ngunit malaki ang kontribusyon sa mga basurang plastik at polusyon. Ang pag-recycle at muling paggamit ng mga plastik na bote ay nakakatulong na mabawasan ang epekto sa kapaligiran.",
-                "Para sa tamang pagtatapon:",
-                "1. Alisin ang laman ng plastik na bote at banlawan kung kinakailangan.\n" +
-                        "2. Alisin ang takip at label ng bote.\n" +
-                        "3. Ilagay ang plastik na bote sa tamang recycling bin.\n" +
-                        "4. Kung kontaminado ang bote ng pagkain o mapanganib na likido, itapon ito sa basurahan ng hindi nabubulok.\n" +
-                        "5. Iwasang durugin ang plastik na bote bago itapon sa recycling bin, dahil maaari nitong maka-apekto ang proseso ng pag-recycle.",
+                "Mga lalagyan ng tubig, soda, at iba pang likido.",
+                tagproperWasteDisposal,
+                "1. Banlawan at alisin ang takip at label bago itapon.\n" +
+                        "2. Itapon ang malilinis na bote sa recycling bin.\n" +
+                        "3. Ang maruming bote na may tira-tirang pagkain ay hindi maaaring i-recycle.\n" +
+                        "4. Iwasang durugin ang bote bago itapon upang hindi maapektuhan ang pagpoproseso.\n",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
         wasteListTranslated.add(new ItemsClass("Baterya", "E-Waste",
-                "Gamit na nag-iimbak at nagko-convert ng kemikal na enerhiya sa elektrikal na enerhiya upang mapagana ang mga elektronikong kagamitan at makinarya. Binubuo ito ng isa o higit pang mga electrochemical cell na may mga terminal na positibo (cathode) at negatibo (anode), na nagpapahintulot sa daloy ng electric current. Ang mga baterya ay may iba't ibang uri, kabilang ang rechargeable (hal., lithium-ion) at hindi rechargeable (hal., alkaline)",
-                "Para sa tamang pagtatapon:",
-                "1. Huwag itapon ang mga ito sa basurahan ng bahay o sa mga basurahan para sa pagre-recycle sa gilid ng daan.\n" +
-                        "2. Dalhin ang mga ito sa mga lugar na tumatanggap ng baterya o sa mga pasilidad na tumatanggap ng mga mapanganib na basura sa bahay.\n" +
-                        "3. Tukuyin kung anong uri ng baterya (rechargeable o single-use).\n" +
-                        "4. Ganap na i-discharge ang mga rechargeable na baterya bago itapon.\n" +
-                        "5. Takpan ang mga terminal ng baterya ng electrical tape o plastik na takip.\n" +
-                        "6. Itabi ang mga baterya sa malamig, tuyong lugar, malayo sa init at sikat ng araw.\n" +
-                        "7. Panatilihin silang hiwalay sa iba pang basura at mga baterya.",
+                "Mga gamit na baterya mula sa cellphone, laptop, remote, at iba pa.",
+                tagproperWasteDisposal,
+                "1. Huwag itapon sa ordinaryong basurahan o recycling bin.\n" +
+                        "2. Dalhin sa mga collection site o hazardous waste facility.\n" +
+                        "3. Siguraduhing walang karga ang rechargeable batteries bago itapon.\n" +
+                        "4. Takpan ang terminal ng baterya ng tape o plastik upang maiwasan ang short circuit.\n",
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
 
         wasteListTranslated.add(new ItemsClass("Electronik na Gamit", "E-Waste",
-                "Ang mga gadget na gumagana gamit ang mga de-koryenteng circuit upang magproseso, magpadala, o mag-imbak ng impormasyon. Kasama sa mga device na ito ang mga smartphone, computer, telebisyon, at sensor, na umaasa sa mga bahagi ng semiconductor tulad ng mga transistor at integrated circuit. Mahalaga ang papel nila sa modernong komunikasyon, kasiyahan, pangangalaga sa kalusugan, at pagpapabilis ng trabaho.",
-                "Para sa tamang pagtatapon:",
-                "1. I-reset ang device para mabura ang lahat ng personal na data.\n" +
-                        "2. Tanggalin nang maayos ang mga baterya at iba pang naaalis na bahagi.\n" +
-                        "3. Ibalot nang maayos ang device upang maiwasan ang pagkasira habang dinadala.\n" +
-                        "4. Dalhin ang device sa E-waste collection bins ng SM.\n" +
-                        "5. Kung walang SM, maghanap ng accredited E-waste recycler o magtanong sa LGU tungkol sa collection points.\n" +
-                        "6. Iwasang itapon ang device sa karaniwang basurahan o sa mga bukas na lugar.",
+                "Mga gadget tulad ng smartphone, computer, TV, at sensor.",
+                tagproperWasteDisposal,
+                "1. I-reset ang device upang tanggalin ang personal na data bago itapon.\n" +
+                        "2. Alisin nang ligtas ang baterya at iba pang natatanggal na bahagi.\n" +
+                        "3. Balutin nang maayos upang hindi masira sa transportasyon.\n" +
+                        "4. Dalhin sa SM E-waste collection bins o iba pang accredited E-waste collector.\n" +
+                        "5. Huwag itapon sa regular na basurahan o iwanan kung saan lamang.\n",
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
 
         ItemsAdapter adapter = new ItemsAdapter(this, wasteList);
