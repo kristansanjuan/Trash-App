@@ -212,7 +212,7 @@ public class MainActivity extends BaseActivity {
                 .targets(
                         // Welcome prompt
                         TapTarget.forView(findViewById(R.id.centerPoint),
-                                        "Welcome!", "This is the EcoSort home screen. Tap to continue. Tap outside to skip the next tutorial .")
+                                        "Welcome!", "This is the EcoSort home screen. Tap to continue. Tap outside after this, to skip the next tutorial .")
                                 .outerCircleColor(R.color.lightblue)
                                 .targetCircleColor(R.color.white)
                                 .dimColor(android.R.color.darker_gray)
@@ -387,14 +387,14 @@ public class MainActivity extends BaseActivity {
         animator.start();
     }
 
-    // 🛑 Pause Animation
+    // Pause Animation
     private void pauseCircularAnimation() {
         if (animator != null && animator.isRunning()) {
             animator.pause(); // Pause animation
         }
     }
 
-    // ▶ Resume Animation
+    // Resume Animation
     private void resumeCircularAnimation() {
         if (animator != null && animator.isPaused()) {
             animator.resume(); // Resume animation
