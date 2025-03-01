@@ -261,8 +261,8 @@ public class KnowledgeActivity extends BaseActivity {
             findViewById(R.id.knowledgeTitle).setVisibility(View.GONE);
             findViewById(R.id.cardContainer).setVisibility(View.GONE);
             findViewById(R.id.fragmentContainer).setVisibility(View.VISIBLE);
-            findViewById(R.id.segregationTitle).setVisibility(View.GONE);
-            findViewById(R.id.segregationDesc).setVisibility(View.GONE);
+            //findViewById(R.id.segregationTitle).setVisibility(View.GONE);
+            //findViewById(R.id.segregationDesc).setVisibility(View.GONE);
         });
 
         /*listView.setOnItemClickListener((parent, view, position, id) -> {
@@ -291,8 +291,8 @@ public class KnowledgeActivity extends BaseActivity {
                     getSupportFragmentManager().popBackStack();
                     findViewById(R.id.knowledgeTitle).setVisibility(View.VISIBLE);
                     findViewById(R.id.cardContainer).setVisibility(View.VISIBLE);
-                    findViewById(R.id.segregationTitle).setVisibility(View.VISIBLE);
-                    findViewById(R.id.segregationDesc).setVisibility(View.VISIBLE);
+                    //findViewById(R.id.segregationTitle).setVisibility(View.VISIBLE);
+                    //findViewById(R.id.segregationDesc).setVisibility(View.VISIBLE);
                     findViewById(R.id.fragmentContainer).setVisibility(View.GONE);
                 } else {
                     setEnabled(false);
