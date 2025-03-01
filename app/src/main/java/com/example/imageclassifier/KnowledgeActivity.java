@@ -53,135 +53,106 @@ public class KnowledgeActivity extends BaseActivity {
             searchIcon.setColorFilter(Color.parseColor("#247D7F"), PorterDuff.Mode.SRC_IN);
         }
 
+        String properWasteDisposal = "Proper Waste Disposal";
+
         wasteList.add(new ItemsClass("Organic Waste", "Biodegradable",
-                "Organic waste consists of biodegradable materials such as vegetable and fruit scraps, eggshell, and rotten vegetable and fruit scraps that decompose naturally. As of now, EcoSort is designed to classify only these as organic waste and will not classify other objects.",
-                "To Properly Dispose:",
-                "1. Gather vegetable peels, fruit peels, eggshells, and similar organic waste in a separate container.\n" +
-                        "2. Avoid mixing organic waste with plastics, paper, glass, or other non-biodegradable materials.\n" +
-                        "3. Place the organic waste in a biodegradable bag or a green bin labeled for organic waste.\n" +
-                        "4. If you have space, use the organic waste to create compost by placing it in a compost bin or pile and adding dry materials like dried leaves.\n" +
-                        "5. Do not throw organic waste into canals, rivers, or open areas to prevent pollution and flooding.\n" +
-                        "6. Ensure the organic waste is properly stored in covered bins to avoid attracting pests.\n" +
-                        "7. Coordinate with your local waste management service to have the organic waste collected on designated days.\n" +
-                        "8. If composting is not possible and collection services are unavailable, contact the local government for proper disposal instructions.",
+                "Organic waste includes biodegradable materials like vegetable and fruit scraps, eggshells, and rotten produce that decompose naturally.",
+                properWasteDisposal,
+                "1. Dispose in a green bin or compost\n" +
+                        "2. Composting works best with dried leaves.\n" +
+                        "3. Uncovered waste attracts pests.\n" +
+                        "4. Dumping in canals causes pollution.\n",
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
 
-        /*wasteList.add(new ItemsClass("Food Waste", "Biodegradable",
-                "Refers to discarded edible food that is lost at various stages of production, distribution, and consumption, contributing to environmental and economic challenges. It includes uneaten leftovers, spoiled produce, and excess food from farms, stores, and households. Reducing food waste involves better storage, mindful consumption, and sustainable food management practices to minimize resource depletion and greenhouse gas emissions.",
-                "To Properly dispose:",
-                "1. Separate leftover food from other types of waste such as plastics, bottles, and paper. Leftover food should be disposed of as biodegradable waste.\n" +
-                        "2. Place the leftover food in the bin labeled for biodegradable waste. These bins are usually green or marked \"Biodegradable.\"\n" +
-                        "3. If space allows, leftover food can be used to create compost, which is beneficial for soil and plants.\n" +
-                        "4. Do not throw leftover food into drains or rivers as this can cause flooding and pollution.\n" +
-                        "5. Ensure that leftover food waste is collected by the local government or waste collectors on the designated collection days.",
-                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));*/
-
         wasteList.add(new ItemsClass("Environmental Waste", "Biodegradable",
-                "Environmental waste includes items like branches, flowers, grass, and leaves. As of now, EcoSort is designed to classify only these as environmental waste and will not classify other objects.",
-                "To Properly Dispose:",
-                "1. Gather dry leaves, grass clippings, small branches, and similar organic waste.\n" +
-                        "2. Avoid mixing with non-biodegradable waste like plastics or metals.\n" +
-                        "3. Place in a compost bin or green waste bin if available.\n" +
-                        "4. For composting, mix with other organic waste for faster decomposition.\n" +
-                        "5. If composting isn’t an option, contact local authorities for disposal.\n" +
-                        "6. Do not burn, as it harms health and air quality.\n" +
-                        "7. Ensure it's stored in a covered bin to avoid pests.\n" +
-                        "8. Confirm collection with local waste management.",
+                "Environmental waste includes branches, flowers, grass, and leaves.",
+                properWasteDisposal,
+                "1. Compost bins and green waste bins help in proper waste management.\n" +
+                        "2. Mixing organic waste enhances composting and speeds up decomposition.\n" +
+                        "3. Burning waste releases pollutants that harm air quality.\n" +
+                        "4. Keeping waste covered helps prevent pests and maintain cleanliness.\n",
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
 
         wasteList.add(new ItemsClass("Glass Type Waste", "Non-Biodegradable",
-                "Glass waste refers to discarded glass materials such as bottles, jars, windows, mirrors, and drinkware. It can be recycled into new glass products, but broken or contaminated glass should be disposed of properly to prevent hazards.",
-                "To Properly Dispose:",
-                "1. If the glass is unbroken (bottles, jars), rinse and place it in the recycling bin.\n" +
-                        "2. For broken glass, wear gloves and carefully collect the shards.\n" +
-                        "3. Wrap the broken glass in newspaper or place it inside a sturdy cardboard box.\n" +
-                        "4. Label the package as 'Broken Glass' to alert waste collectors.\n" +
-                        "5. Dispose of broken glass in the regular trash, not in recycling.\n",
+                "Glass waste includes discarded bottles, jars, windows, mirrors, and drinkware. It can be recycled, but broken or contaminated glass requires proper disposal to prevent hazards.",
+                properWasteDisposal,
+                "1. Recyclable glass, such as bottles and jars, belongs in the recycling bin.\n" +
+                        "2. Wrapping broken glass securely helps prevent injuries\n" +
+                        "3. Labeling as 'Broken Glass' ensures safe handling.\n" +
+                        "4. Disposing of broken glass in the non-biodegradable bin keeps waste properly sorted.\n",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteList.add(new ItemsClass("Plastic Type Waste", "Non-Biodegradable",
-                "Refers to discarded plastic materials that accumulate in the environment, posing significant ecological risks due to their non-biodegradable nature. It includes various types, such as PET (polyethylene terephthalate) used in bottles, HDPE (high-density polyethylene) found in containers, and PVC (polyvinyl chloride) used in pipes and packaging. Managing plastic waste effectively requires recycling, reducing single-use plastics, and adopting sustainable alternatives to mitigate pollution.",
-                "To Properly Dispose:",
-                "1. Separate plastics by type (e.g., PET, HDPE).\n" +
-                        "2. Rinse off food and liquid residues.\n" +
-                        "3. Remove non-recyclable parts such as caps and labels.\n" +
-                        "4. Check for recycling symbols or instructions.\n" +
-                        "5. Place in the designated recycling bin or drop-off center.",
+                "Plastic waste consists of discarded non-biodegradable materials like PET bottles, HDPE containers, and PVC packaging. Proper management helps reduce pollution.",
+                properWasteDisposal,
+                "1. Leftover residues can impact the recyclability of materials.\n" +
+                        "2. Non-recyclable parts make processing less efficient.\n" +
+                        "3. Recycling works best when guidelines are followed.\n" +
+                        "4. Proper disposal in designated recycling bins ensures effective waste management.\n",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteList.add(new ItemsClass("Aluminum Cans", "Non-Biodegradable",
-                "Aluminum waste consists of discarded aluminum cans, including industrial scrap, consumer products, and manufacturing by-products. It is highly recyclable, making it valuable for both economic and environmental sustainability. ",
-                "To Properly Dispose:",
-                "1. Keep aluminum can separate from other materials like plastic or glass, remove the label if possible.\n" +
-                        "2. If possible, crush the cans or fold the foil to save space.\n" +
-                        "3. Then, place the aluminum can in its designated recycling bin.",
+                "Lightweight, recyclable containers used for packaging drinks and food, made from corrosion-resistant aluminum.",
+                properWasteDisposal,
+                "1. Aluminum cans are best kept separate from plastic or glass, and labels can be removed if possible.\n" +
+                        "2. Crushing cans or folding foil helps save space during disposal.\n" +
+                        "3. Placing aluminum cans in their designated recycling bin ensures proper recycling.",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteList.add(new ItemsClass("Packaging Boxes", "Recyclable",
-                "Packaging Boxes are containers made from materials like cardboard, corrugated fiberboard, or plastic, designed to store, protect, and transport goods. It serves both functional and branding purposes, ensuring product safety while often featuring custom designs for marketing. Packaging boxes come in various types, including folding cartons, rigid boxes, and corrugated boxes, depending on durability and usage needs.",
-                "To Properly Dispose:",
-                "1. Flatten packaging boxes to save space.\n" +
-                        "2. Remove any non-recyclable items such as plastic liners or tape.\n" +
-                        "3. Place the flattened boxes in the appropriate recycling bin.\n" +
-                        "4. If the box is contaminated with food or liquid, dispose of it in the non-recyclable waste bin.\n" +
-                        "5. Avoid mixing packaging boxes with non-recyclable materials.",
+                "Containers made of cardboard, corrugated fiberboard, or plastic, used for storing, protecting, and transporting goods.",
+                properWasteDisposal,
+                "1. Flattening packaging boxes helps save space for disposal.\n" +
+                        "2. Non-recyclable items like plastic liners or tape should be removed.\n" +
+                        "3. Recycling bins are the best place for flattened, clean packaging boxes.\n" +
+                        "4. Boxes contaminated with food or liquid belong in non-recyclable waste.\n" +
+                        "5. Keeping packaging boxes separate from non-recyclable materials ensures proper recycling.",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
         wasteList.add(new ItemsClass("Paper Type Waste", "Recyclable",
-                "Refers to discarded paper materials that are no longer useful, including newspapers, magazines, office documents, cardboard, and packaging. It is one of the most recyclable waste types and can be repurposed into new paper products to reduce environmental impact. Proper paper waste management involves recycling, reducing paper usage, and opting for digital alternatives to minimize deforestation and waste accumulation.",
-                "To Properly Dispose:",
-                "1. Separate paper waste from other trash.\n" +
-                        "2. Flatten any paper items like boxes or cardboard.\n" +
-                        "3. Remove any food or liquid-soaked paper and dispose of it in the non-recyclable waste bin.\n" +
-                        "4. Place the clean, dry paper in the recycling bin.\n" +
-                        "5. Avoid mixing paper with plastic or metal materials.",
+                "Discarded paper materials such as newspapers, magazines, office documents, cardboard, and packaging. Highly recyclable, it can be repurposed into new paper products to reduce waste and environmental impact.",
+                properWasteDisposal,
+                "1. Keeping paper waste separate helps ensure proper recycling.\n" +
+                        "2. Flattening paper items like boxes saves space for disposal.\n" +
+                        "3. Food-soaked or wet paper is non-recyclable and should be disposed of separately.\n" +
+                        "4. Clean, dry paper belongs in the recycling bin for reuse.\n" +
+                        "5. Mixing paper with plastic or metal must be avoid to maintain recycling efficiency.",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
-        wasteList.add(new ItemsClass("Plastic Bottle", "Recyclable",
-                "Is a lightweight, durable container made primarily from polymers like PET (polyethylene terephthalate) or HDPE (high-density polyethylene), commonly used for storing liquids such as water, soda, and household products. These bottles are widely produced due to their cost-effectiveness and versatility but contribute significantly to plastic waste and pollution. Recycling and reusing plastic bottles help reduce environmental impact and promote sustainable waste management.",
-                "To Properly Dispose:",
-                "1. Empty the plastic bottle and rinse it if necessary.\n" +
-                        "2. Remove any caps or labels.\n" +
-                        "3. Place the plastic bottle in the recycling bin.\n" +
-                        "4. If the bottle is contaminated with food or hazardous liquids, dispose of it in the non-recyclable waste bin.\n" +
-                        "5. Avoid crushing plastic bottles before recycling, as it can affect the recycling process.",
+        wasteList.add(new ItemsClass("Plastic Bottles", "Recyclable",
+                " Lightweight, durable containers made from polymers like PET or HDPE, commonly used for storing liquids such as water, soda, and household products. While cost-effective and versatile, they contribute to plastic waste and pollution. Recycling and reusing plastic bottles help minimize environmental impact.",
+                properWasteDisposal,
+                "1. Emptying and rinsing plastic bottles helps maintain recycling quality.\n" +
+                        "2. Caps and labels should be removed before disposal.\n" +
+                        "3. Clean plastic bottles belong in the recycling bin.\n" +
+                        "4. Contaminated bottles with food or hazardous liquids should go in non-recyclable waste.\n" +
+                        "5. Avoid crushing bottles before recycling, as it may affect processing efficiency.",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
 
         wasteList.add(new ItemsClass("Batteries", "E-Waste",
-                "Are devices that stores and converts chemical energy into electrical energy to power electronic devices and machinery. It consists of one or more electrochemical cells with positive (cathode) and negative (anode) terminals, allowing the flow of electric current. Batteries come in various types, including rechargeable (e.g., lithium-ion) and non-rechargeable (e.g., alkaline), playing a crucial role in modern technology and energy storage.",
-                "To Properly Dispose:",
-                "1. Do not place them in household trash or curbside recycling bins.\n" +
-                        "2. Take them to battery collection sites or household hazardous waste collection facilities.\n" +
-                        "3. Identify the type of battery (rechargeable or single use).\n" +
-                        "4. Discharge rechargeable batteries completely before disposal.\n" +
-                        "5. Cover battery terminals with electrical tape or plastic caps.\n" +
-                        "6. Store batteries in a cool, dry place away from heat sources and sunlight.\n" +
-                        "7. Keep them separate from other waste and batteries.\n",
+                "Devices that store and convert chemical energy into electrical energy to power electronics and machinery. They consist of electrochemical cells with positive (cathode) and negative (anode) terminals, allowing electric current flow. Batteries come in rechargeable (e.g., lithium-ion) and non-rechargeable (e.g., alkaline) types, playing a key role in energy storage and modern technology.",
+                properWasteDisposal,
+                "1. Household trash and curbside recycling bins are not suitable for battery disposal.\n" +
+                        "2. Battery collection sites or hazardous waste facilities ensure safe disposal.\n" +
+                        "3. Identifying the battery type helps determine proper recycling methods\n" +
+                        "4. Fully discharging rechargeable batteries before disposal enhances safety.\n" +
+                        "5. Covering battery terminals with tape or plastic caps prevents short circuits.\n" +
+                        "6. Storing batteries in a cool, dry place keeps them safe from heat exposure.\n" +
+                        "7. Keeping batteries separate from other waste improves recycling efficiency.\n",
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
 
         wasteList.add(new ItemsClass("Electronic Devices", "E-Waste",
-                "Are gadgets that operate using electrical circuits to process, transmit, or store information. These devices include smartphones, computers, televisions, and sensors, which rely on semiconductor components like transistors and integrated circuits. They play a crucial role in modern communication, entertainment, healthcare, and industrial automation.",
-                "To Properly Dispose:",
-                "1. Reset the device to remove all personal data.\n" +
-                        "2. Safely remove any batteries and other detachable components.\n" +
-                        "3. Pack the device securely to avoid damage during transport.\n" +
-                        "4. Bring the device to SM E-waste collection bins or any other e-waste disposal collector.\n" +
-                        "5. If SM is not available, there are others like E-waste Management Philippines, E-waste Project UP or look for any accredited E-waste recycler or inquire with your LGU about collection points.\n" +
-                        "6. Avoid disposing of the device in regular trash bins or dumping it in open areas.",
+                "Gadgets that use electrical circuits to process, transmit, or store information. These include smartphones, computers, televisions, and sensors, which rely on semiconductor components like transistors and integrated circuits. They are essential in communication, entertainment, healthcare, and industrial automation.",
+                properWasteDisposal,
+                "1. Resetting devices helps remove personal data before disposal.\n" +
+                        "2. Detachable components, like batteries, should be removed safely.\n" +
+                        "3. Secure packaging prevents damage during transport.\n" +
+                        "4. SM E-waste collection bins and other disposal sites accept electronic waste.\n" +
+                        "5. E-waste recyclers like E-waste Management Philippines and E-waste Project UP provide disposal options.\n" +
+                        "6. Regular trash bins and open dumping are not suitable for electronic waste disposal.",
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
 
-        /*wasteList.add(new ItemsClass("Home Appliance", "E-Waste",
-                "Refers to a household device designed to perform specific tasks that improve comfort, convenience, and efficiency in daily life. These appliances include cooking devices (like ovens and microwaves), cleaning equipment (such as washing machines and vacuums), and other tools (like refrigerators and air conditioners) that utilize electricity or gas to operate. Home appliances are essential in modern homes for simplifying routine chores and maintaining a ",
-                "To Properly Dispose:",
-                "1. Unplug the appliance and clean it thoroughly.\n" +
-                        "2. Safely remove any hazardous parts, such as batteries or fluids, if applicable.\n" +
-                        "3. Separate any recyclable components, like metal or plastic parts, if possible.\n" +
-                        "4. Transport the appliance to SM collection bins for E-waste or accredited recycling centers. \n" +
-                        "5. If SM is unavailable, coordinate with your LGU for proper disposal services.\n" +
-                        "6. Do not burn, bury, or dispose of appliances in landfills.\n" +
-                        "7. You can trade them, put for sale or either scrap them for additional money.",
-                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));*/
-
+        //Tagalog//
         wasteListTranslated.add(new ItemsClass("Organik na Basura", "Nabubulok",
                 "Ang mga organik na basura ay binubuo ng mga nabubulok na materyales tulad ng mga tirang gulay at prutas, balat ng itlog, at mga bulok na gulay at prutas na natural na nabubulok. Sa ngayon, ang EcoSort ay idinisenyo upang tukuyin lamang ang mga ito bilang mga organikong basura at hindi tutukoy pa ng iba pang mga bagay.",
                 "Para sa tamang pagtatapon:",
@@ -194,16 +165,6 @@ public class KnowledgeActivity extends BaseActivity {
                         "7. Makipag-ugnayan sa lokal na serbisyo ng pamamahala ng basura upang makolekta ang mga nabubulok na basura sa tamang araw ng koleksyon.\n" +
                         "8. Kung hindi posible ang pag-kompost at walang koleksyon ng basura, humingi ng payo sa lokal na pamahalaan para sa tamang pagtapon ng basura.",
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
-
-        /*wasteListTranslated.add(new ItemsClass("Food Waste", "Nabubulok",
-                "Kasama sa mga basura sa kapaligiran ang mga bagay tulad ng mga sanga, bulaklak, damo, at dahon. Sa ngayon, ang EcoSort ay idinisenyo upang uriin lamang ang mga ito bilang mga basura sa kapaligiran at hindi mag-uuri ng iba pang mga bagay.",
-                "Para sa tamang pagtatapon:",
-                "1. Ihiwalay ang mga tira-tirang pagkain sa ibang uri ng basura tulad ng plastik, bote, at papel. Ang mga tirang pagkain ay itapon bilang nabubulok o biodegradable.\n" +
-                        "2. Ilagay ang mga tirang pagkain sa lalagyan na para sa mga nabubulok. Karaniwan itong kulay berde o nakalabel na \"Biodegradable.\"\n" +
-                        "3. Kung may bakuran, maaari ring gamitin ang mga tirang pagkain para sa paggawa ng kompost na makakatulong sa lupa at mga halaman.\n" +
-                        "4. Huwag itapon ang mga tirang pagkain sa kanal o ilog dahil maaaring magdulot ito ng pagbaha at polusyon.\n" +
-                        "5. Siguraduhing ang mga tira-tirang pagkain ay kukunin ng lokal na pamahalaan o tagapag-kolekta ng basura sa tamang araw ng koleksyon.",
-                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));*/
 
         wasteListTranslated.add(new ItemsClass("Environmental Waste", "Nabubulok",
                 "Kasama sa mga basura sa kapaligiran ang mga bagay tulad ng mga sanga, bulaklak, damo, at dahon. Sa ngayon, ang EcoSort ay idinisenyo upang uriin lamang ang mga ito bilang mga basura sa kapaligiran at hindi mag-uuri ng iba pang mga bagay.",
@@ -299,20 +260,6 @@ public class KnowledgeActivity extends BaseActivity {
                         "5. Kung walang SM, maghanap ng accredited E-waste recycler o magtanong sa LGU tungkol sa collection points.\n" +
                         "6. Iwasang itapon ang device sa karaniwang basurahan o sa mga bukas na lugar.",
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
-
-        /*wasteListTranslated.add(new ItemsClass("Home Appliance", "E-Waste",
-                "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.\n" +
-                        "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
-                "Para sa tamang pagtatapon:",
-                "I-unplug ang appliance at linisin itong mabuti.\n" +
-                        "Tanggalin nang maayos ang mga mapanganib na bahagi tulad ng baterya o likido, kung mayroon.\n" +
-                        "Paghiwalayin ang mga recyclable na bahagi tulad ng metal o plastik kung posible.\n" +
-                        "Dalhin ang appliance sa SM collection bins para sa E-waste o sa mga accredited recycling centers.\n" +
-                        "Kung walang SM, makipag-ugnayan sa LGU para sa tamang disposal services.\n" +
-                        "Huwag sunugin, ibaon, o itapon ang appliance sa mga landfill.\n" +
-                        "Puwede mo itong ipangpalit sa iba, ibenta, o ibenta ang mga bahagi para sa dagdag pera.",
-                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));*/
 
         ItemsAdapter adapter = new ItemsAdapter(this, wasteList);
         listView.setAdapter(adapter);
