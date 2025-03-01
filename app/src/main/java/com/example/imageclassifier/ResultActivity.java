@@ -106,7 +106,7 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
 
-            String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottles", "Paper Type Waste" , "Aluminum Type Waste", "Unknown Object"} /**/;
+            String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottles", "Paper Type Waste" , "Aluminum Cans", "Unknown Object"} /**/;
             String detectedObject = classes[maxPos];
 
             // Check if confidence is below 93%
@@ -147,7 +147,7 @@ public class ResultActivity extends AppCompatActivity {
                 case "Packaging Boxes":
                 case "Paper Type Waste":
                 case "Plastic Bottles":
-                case "Aluminum Type Waste":
+                case "Aluminum Cans":
                     wasteIcon.setImageResource(R.drawable.icon_recylable);
                     return "Recyclable Waste";
 
@@ -175,7 +175,7 @@ public class ResultActivity extends AppCompatActivity {
                 case "Packaging Boxes":
                 case "Paper Type Waste":
                 case "Plastic Bottles":
-                case "Aluminum Type Waste":
+                case "Aluminum Cans":
                     wasteIcon.setImageResource(R.drawable.icon_recylable);
                     return "Recyclable Waste";
 
@@ -209,8 +209,8 @@ public class ResultActivity extends AppCompatActivity {
                     return "Paper Type Waste";
                 case "Plastic Bottles":
                     return "Plastic Bottles";
-                case "Aluminum Type Waste":
-                    return "Aluminum Type Waste";
+                case "Aluminum Cans":
+                    return "Aluminum Cans";
                 case "Batteries":
                     return "Batteries";
                 case "Electronic Devices":
@@ -236,8 +236,8 @@ public class ResultActivity extends AppCompatActivity {
                 return "Basurang Papel";
             case "Plastic Bottles":
                 return "Plastik na Bote";
-            case "Aluminum Type Waste":
-                return "Basurang Aluminum";
+            case "Aluminum Cans":
+                return "Latang Aluminum";
             case "Batteries":
                 return "Baterya";
             case "Electronic Devices":

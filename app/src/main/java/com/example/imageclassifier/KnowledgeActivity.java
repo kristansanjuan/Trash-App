@@ -109,12 +109,12 @@ public class KnowledgeActivity extends BaseActivity {
                         "5. Place in the designated recycling bin or drop-off center.",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
-        wasteList.add(new ItemsClass("Aluminum Type Waste", "Non-Biodegradable",
-                "Aluminum waste consists of discarded aluminum materials, including industrial scrap, consumer products, and manufacturing by-products. It is highly recyclable, making it valuable for both economic and environmental sustainability. ",
+        wasteList.add(new ItemsClass("Aluminum Cans", "Non-Biodegradable",
+                "Aluminum waste consists of discarded aluminum cans, including industrial scrap, consumer products, and manufacturing by-products. It is highly recyclable, making it valuable for both economic and environmental sustainability. ",
                 "To Properly Dispose:",
-                "1. Keep aluminum waste separate from other materials like plastic or glass, remove the label if possible.\n" +
+                "1. Keep aluminum can separate from other materials like plastic or glass, remove the label if possible.\n" +
                         "2. If possible, crush the cans or fold the foil to save space.\n" +
-                        "3. Then, place the aluminum waste in its designated recycling bin.",
+                        "3. Then, place the aluminum can in its designated recycling bin.",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteList.add(new ItemsClass("Packaging Boxes", "Recyclable",
@@ -239,12 +239,12 @@ public class KnowledgeActivity extends BaseActivity {
                         "5. Ilagay sa tamang basurahan o lugar ng pag-iipon ng mga recyclable.",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
-        wasteListTranslated.add(new ItemsClass("Basurang Aluminum", "Hindi Nabubulok",
-                "Ito ay tumutukoy sa mga itinapong materyales na gawa sa aluminum, kabilang ang industrial scrap, mga produktong consumer, at mga by-product mula sa pagmamanupaktura. Madali itong i-recycle, kaya’t mahalaga ito hindi lang sa ekonomiya kundi pati na rin sa pangangalaga ng kalikasan. ",
+        wasteListTranslated.add(new ItemsClass("Latang Aluminum", "Hindi Nabubulok",
+                "Ito ay tumutukoy sa mga latang aluminum, kabilang ang industrial scrap, mga produktong consumer, at mga by-product mula sa pagmamanupaktura. Madali itong i-recycle, kaya’t mahalaga ito hindi lang sa ekonomiya kundi pati na rin sa pangangalaga ng kalikasan. ",
                 "Para sa tamang pagtatapon:",
-                "1. Ihiwalay ang basura na aluminum mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari. \n" +
-                        "2. Kung maaari, durugin ang lata o tiklupin ang foil upang makatipid sa espasyo. \n" +
-                        "3. Pagkatapos, ilagay ang basura na aluminum sa recycling bin. ",
+                "1. Ihiwalay ang basura na lata mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari. \n" +
+                        "2. Kung maaari, durugin ang lata upang makatipid sa espasyo. \n" +
+                        "3. Pagkatapos, ilagay ang latang aluminum sa recycling bin. ",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
 
         wasteListTranslated.add(new ItemsClass("Packaging Boxes", "Recyclable",
