@@ -18,11 +18,11 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:src="@drawable/back_arrow"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:background="@drawable/round_button_bg"
         android:backgroundTint="@color/white"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
         android:contentDescription="back button" />
 
 

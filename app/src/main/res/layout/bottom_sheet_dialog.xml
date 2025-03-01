@@ -61,6 +61,7 @@
         android:fontFamily="@font/generalsansregular"
         android:text="Translate"
         android:textSize="14sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

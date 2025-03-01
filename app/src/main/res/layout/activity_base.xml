@@ -48,11 +48,12 @@
         android:layout_gravity="start"
         android:background="@drawable/menu_bg"
         app:headerLayout="@layout/menu_header"
-        app:itemIconTint="@color/yellow"
+        app:itemIconTint="@color/white"
         app:dividerInsetStart="20dp"
         app:dividerInsetEnd="20dp"
         app:itemTextColor="@color/white"
-        app:menu="@menu/menu_items1" >
+        app:menu="@menu/menu_items1"
+        app:itemTextAppearance="@style/NavifationMenuTextStyle" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,6 +73,7 @@
                 android:background="@drawable/menu_bg"
                 app:itemTextColor="@color/white"
                 app:itemIconTint="@color/white"
+                app:itemTextAppearance="@style/NavifationMenuTextStyle"
                 android:paddingBottom="50sp" />
 
         </LinearLayout>

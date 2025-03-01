@@ -24,7 +24,7 @@
 
         <item
             android:id="@+id/navExit"
-            android:title="Exit"
+            android:title="Close"
             android:icon="@drawable/exit_icon" />
 
     </group>
