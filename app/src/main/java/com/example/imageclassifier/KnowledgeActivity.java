@@ -112,7 +112,7 @@ public class KnowledgeActivity extends BaseActivity {
         wasteList.add(new ItemsClass("Aluminum Cans", "Non-Biodegradable",
                 "Aluminum waste consists of discarded aluminum cans, including industrial scrap, consumer products, and manufacturing by-products. It is highly recyclable, making it valuable for both economic and environmental sustainability. ",
                 "To Properly Dispose:",
-                "1. Keep aluminum can separate from other materials like plastic or glass, remove the label if possible.\n" +
+                "1. Keep aluminum cans separate from other materials like plastic or glass, remove the label if possible.\n" +
                         "2. If possible, crush the cans or fold the foil to save space.\n" +
                         "3. Then, place the aluminum can in its designated recycling bin.",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));

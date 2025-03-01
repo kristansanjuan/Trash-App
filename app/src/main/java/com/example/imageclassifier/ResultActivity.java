@@ -237,7 +237,7 @@ public class ResultActivity extends AppCompatActivity {
             case "Plastic Bottles":
                 return "Plastik na Bote";
             case "Aluminum Cans":
-                return "Latang Aluminum";
+                return "Latang Aluminums";
             case "Batteries":
                 return "Baterya";
             case "Electronic Devices":
