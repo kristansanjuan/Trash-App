@@ -30,6 +30,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     buildFeatures {
+        buildConfig = true
         viewBinding = true
         mlModelBinding = true
     }

@@ -131,16 +131,16 @@ public class DisposalGuideActivity {
                         "5. Itapon ang basag na salamin sa regular na basura, hindi sa recycling bin.\n"
         });
 
-        defaultGuides.put("Aluminum Type Waste", new String[] {
+        defaultGuides.put("Aluminum Cans", new String[] {
                 // English
-                "1. Keep aluminum waste separate from other materials like plastic or glass, remove the label if possible.\n" +
-                        "2. If possible, crush the cans or fold the foil to save space. \n" +
-                        "3. Then, place the aluminum waste in its designated recycling bin.\n",
+                "1. Keep aluminum cans separate from other materials like plastic or glass, remove the label if possible.\n" +
+                        "2. If possible, crush the cans to save space. \n" +
+                        "3. Then, place the aluminum can in its designated recycling bin.\n",
 
                 // Tagalog
-                "1. Ihiwalay ang basura na aluminum mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari.\n" +
-                        "2. Kung maaari, durugin ang lata o tiklupin ang foil upang makatipid sa espasyo.\n" +
-                        "3. Pagkatapos, ilagay ang basura na aluminum sa recycling bin.\n"
+                "1. Ihiwalay ang latang aluminum mula sa iba pang mga materyales tulad ng plastik o salamin, alisin ang label kung maaari.\n" +
+                        "2. Kung maaari, durugin ang lata upang makatipid sa espasyo.\n" +
+                        "3. Pagkatapos, ilagay ang latang aluminum sa recycling bin.\n"
         });
 
         defaultGuides.put("Packaging Boxes", new String[] {

@@ -8,17 +8,37 @@
     android:background="@color/white"
     tools:context=".WasteItemFragment">
 
-    <ImageButton
-        android:id="@+id/buttonBack"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/back_arrow"
-        android:layout_gravity="end"
-        android:background="@drawable/round_button_bg"
-        android:backgroundTint="@color/lightblue"
-        android:layout_marginEnd="20dp"
-        app:tint="@color/white"
-        android:contentDescription="button back" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/back_arrow"
+            android:layout_gravity="start"
+            android:layout_marginStart="15dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="button back" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/translateLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/generalsansregular"
+            android:text="Translate"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            app:switchMinWidth="56sp"
+            app:switchPadding="10sp"
+            app:thumbTint="@drawable/thumb"
+            app:trackTint="@drawable/track" />
+
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -86,20 +106,6 @@
                     app:layout_constraintVertical_bias="0.315" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/translateLanguage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/generalsansregular"
-                android:text="Translate"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:switchMinWidth="56sp"
-                app:switchPadding="10sp"
-                app:thumbTint="@drawable/thumb"
-                app:trackTint="@drawable/track"
-                android:layout_marginStart="34dp"/>
 
             <TextView
                 android:id="@+id/descriptionView"

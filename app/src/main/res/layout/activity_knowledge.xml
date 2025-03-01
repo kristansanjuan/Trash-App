@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/segregationTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/segregationTitle"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.188" />-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardContainer"
