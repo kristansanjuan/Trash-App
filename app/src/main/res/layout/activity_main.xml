@@ -200,11 +200,11 @@
                 android:lineSpacingExtra="4dp"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
-                android:text=""
+                android:text="Tap any of the moving buttons"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="19sp"
-                android:visibility="gone"
+
                 app:layout_constraintBottom_toTopOf="@+id/cameraButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

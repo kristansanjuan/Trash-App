@@ -46,6 +46,29 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="About the Model"
+            android:textColor="#247D7F"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/aboutModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="@color/bluegreen"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:padding="8dp"
+            android:lineSpacingExtra="8dp"
+            android:textColor="#666"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Developers"
             android:textColor="#247D7F"
             android:textSize="25sp"
