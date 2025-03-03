@@ -109,8 +109,8 @@ public class ResultActivity extends AppCompatActivity {
             String[] classes = {"Organic Waste", "Environmental Waste", "Plastic Type Waste", "Glass Type Waste", "Packaging Boxes", "Batteries", "Electronic Devices", "Plastic Bottles", "Paper Type Waste" , "Aluminum Cans", "Unknown Object"} /**/;
             String detectedObject = classes[maxPos];
 
-            // Check if confidence is below 93%
-            if (maxConfidence <= 0.93f) {
+            // Check if confidence is below 94%
+            if (maxConfidence <= 0.94f) {
                 // Show a "Can't classify" message if confidence is low
                 detectedObject = "Unknown";
             }
