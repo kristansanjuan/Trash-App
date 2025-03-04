@@ -26,4 +26,28 @@
 
     </group>
 
+    <group
+        android:id="@+id/otherGroup">
+
+        <item
+            android:id="@+id/navAbout"
+            android:title="About"
+            android:icon="@drawable/about_icon" />
+
+        <!--<item
+            android:id="@+id/navUpdateApp"
+            android:title="Check for Update"
+            android:icon="@drawable/ecosort_logo1" />-->
+        <!--<item
+            android:id="@+id/navContactUs"
+            android:title="Contact Us"
+            android:icon="@drawable/contactus_icon" />-->
+
+        <item
+            android:id="@+id/navExit"
+            android:title="Close"
+            android:icon="@drawable/exit_icon" />
+
+    </group>
+
 </menu>

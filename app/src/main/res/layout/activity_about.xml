@@ -40,7 +40,7 @@
             android:textAlignment="center"
             android:padding="8dp"
             android:lineSpacingExtra="8dp"
-            android:textColor="#666"/>
+            android:textColor="@color/black"/>
 
 
         <TextView
@@ -64,7 +64,31 @@
             android:textAlignment="center"
             android:padding="8dp"
             android:lineSpacingExtra="8dp"
-            android:textColor="#666"/>
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_model_conti1"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:lineSpacingExtra="8dp"
+            android:padding="8dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_model_conti2"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:lineSpacingExtra="8dp"
+            android:padding="8dp"
+            android:layout_marginTop="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -104,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:text="Kristan Aimar B. San Juan"
                     android:textSize="20sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:gravity="center"
                     android:paddingTop="8dp"/>
 
@@ -114,7 +138,7 @@
                     android:layout_height="wrap_content"
                     android:text="kristanaimarsanjuan.hs@gmail.com"
                     android:textSize="18sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
 
@@ -124,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:text="09774528049"
                     android:textSize="18sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
             </LinearLayout>
@@ -150,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:text="Jomari T. Basario"
                     android:textSize="20sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:gravity="center"
                     android:paddingTop="8dp"/>
 
@@ -160,7 +184,7 @@
                     android:layout_height="wrap_content"
                     android:text="jomarit.basario@gmail.com"
                     android:textSize="18sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
 
@@ -170,7 +194,7 @@
                     android:layout_height="wrap_content"
                     android:text="09773942793"
                     android:textSize="18sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
             </LinearLayout>
@@ -195,7 +219,7 @@
                     android:layout_height="wrap_content"
                     android:text="Rey Albert M. De Zuñiga"
                     android:textSize="20sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:gravity="center"
                     android:paddingTop="8dp"/>
 
@@ -205,7 +229,7 @@
                     android:layout_height="wrap_content"
                     android:text="reyalbertdezuniga@gmail.com"
                     android:textSize="18sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
 
@@ -215,7 +239,7 @@
                     android:layout_height="wrap_content"
                     android:text="09633945115"
                     android:textSize="18sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
 
@@ -241,7 +265,7 @@
                     android:layout_height="wrap_content"
                     android:text="Denzel Stewart S. Buluran"
                     android:textSize="20sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:gravity="center"
                     android:paddingTop="8dp"/>
 
@@ -251,7 +275,7 @@
                     android:layout_height="wrap_content"
                     android:text="denzelstewartbuluran.hs@gmail.com"
                     android:textSize="18sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
 
@@ -261,7 +285,7 @@
                     android:layout_height="wrap_content"
                     android:text="09549916948"
                     android:textSize="18sp"
-                    android:textColor="#333"
+                    android:textColor="@color/black"
                     android:textIsSelectable="true"
                     android:gravity="center"/>
             </LinearLayout>
@@ -277,7 +301,7 @@
             android:textAlignment="center"
             android:paddingTop="16dp"
             android:paddingBottom="0dp"
-            android:textColor="#333"
+            android:textColor="@color/black"
             android:textIsSelectable="true"
             android:layout_gravity="center_horizontal"/>
 

@@ -20,12 +20,12 @@
     <string name="segregationMatters">Why Waste Segregation Matters?</string>
     <string name="segregationDialogue">Waste segregation helps keep the environment clean by reducing pollution and making recycling more effective. By separating waste properly, you prevent harmful materials from mixing with recyclables, reduce landfill waste, and conserve natural resources. So what are you waiting for? Be a part of the solution—start segregating today! </string>
 
-    <string name="about_model_with_link">
-        This waste classification model was trained using <a href="https://teachablemachine.withgoogle.com/">Google Teachable Machine</a>. Developers collected images of different waste types such as biodegradable, non-biodegradable, recyclable, and e-waste to build a diversed dataset.
+    <string name="about_model_conti1">
+        The model was trained using hyperparameters like epochs, learning rate, and batch size to improve accuracy. A confusion matrix was used to evaluate performance and ensure correct classification.
+    </string>
 
-        The model was trained using optimized settings like epochs, learning rate, and batch size to improve accuracy. A confusion matrix was used to evaluate performance and ensure correct classification.
-
-        Integrated into this app into a tensorflow lite format, the model helps users identify waste types instantly, promoting proper waste disposal. Future updates will improve accuracy and add more waste categories to enhance sustainability efforts.
+    <string name="about_model_conti2">
+        Integrated into this app as a tensorflow lite format, the model helps users identify waste types instantly, promoting proper waste disposal. Future updates will improve accuracy and add more waste categories to enhance sustainability efforts.
     </string>
     
     <string name="biodegradableDescription">

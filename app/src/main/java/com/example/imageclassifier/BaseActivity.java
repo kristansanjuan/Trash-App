@@ -57,7 +57,7 @@ public class BaseActivity extends AppCompatActivity {
         });
 
         NavigationView navigationView1 = findViewById(R.id.navMenu1);
-        NavigationView navigationView2 = findViewById(R.id.navMenu2);
+        //NavigationView navigationView2 = findViewById(R.id.navMenu2);
 
         View headerView = navigationView1.getHeaderView(0);
         closeMenuButton = headerView.findViewById(R.id.closeMenuButton);
@@ -75,22 +75,15 @@ public class BaseActivity extends AppCompatActivity {
                     startActivity(new Intent(this, KnowledgeActivity.class));
                 }
             } else if (item.getItemId() == R.id.navHelp) {
-                startActivity(new Intent(this, OnboardingActivity.class));
-            } else {
-                return false;
-            }
-
-            drawerLayout.closeDrawer(GravityCompat.START);
-            return true;
-        });
-        
-        navigationView2.setNavigationItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.navAbout) {
+                if(!(this instanceof KnowledgeActivity)){
+                    startActivity(new Intent(this, HelpActivity.class));
+                }
+            } else if (item.getItemId() == R.id.navAbout) {
                 if(!(this instanceof AboutActivity)){
                     startActivity(new Intent(this, AboutActivity.class));
                 }
-            } else if (item.getItemId() == R.id.navUpdateApp) {
-                checkForUpdate();
+                //} else if (item.getItemId() == R.id.navUpdateApp) {
+                //    checkForUpdate();
             } else if (item.getItemId() == R.id.navExit) {
                 finishAffinity();
                 System.exit(0);
@@ -101,6 +94,24 @@ public class BaseActivity extends AppCompatActivity {
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });
+        
+        /*navigationView2.setNavigationItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.navAbout) {
+                if(!(this instanceof AboutActivity)){
+                    startActivity(new Intent(this, AboutActivity.class));
+                }
+            //} else if (item.getItemId() == R.id.navUpdateApp) {
+            //    checkForUpdate();
+            } else if (item.getItemId() == R.id.navExit) {
+                finishAffinity();
+                System.exit(0);
+            } else {
+                return false;
+            }
+
+            drawerLayout.closeDrawer(GravityCompat.START);
+            return true;
+        });*/
     }
 
     private void checkForUpdate() {

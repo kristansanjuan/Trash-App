@@ -55,7 +55,7 @@
         app:menu="@menu/menu_items1"
         app:itemTextAppearance="@style/NavifationMenuTextStyle" >
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -76,7 +76,7 @@
                 app:itemTextAppearance="@style/NavifationMenuTextStyle"
                 android:paddingBottom="50sp" />
 
-        </LinearLayout>
+        </LinearLayout>-->
 
     </com.google.android.material.navigation.NavigationView>
 
