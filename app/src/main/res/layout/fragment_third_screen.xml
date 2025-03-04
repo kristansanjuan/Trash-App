@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/lightblue"
     tools:context=".onboarding.ThirdScreen">
 
     <ImageView
         android:id="@+id/logo3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ecosort1"
+        android:src="@drawable/ecosort2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,8 +19,8 @@
         app:layout_constraintVertical_bias="0.018" />
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="376dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/generalsansregular"
         android:text="@string/title3"
-        android:textColor="#343232"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,12 +52,12 @@
 
     <TextView
         android:id="@+id/description3"
-        android:layout_width="310dp"
+        android:layout_width="370dp"
         android:layout_height="219dp"
         android:fontFamily="@font/generalsansregular"
         android:text="@string/description3"
         android:textAlignment="center"
-        android:textColor="#343232"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,11 +70,11 @@
         android:id="@+id/skipButton"
         android:layout_width="350sp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/lightblue"
+        android:backgroundTint="@color/white"
         android:fontFamily="@font/generalsansregular"
         android:text="Skip"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/lightblue"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

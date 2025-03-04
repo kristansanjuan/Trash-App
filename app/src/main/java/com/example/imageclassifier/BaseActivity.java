@@ -75,7 +75,7 @@ public class BaseActivity extends AppCompatActivity {
                     startActivity(new Intent(this, KnowledgeActivity.class));
                 }
             } else if (item.getItemId() == R.id.navHelp) {
-                if(!(this instanceof KnowledgeActivity)){
+                if(!(this instanceof HelpActivity)){
                     startActivity(new Intent(this, HelpActivity.class));
                 }
             } else if (item.getItemId() == R.id.navAbout) {

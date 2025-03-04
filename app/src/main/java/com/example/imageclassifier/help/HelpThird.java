@@ -34,7 +34,7 @@ public class HelpThird extends Fragment {
         });
 
         VideoView videoView = view.findViewById(R.id.videoWalkthrough);
-        Uri videoUri = Uri.parse("android.resource://" + requireContext().getPackageName() + "/" + R.raw.ecosort_walkthrough);
+        Uri videoUri = Uri.parse("android.resource://" + requireContext().getPackageName() + "/" + R.raw.ecosort_walkthrough1);
         videoView.setVideoURI(videoUri);
 
         videoView.setOnPreparedListener(mp -> {

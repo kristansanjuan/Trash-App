@@ -89,6 +89,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            
+            <ImageView
+                android:id="@+id/wasteImage"
+                android:layout_width="match_parent"
+                android:layout_height="196dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
 
             <TextView
                 android:id="@+id/descriptionView"
