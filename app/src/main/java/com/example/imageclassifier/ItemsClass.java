@@ -10,8 +10,9 @@ public class ItemsClass {
     int imageId;
     int backgroundId;
     int colorId;
+    int sampleImageId;
 
-    public ItemsClass(String itemTitle, String wasteType, String description, String intro, String disposal, int imageId, int colorId) {
+    public ItemsClass(String itemTitle, String wasteType, String description, String intro, String disposal, int imageId, int colorId, int sampleImageId) {
         this.itemTitle = itemTitle;
         this.wasteType = wasteType;
         this.description = description;
@@ -20,6 +21,7 @@ public class ItemsClass {
         this.imageId = imageId;
         //this.backgroundId = backgroundId;
         this.colorId = colorId;
+        this.sampleImageId = sampleImageId;
     }
 
     public String getItemTitle() { return itemTitle; }
@@ -30,5 +32,6 @@ public class ItemsClass {
     public int getImageId() { return imageId; }
     //public int getBackgroundId() { return backgroundId; }
     public int getColorId() { return colorId; }
+    public int getSampleImageId() { return sampleImageId; }
 
 }

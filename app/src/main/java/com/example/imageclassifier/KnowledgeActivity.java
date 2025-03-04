@@ -61,7 +61,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Composting works best with dried \u2003leaves.\n" +
                         "3. Uncovered waste attracts pests.\n" +
                         "4. Dumping in canals causes pollution.\n",
-                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
+                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green), R.drawable.sample_organic));
 
         wasteList.add(new ItemsClass("Environmental Waste", "Biodegradable",
                 "Environmental waste includes branches, flowers, grass, and leaves.",
@@ -70,7 +70,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Mixing organic waste enhances \u2003composting and speeds up \u2003decomposition.\n" +
                         "3. Burning waste releases pollutants that \u2003harm air quality.\n" +
                         "4. Keeping waste covered helps prevent \u2003pests and maintain cleanliness.\n",
-                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
+                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green), R.drawable.sample_environmental));
 
         wasteList.add(new ItemsClass("Glass Type Waste", "Non-Biodegradable",
                 "Glass waste includes discarded bottles, jars, windows, mirrors, and drinkware. It can be recycled, but broken or contaminated glass requires proper disposal to prevent hazards.",
@@ -79,7 +79,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Wrapping broken glass securely helps \u2003prevent injuries\n" +
                         "3. Labeling as 'Broken Glass' ensures safe \u2003handling.\n" +
                         "4. Disposing of broken glass in the \u2003non-biodegradable bin keeps waste \u2003properly sorted.\n",
-                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
+                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow), R.drawable.sample_glasstype));
 
         wasteList.add(new ItemsClass("Plastic Type Waste", "Non-Biodegradable",
                 "Plastic waste consists of discarded non-biodegradable materials like PET bottles, HDPE containers, and PVC packaging. Proper management helps reduce pollution.",
@@ -88,7 +88,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Non-recyclable parts make processing \u2003less efficient.\n" +
                         "3. Recycling works best when guidelines \u2003are followed.\n" +
                         "4. Proper disposal in designated \u2003recycling bins ensures effective waste \u2003management.\n",
-                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
+                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow), R.drawable.sample_plastictype));
 
         wasteList.add(new ItemsClass("Aluminum Cans", "Non-Biodegradable",
                 "Lightweight, recyclable containers used for packaging drinks and food, made from corrosion-resistant aluminum.",
@@ -96,7 +96,7 @@ public class KnowledgeActivity extends BaseActivity {
                 "1. Aluminum cans are best kept separate \u2003from plastic or glass, and labels can be \u2003removed if possible.\n" +
                         "2. Crushing cans or folding foil helps save \u2003space during disposal.\n" +
                         "3. Placing aluminum cans in their \u2003designated recycling bin ensures proper \u2003recycling.",
-                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
+                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow), R.drawable.sample_aluminumcans));
 
         wasteList.add(new ItemsClass("Packaging Boxes", "Recyclable",
                 "Containers made of cardboard, corrugated fiberboard, or plastic, used for storing, protecting, and transporting goods.",
@@ -106,7 +106,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "3. Recycling bins are the best place for \u2003flattened, clean packaging boxes.\n" +
                         "4. Boxes contaminated with food or liquid \u2003belong in non-recyclable waste.\n" +
                         "5. Keeping packaging boxes separate from \u2003non-recyclable materials ensures proper \u2003recycling.",
-                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
+                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen), R.drawable.sample_packagingboxes));
 
         wasteList.add(new ItemsClass("Paper Type Waste", "Recyclable",
                 "Discarded paper materials such as newspapers, magazines, office documents, cardboard, and packaging. Highly recyclable, it can be repurposed into new paper products to reduce waste and environmental impact.",
@@ -116,7 +116,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "3. Food-soaked or wet paper is \u2003non-recyclable and should be disposed \u2003of separately.\n" +
                         "4. Clean, dry paper belongs in the recycling \u2003bin for reuse.\n" +
                         "5. Mixing paper with plastic or metal must \u2003be avoid to maintain recycling efficiency.",
-                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
+                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen), R.drawable.sample_papertype));
 
         wasteList.add(new ItemsClass("Plastic Bottles", "Recyclable",
                 " Lightweight, durable containers made from polymers like PET or HDPE, commonly used for storing liquids such as water, soda, and household products. While cost-effective and versatile, they contribute to plastic waste and pollution. Recycling and reusing plastic bottles help minimize environmental impact.",
@@ -126,7 +126,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "3. Clean plastic bottles belong in the \u2003recycling bin.\n" +
                         "4. Contaminated bottles with food \u2003or hazardous liquids should go in \u2003non-recyclable waste.\n" +
                         "5. Avoid crushing bottles before recycling, \u2003as it may affect processing efficiency.",
-                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
+                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen),R.drawable.sample_plasticbottles));
 
         wasteList.add(new ItemsClass("Batteries", "E-Waste",
                 "Devices that store and convert chemical energy into electrical energy to power electronics and machinery. They consist of electrochemical cells with positive (cathode) and negative (anode) terminals, allowing electric current flow. Batteries come in rechargeable (e.g., lithium-ion) and non-rechargeable (e.g., alkaline) types, playing a key role in energy storage and modern technology.",
@@ -138,7 +138,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "5. Covering battery terminals with tape or \u2003plastic caps prevents short circuits.\n" +
                         "6. Storing batteries in a cool, dry place \u2003keeps them safe from heat exposure.\n" +
                         "7. Keeping batteries separate from other \u2003waste improves recycling efficiency.\n",
-                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
+                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red), R.drawable.sample_batteries));
 
         wasteList.add(new ItemsClass("Electronic Devices", "E-Waste",
                 "Gadgets that use electrical circuits to process, transmit, or store information. These include smartphones, computers, televisions, and sensors, which rely on semiconductor components like transistors and integrated circuits. They are essential in communication, entertainment, healthcare, and industrial automation.",
@@ -149,7 +149,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "4. SM E-waste collection bins and other \u2003disposal sites accept electronic waste.\n" +
                         "5. E-waste recyclers like E-waste \u2003Management Philippines and E-waste \u2003Project UP provide disposal options.\n" +
                         "6. Regular trash bins and open dumping \u2003are not suitable for electronic waste \u2003disposal.",
-                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
+                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red), R.drawable.sample_electronicdevices));
 
         //Tagalog//
         wasteListTranslated.add(new ItemsClass("Organik na Basura", "Nabubulok",
@@ -159,7 +159,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Ang paghalo ng tuyong dahon ay \u2003nakakatulong sa composting.\n" +
                         "3. Iwasang iwanang bukas ang basura \u2003upang hindi makapagdulot ng peste.\n" +
                         "4. Ang pagtatapon sa kanal ay nagdudulot \u2003ng polusyon.\n",
-                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
+                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green), R.drawable.sample_organic));
 
         wasteListTranslated.add(new ItemsClass("Environmental Waste", "Nabubulok",
                 "Mga basura mula sa halaman tulad ng sanga, bulaklak, damo, at dahon.",
@@ -168,7 +168,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Paghahalo ng organic waste ay \u2003nakakatulong sa mabilisang pagkabulok.\n" +
                         "3. Ang pagsusunog ng basura ay \u2003naglalabas ng nakakasamang polusyon \u2003sa hangin.\n" +
                         "4. Kung magko-kompost, ihalo ang mga \u2003ito sa ibang nabubulok na basura para \u2003mapabilis ang pagkabulok.\n",
-                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green)));
+                R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green), R.drawable.sample_environmental));
 
         wasteListTranslated.add(new ItemsClass("Basurang Salamin", "Hindi Nabubulok",
                 "Mga basurang babasagin katulad ng bote, garapon, bintana, salamin, at baso.",
@@ -177,7 +177,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Balutin nang maayos ang basag na \u2003salamin upang maiwasan ang pinsala.\n" +
                         "3. Lagyan ng label na “Basag na Salamin” \u2003upang mapanatili ang kaligtasan.\n" +
                         "4. Itapon ang basag na salamin sa tamang \u2003non-biodegradable bin.\n",
-                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
+                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow), R.drawable.sample_glasstype));
 
         wasteListTranslated.add(new ItemsClass("Basurang Plastik", "Hindi Nabubulok",
                 "Mga plastik tulad ng PET bottles, HDPE containers, at PVC packaging.",
@@ -186,7 +186,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Ang hindi nare-recycle na bahagi ay \u2003nagpapahirap sa pagpoproseso.\n"+
                         "3. Sumunod sa tamang patakaran ng \u2003recycling upang maging epektibo ito.\n" +
                         "4. Itapon sa tamang recycling bin.\n",
-                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
+                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow), R.drawable.sample_plastictype));
 
         wasteListTranslated.add(new ItemsClass("Latang Aluminum", "Hindi Nabubulok",
                 "Magagaan, madaling i-recycle na lalagyan para sa inumin at pagkain.",
@@ -194,7 +194,7 @@ public class KnowledgeActivity extends BaseActivity {
                 "1. Hiwalayin ito mula sa plastik at salamin.\n" +
                         "2. Durugin o tupiin ang lata upang \u2003makatipid sa espasyo.\n" +
                         "3. Itapon sa tamang recycling bin para sa \u2003aluminyo.",
-                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow)));
+                R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow), R.drawable.sample_aluminumcans));
 
         wasteListTranslated.add(new ItemsClass("Packaging Boxes", "Recyclable",
                 "Mga kahon mula sa karton, corrugated fiberboard, o plastik.",
@@ -203,7 +203,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Alisin ang hindi nare-recycle na bagay \u2003tulad ng plastik na balot o tape.\n" +
                         "3. Ilagay sa recycling bin ang malinis na \u2003packaging boxes.\n" +
                         "4. Ang mga kahong marumi sa pagkain o \u2003likido ay hindi na maaaring i-recycle.\n",
-                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
+                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen), R.drawable.sample_packagingboxes));
 
         wasteListTranslated.add(new ItemsClass("Basurang Papel", "Recyclable",
                 "Mga papel tulad ng diyaryo, magasin, dokumento, at packaging.",
@@ -212,7 +212,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Iwasang itapon ang basang papel sa \u2003recycling bin.\n" +
                         "3. Ilagay ang papel sa recycling bin upang \u2003muling magamit.\n" +
                         "4. Huwag ihalo ang papel sa plastik o \u2003metal upang mapanatili ang kalidad ng \u2003recycling.\n",
-                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
+                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen), R.drawable.sample_papertype));
 
         wasteListTranslated.add(new ItemsClass("Boteng Plastik", "Recyclable",
                 "Mga lalagyan ng tubig, soda, at iba pang likido.",
@@ -221,7 +221,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Itapon ang malilinis na bote sa recycling \u2003bin.\n" +
                         "3. Ang maruming bote na may tira-tirang \u2003pagkain ay hindi maaaring i-recycle.\n" +
                         "4. Iwasang durugin ang bote bago \u2003itapon upang hindi maapektuhan ang \u2003pagpoproseso.\n",
-                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen)));
+                R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen), R.drawable.sample_plasticbottles));
 
         wasteListTranslated.add(new ItemsClass("Baterya", "E-Waste",
                 "Mga gamit na baterya mula sa cellphone, laptop, remote, at iba pa.",
@@ -230,7 +230,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Dalhin sa mga collection site o hazardous \u2003waste facility.\n" +
                         "3. Siguraduhing walang karga ang \u2003rechargeable batteries bago itapon.\n" +
                         "4. Takpan ang terminal ng baterya ng tape \u2003o plastik upang maiwasan ang short \u2003circuit.\n",
-                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
+                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red), R.drawable.sample_batteries));
 
         wasteListTranslated.add(new ItemsClass("Electronik na Gamit", "E-Waste",
                 "Mga gadget tulad ng smartphone, computer, TV, at sensor.",
@@ -240,7 +240,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "3. Balutin nang maayos upang hindi masira \u2003sa transportasyon.\n" +
                         "4. Dalhin sa SM E-waste collection bins o \u2003iba pang accredited E-waste collector.\n" +
                         "5. Huwag itapon sa regular na basurahan o \u2003iwanan kung saan lamang.\n",
-                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red)));
+                R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red), R.drawable.sample_electronicdevices));
 
         ItemsAdapter adapter = new ItemsAdapter(this, wasteList);
         listView.setAdapter(adapter);

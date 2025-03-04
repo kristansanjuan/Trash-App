@@ -18,12 +18,13 @@ public class WasteItemFragment extends Fragment {
     ImageButton backButton;
 
     ImageView wasteIcon;
+    ImageView wasteImage;
     TextView wasteItem, wasteCategory, descriptionView, introView, disposalView;
     SwitchCompat translateSwitch;
 
     String itemText, categoryText, descriptionText, introText, disposalText;
     String itemTrans, categoryTrans, descriptionTrans, introTrans, disposalTrans;
-    int iconImage, backgroundType, categoryColor;
+    int iconImage, backgroundType, categoryColor, wasteSample;
 
     public static WasteItemFragment newInstance(ItemsClass item, ItemsClass itemTranslated) {
         WasteItemFragment fragment = new WasteItemFragment();
@@ -43,6 +44,7 @@ public class WasteItemFragment extends Fragment {
         args.putInt("iconImage", item.getImageId());
         //args.putInt("backgroundType", item.getBackgroundId());
         args.putInt("categoryColor", item.getColorId());
+        args.putInt("wasteSample", item.getSampleImageId());
         fragment.setArguments(args);
         return fragment;
     }
@@ -59,6 +61,7 @@ public class WasteItemFragment extends Fragment {
         introView = view.findViewById(R.id.introView);
         disposalView = view.findViewById(R.id.disposalView);
         translateSwitch = view.findViewById(R.id.translateLanguage);
+        wasteImage = view.findViewById(R.id.wasteImage);
 
         backButton = view.findViewById(R.id.buttonBack);
 
@@ -80,12 +83,14 @@ public class WasteItemFragment extends Fragment {
             iconImage = getArguments().getInt("iconImage");
             //backgroundType = getArguments().getInt("backgroundType");
             categoryColor = getArguments().getInt("categoryColor");
+            wasteSample = getArguments().getInt("wasteSample");
 
             wasteItem.setText(itemText);
 
             wasteIcon.setImageResource(iconImage);
             //wasteIcon.setBackgroundResource(backgroundType);
             wasteCategory.setTextColor(categoryColor);
+            wasteImage.setImageResource(wasteSample);
 
             translateText(false);
         }
