@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        android:divider="@color/black"
+        android:divider="@color/gray"
         android:showDividers="middle"
         android:dividerPadding="20dp">
 
@@ -30,7 +30,7 @@
             android:src="@drawable/ecosort1"
             android:layout_gravity="start"
             android:layout_marginStart="50dp"
-            android:paddingBottom="5dp"/>
+            android:paddingBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
