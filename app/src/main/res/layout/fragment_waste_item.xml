@@ -42,38 +42,40 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="70dp"
+        android:layout_marginStart="50dp">
+
 
         <ImageView
             android:id="@+id/wasteIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/biodegradable1"
             android:layout_marginEnd="5dp"
-            android:layout_toStartOf="@id/wasteItem" />
+            android:layout_toStartOf="@id/wasteItem"
+            android:src="@drawable/biodegradable1" />
 
         <TextView
             android:id="@+id/wasteItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/generalsansregular"
             android:text="Organic Waste"
             android:textAlignment="viewStart"
             android:textColor="@color/black"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/wasteCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/generalsansregular"
             android:text="Biodegradable"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true" />
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

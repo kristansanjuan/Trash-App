@@ -50,7 +50,8 @@
         app:headerLayout="@layout/menu_header"
         app:itemIconTint="@color/white"
         app:dividerInsetStart="20dp"
-        app:dividerInsetEnd="20dp"
+        app:dividerInsetEnd="40dp"
+        app:itemVerticalPadding="30dp"
         app:itemTextColor="@color/white"
         app:menu="@menu/menu_items1"
         app:itemTextAppearance="@style/NavifationMenuTextStyle" >
