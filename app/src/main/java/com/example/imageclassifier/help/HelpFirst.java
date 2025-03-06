@@ -33,22 +33,6 @@ public class HelpFirst extends Fragment {
             }).start();
         });
 
-<<<<<<< Updated upstream
-        /*skipOnboarding2.setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), MainActivity.class));
-            getActivity().finish(); // Close HelpActivity
-        });*/
-=======
-
-        skipOnboarding2.setOnClickListener(v -> {
-            v.animate().scaleX(0.9f).scaleY(0.9f).setDuration(70).withEndAction(() -> {
-                v.animate().scaleX(1f).scaleY(1f).setDuration(70);
-                startActivity(new Intent(getActivity(), MainActivity.class));
-                getActivity().finish();
-            }).start();
-        });
->>>>>>> Stashed changes
-
         return view;
     }
 }
