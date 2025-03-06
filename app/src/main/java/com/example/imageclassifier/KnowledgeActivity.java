@@ -95,7 +95,7 @@ public class KnowledgeActivity extends BaseActivity {
                 properWasteDisposal,
                 "1. Aluminum cans are best kept separate \u2003from plastic or glass, and labels can be \u2003removed if possible.\n" +
                         "2. Crushing cans or folding foil helps save \u2003space during disposal.\n" +
-                        "3. Placing aluminum cans in their \u2003designated recycling bin ensures proper \u2003recycling.",
+                        "3. Placing aluminum cans in their \u2003designated recycling bin ensures proper \u2003recycling.\n",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow), R.drawable.sample_aluminumcans));
 
         wasteList.add(new ItemsClass("Packaging Boxes", "Recyclable",
@@ -105,7 +105,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Non-recyclable items like plastic liners or \u2003tape should be removed.\n" +
                         "3. Recycling bins are the best place for \u2003flattened, clean packaging boxes.\n" +
                         "4. Boxes contaminated with food or liquid \u2003belong in non-recyclable waste.\n" +
-                        "5. Keeping packaging boxes separate from \u2003non-recyclable materials ensures proper \u2003recycling.",
+                        "5. Keeping packaging boxes separate from \u2003non-recyclable materials ensures proper \u2003recycling.\n",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen), R.drawable.sample_packagingboxes));
 
         wasteList.add(new ItemsClass("Paper Type Waste", "Recyclable",
@@ -124,7 +124,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Caps and labels should be removed \u2003before disposal.\n" +
                         "3. Clean plastic bottles belong in the \u2003recycling bin.\n" +
                         "4. Contaminated bottles with food \u2003or hazardous liquids should go in \u2003non-recyclable waste.\n" +
-                        "5. Avoid crushing bottles before recycling, \u2003as it may affect processing efficiency.",
+                        "5. Avoid crushing bottles before recycling, \u2003as it may affect processing efficiency.\n",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen),R.drawable.sample_plasticbottles));
 
         wasteList.add(new ItemsClass("Batteries", "E-Waste",
@@ -147,7 +147,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "3. Secure packaging prevents damage \u2003during transport.\n" +
                         "4. SM E-waste collection bins and other \u2003disposal sites accept electronic waste.\n" +
                         "5. E-waste recyclers like E-waste \u2003Management Philippines and E-waste \u2003Project UP provide disposal options.\n" +
-                        "6. Regular trash bins and open dumping \u2003are not suitable for electronic waste \u2003disposal.",
+                        "6. Regular trash bins and open dumping \u2003are not suitable for electronic waste \u2003disposal.\n",
                 R.drawable.icon_ewaste, ContextCompat.getColor(this, R.color.red), R.drawable.sample_electronicdevices));
 
         //Tagalog//
@@ -166,7 +166,7 @@ public class KnowledgeActivity extends BaseActivity {
                 "1. Itapon sa berdeng basurahan \u2003bin.\n" +
                         "2. Paghahalo ng organik na basura ay \u2003nakakatulong sa mabilisang pagkabulok.\n" +
                         "3. Ang pagsusunog ng basura ay \u2003naglalabas ng nakakasamang polusyon \u2003sa hangin.\n" +
-                        "4. Panatiliing nakasara o may takip \u2003ang basurahan upang hindi\u2003pamahayan ng mga peste.\n",
+                        "4. Panatiliing nakasara o may takip \u2003ang basurahan upang hindi \u2003pamahayan ng mga peste.\n",
                 R.drawable.icon_biodegradable, ContextCompat.getColor(this, R.color.green), R.drawable.sample_environmental));
 
         wasteListTranslated.add(new ItemsClass("Basurang Salamin", "Hindi Nabubulok",
@@ -192,7 +192,7 @@ public class KnowledgeActivity extends BaseActivity {
                 tagproperWasteDisposal,
                 "1. Hiwalayin ito mula sa ibang basura at tangalin ang label nito kung maaari.\n" +
                         "2. Durugin o tupiin ang lata upang \u2003makatipid sa espasyo.\n" +
-                        "3. Itapon sa tamang recycling bin.",
+                        "3. Itapon sa tamang recycling bin.\n",
                 R.drawable.icon_nonbiodegradable, ContextCompat.getColor(this, R.color.yellow), R.drawable.sample_aluminumcans));
 
         wasteListTranslated.add(new ItemsClass("Packaging Boxes", "Recyclable",
@@ -202,7 +202,7 @@ public class KnowledgeActivity extends BaseActivity {
                         "2. Alisin ang hindi nare-recycle na bagay \u2003tulad ng plastik na balot o tape.\n" +
                         "3. Ilagay sa recycling bin ang malinis at nakatuping \u2003packaging boxes.\n" +
                         "4. Ang mga kahong marumi na may pagkain o \u2003likido ay hindi na maaaring i-recycle.\n" +
-                        "5. Panatilihing nakahiwalay ang packaging boxes sa ibang uri ng basura para sa tamang pagrerecycle.",
+                        "5. Panatilihing nakahiwalay ang packaging boxes sa ibang uri ng basura para sa tamang pagrerecycle.\n",
                 R.drawable.icon_recylable, ContextCompat.getColor(this, R.color.bluegreen), R.drawable.sample_packagingboxes));
 
         wasteListTranslated.add(new ItemsClass("Basurang Papel", "Recyclable",
@@ -239,7 +239,7 @@ public class KnowledgeActivity extends BaseActivity {
         wasteListTranslated.add(new ItemsClass("Electronik na Gamit", "E-Waste",
                 "Mga gadget tulad ng smartphone, computer, TV, at sensor na gumagamit ng electrical circuits para gumana, magbigay o mag-imbak ng impormasyon.",
                 tagproperWasteDisposal,
-                "1. I-reset ang device upang mawala ang mga\u2003personal na data bago itapon.\n" +
+                "1. I-reset ang device upang mawala ang mga \u2003personal na data bago itapon.\n" +
                         "2. Alisin nang ligtas ang baterya at iba pang \u2003natatanggal na bahagi.\n" +
                         "3. Balutin nang maayos upang hindi masira \u2003sa transportasyon.\n" +
                         "4. Dalhin sa SM E-waste collection bins o \u2003iba pang accredited E-waste collector.\n" +
