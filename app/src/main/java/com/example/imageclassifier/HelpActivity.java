@@ -25,7 +25,7 @@ public class HelpActivity extends BaseActivity {
 
         dotsContainer = findViewById(R.id.dotsContainer);
         ViewPager2 viewPager = findViewById(R.id.viewPager);
-        Button skipOnboarding2 = findViewById(R.id.skipOnboarding2);
+        //Button skipOnboarding2 = findViewById(R.id.skipOnboarding2);
 
         HelpAdapter adapter = new HelpAdapter(this);
         adapter.addFragment(new HelpFirst());

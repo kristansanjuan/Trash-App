@@ -15,9 +15,9 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:hardwareAccelerated="false"
-        android:icon="@drawable/ecosort_logo_styled"
+        android:icon="@drawable/ecosort_logo1"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ecosort_logo_styled"
+        android:roundIcon="@drawable/ecosort_logo1"
         android:supportsRtl="true"
         android:theme="@style/Theme.ImageClassifier"
         tools:targetApi="31">

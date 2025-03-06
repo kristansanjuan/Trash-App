@@ -7,6 +7,19 @@
     android:background="@color/white"
     tools:context=".onboarding.SecondScreen">
 
+    <Button
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/lightblue"
+        android:fontFamily="@font/generalsansregular"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ImageView
         android:id="@+id/logo2"
         android:layout_width="wrap_content"

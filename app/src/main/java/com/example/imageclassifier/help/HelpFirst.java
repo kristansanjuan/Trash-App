@@ -22,17 +22,17 @@ public class HelpFirst extends Fragment {
         View view = inflater.inflate(R.layout.fragment_help1, container, false);
 
         Button nextButton1 = view.findViewById(R.id.nextButton1);
-        Button skipOnboarding2 = view.findViewById(R.id.skipOnboarding2);
+        //Button skipOnboarding2 = view.findViewById(R.id.skipOnboarding2);
 
         nextButton1.setOnClickListener(v -> {
             ViewPager2 viewPager = getActivity().findViewById(R.id.viewPager);
             viewPager.setCurrentItem(1);
         });
 
-        skipOnboarding2.setOnClickListener(v -> {
+        /*skipOnboarding2.setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), MainActivity.class));
             getActivity().finish(); // Close HelpActivity
-        });
+        });*/
 
         return view;
     }

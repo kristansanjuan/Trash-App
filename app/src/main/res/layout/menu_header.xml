@@ -22,17 +22,24 @@
         android:gravity="bottom"
         android:divider="@color/gray"
         android:showDividers="middle"
-        android:dividerPadding="20dp">
+        android:paddingStart="20dp"
+        android:paddingEnd="45dp">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ecosort1"
             android:layout_gravity="start"
-            android:layout_marginStart="50dp"
-            android:paddingBottom="10dp"/>
+            android:layout_marginStart="30dp"
+            android:paddingBottom="10dp"
+            android:layout_marginBottom="40dp"/>
 
-        <TextView
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="45dp" />
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Menu"
@@ -43,7 +50,7 @@
             android:fontFamily="@font/generalsansregular"
             android:paddingTop="0dp"
             android:paddingLeft="21dp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"/>-->
 
     </LinearLayout>
 
