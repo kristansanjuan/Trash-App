@@ -81,11 +81,14 @@
     </string>
 
     <string name="description3">
-        ECOSORT, your guide to efficient waste segregation! To use the app, simply open it, point your
+        ECOSORT: Your smart waste segregation guide! Just open the app, scan an object,
+        and get instant classification into
+        Biodegradable, Non-Biodegradable, Recyclable, or E-Waste, along with proper disposal tips.
+        <!--ECOSORT, your guide to efficient waste segregation! To use the app, simply open it, point your
         camera at the object you want to classify, and tap the Scan button. It will quickly identify and
         categorize the item into one of five categories: Biodegradable, Non-Biodegradable, Recyclable,
         or Electronic Waste. Once classified, follow the recommended disposal method for responsible
-        waste management!
+        waste management!-->
     </string>
 
     <string name="disposalIntro">
