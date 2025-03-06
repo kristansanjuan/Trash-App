@@ -6,6 +6,9 @@ import android.os.Bundle;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.LeadingMarginSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -108,13 +111,26 @@ public class WasteItemFragment extends Fragment {
             wasteCategory.setText(categoryTrans);
             descriptionView.setText(descriptionTrans);
             introView.setText(introTrans);
-            disposalView.setText(disposalTrans);
+            setHangingIndent(disposalView, disposalTrans);
+            //disposalView.setText(disposalTrans);
         } else {
             wasteItem.setText(itemText);
             wasteCategory.setText(categoryText);
             descriptionView.setText(descriptionText);
             introView.setText(introText);
-            disposalView.setText(disposalText);
+            setHangingIndent(disposalView, disposalText);
+            //disposalView.setText(disposalText);
         }
     }
+
+    private void setHangingIndent(TextView textView, String text) {
+        //int numberIndent = 0;
+        int textIndent = 50;
+
+        SpannableString spannableString = new SpannableString(text);
+        spannableString.setSpan(new LeadingMarginSpan.Standard(0, textIndent), 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        textView.setText(spannableString);
+    }
+
 }
