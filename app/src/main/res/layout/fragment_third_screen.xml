@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/generalsansregular"
-        android:text="Skip"
+        android:text="Get Started"
         android:textAlignment="center"
         android:textColor="@color/lightblue"
         android:textSize="24sp"
