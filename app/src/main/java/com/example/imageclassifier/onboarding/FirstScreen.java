@@ -27,15 +27,23 @@ public class FirstScreen extends Fragment {
 
 
         nextButton1.setOnClickListener(v -> {
-            ViewPager2 viewPager = getActivity().findViewById(R.id.viewPager);
-            viewPager.setCurrentItem(1);
+            v.animate().scaleX(0.9f).scaleY(0.9f).setDuration(100).withEndAction(() -> {
+                v.animate().scaleX(1f).scaleY(1f).setDuration(100).withEndAction(() -> {
+                    ViewPager2 viewPager = getActivity().findViewById(R.id.viewPager);
+                    viewPager.setCurrentItem(1);
+                }).start();
+            }).start();
         });
 
         skipOnboarding.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), MainActivity.class);
-            startActivity(intent);
-            getActivity().finish();
+            v.animate().scaleX(0.9f).scaleY(0.9f).setDuration(70).withEndAction(() ->
+                    v.animate().scaleX(1f).scaleY(1f).setDuration(70).start()
+            ).start();
+
+            startActivity(new Intent(getContext(), MainActivity.class));
+            if (getActivity() != null) getActivity().finish();
         });
+
 
         return view;
     }

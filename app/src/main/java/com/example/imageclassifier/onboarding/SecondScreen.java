@@ -26,8 +26,12 @@ public class SecondScreen extends Fragment {
         Button skipOnboarding = view.findViewById(R.id.skip);
 
         nextButton2.setOnClickListener(v -> {
-            ViewPager2 viewPager = getActivity().findViewById(R.id.viewPager);
-            viewPager.setCurrentItem(2);
+            v.animate().scaleX(0.9f).scaleY(0.9f).setDuration(100).withEndAction(() -> {
+                v.animate().scaleX(1f).scaleY(1f).setDuration(100).withEndAction(() -> {
+                    ViewPager2 viewPager = getActivity().findViewById(R.id.viewPager);
+                    viewPager.setCurrentItem(2);
+                }).start();
+            }).start();
         });
 
         skipOnboarding.setOnClickListener(v -> {

@@ -118,19 +118,21 @@ public class MainActivity extends BaseActivity {
         //View headerView = navigationView1.getHeaderView(0);
         //closeButton = headerView.findViewById(R.id.closeMenuButton);
 
-        picture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        picture.setOnClickListener(view -> {
+            view.animate().scaleX(0.9f).scaleY(0.9f).setDuration(100).withEndAction(() -> {
+                view.animate().scaleX(1f).scaleY(1f).setDuration(100).start();
+
                 // Launch camera if we have permission
                 if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(cameraIntent, 1);
                 } else {
-                    //Request camera permission if we don't have it.
+                    // Request camera permission if we don't have it.
                     requestPermissions(new String[]{Manifest.permission.CAMERA}, 100);
                 }
-            }
+            }).start();
         });
+
 
         List<ImageButton> wasteButtons = new ArrayList<>();
         wasteButtons.add(findViewById(R.id.biodegradableButton));

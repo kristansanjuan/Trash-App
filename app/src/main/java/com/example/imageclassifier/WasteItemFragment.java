@@ -68,7 +68,11 @@ public class WasteItemFragment extends Fragment {
 
         backButton = view.findViewById(R.id.buttonBack);
 
-        backButton.setOnClickListener(view1 -> requireActivity().getOnBackPressedDispatcher().onBackPressed());
+        backButton.setOnClickListener(view1 -> {
+            view1.animate().translationX(-20f).setDuration(200).withEndAction(() -> {
+                requireActivity().getOnBackPressedDispatcher().onBackPressed();
+            }).start();
+        });
 
         if (getArguments() != null) {
             itemText = getArguments().getString("wasteItem");

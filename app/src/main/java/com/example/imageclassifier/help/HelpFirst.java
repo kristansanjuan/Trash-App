@@ -25,14 +25,29 @@ public class HelpFirst extends Fragment {
         //Button skipOnboarding2 = view.findViewById(R.id.skipOnboarding2);
 
         nextButton1.setOnClickListener(v -> {
-            ViewPager2 viewPager = getActivity().findViewById(R.id.viewPager);
-            viewPager.setCurrentItem(1);
+            v.animate().scaleX(0.9f).scaleY(0.9f).setDuration(100).withEndAction(() -> {
+                v.animate().scaleX(1f).scaleY(1f).setDuration(100).withEndAction(() -> {
+                    ViewPager2 viewPager = getActivity().findViewById(R.id.viewPager);
+                    viewPager.setCurrentItem(1);
+                }).start();
+            }).start();
         });
 
+<<<<<<< Updated upstream
         /*skipOnboarding2.setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), MainActivity.class));
             getActivity().finish(); // Close HelpActivity
         });*/
+=======
+
+        skipOnboarding2.setOnClickListener(v -> {
+            v.animate().scaleX(0.9f).scaleY(0.9f).setDuration(70).withEndAction(() -> {
+                v.animate().scaleX(1f).scaleY(1f).setDuration(70);
+                startActivity(new Intent(getActivity(), MainActivity.class));
+                getActivity().finish();
+            }).start();
+        });
+>>>>>>> Stashed changes
 
         return view;
     }

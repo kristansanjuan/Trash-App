@@ -3,6 +3,7 @@ package com.example.imageclassifier;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -250,22 +251,30 @@ public class KnowledgeActivity extends BaseActivity {
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
-            ItemsClass selectedItem = (ItemsClass) parent.getItemAtPosition(position);
-            int originalIndex = wasteList.indexOf(selectedItem);
-            ItemsClass translatedItem = wasteListTranslated.get(originalIndex);
-            WasteItemFragment fragment = WasteItemFragment.newInstance(selectedItem, translatedItem);
 
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragmentContainer, fragment)
-                    .addToBackStack(null)
-                    .commit();
+            int originalColor = view.getSolidColor();
+            view.setBackgroundColor(Color.LTGRAY);
 
-            findViewById(R.id.knowledgeTitle).setVisibility(View.GONE);
-            findViewById(R.id.cardContainer).setVisibility(View.GONE);
-            findViewById(R.id.fragmentContainer).setVisibility(View.VISIBLE);
-            //findViewById(R.id.segregationTitle).setVisibility(View.GONE);
-            //findViewById(R.id.segregationDesc).setVisibility(View.GONE);
+            new Handler().postDelayed(() -> {
+                view.setBackgroundColor(originalColor);
+
+                ItemsClass selectedItem = (ItemsClass) parent.getItemAtPosition(position);
+                int originalIndex = wasteList.indexOf(selectedItem);
+                ItemsClass translatedItem = wasteListTranslated.get(originalIndex);
+
+                WasteItemFragment fragment = WasteItemFragment.newInstance(selectedItem, translatedItem);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragmentContainer, fragment).addToBackStack(null).commit();
+
+
+                findViewById(R.id.knowledgeTitle).setVisibility(View.GONE);
+                findViewById(R.id.cardContainer).setVisibility(View.GONE);
+                findViewById(R.id.fragmentContainer).setVisibility(View.VISIBLE);
+                // findViewById(R.id.segregationTitle).setVisibility(View.GONE);
+                // findViewById(R.id.segregationDesc).setVisibility(View.GONE);
+            }, 100);
         });
+
 
         /*listView.setOnItemClickListener((parent, view, position, id) -> {
             ItemsClass selectedItem = (ItemsClass) parent.getItemAtPosition(position);

@@ -28,9 +28,11 @@ public class HelpThird extends Fragment {
         skipButton.setOnClickListener(v -> {
             //ViewPager2 viewPager = getActivity().findViewById(R.id.viewPager);
             //viewPager.setCurrentItem(3);
-            Intent intent = new Intent(getContext(), MainActivity.class);
-            startActivity(intent);
-            getActivity().finish();
+            v.animate().scaleX(0.9f).scaleY(0.9f).setDuration(100).withEndAction(() -> {
+                v.animate().scaleX(1f).scaleY(1f).setDuration(100);
+                startActivity(new Intent(getActivity(), MainActivity.class));
+                getActivity().finish();
+            }).start();
         });
 
         VideoView videoView = view.findViewById(R.id.videoWalkthrough);

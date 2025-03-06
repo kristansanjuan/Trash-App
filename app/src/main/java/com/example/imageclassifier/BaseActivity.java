@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -49,12 +51,18 @@ public class BaseActivity extends AppCompatActivity {
         openMenuButton = findViewById(R.id.openMenuButton);
 
         openMenuButton.setOnClickListener(v -> {
-            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                drawerLayout.closeDrawer(GravityCompat.START);
-            } else {
-                drawerLayout.openDrawer(GravityCompat.START);
-            }
+            v.animate().translationX(60f).setDuration(100).withEndAction(() -> {
+                v.animate().translationX(0f).setDuration(100).setListener(null).start(); // Moves back
+
+                // Toggle drawer
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                } else {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
+            }).start();
         });
+
 
         NavigationView navigationView1 = findViewById(R.id.navMenu1);
         //NavigationView navigationView2 = findViewById(R.id.navMenu2);
@@ -62,38 +70,63 @@ public class BaseActivity extends AppCompatActivity {
         View headerView = navigationView1.getHeaderView(0);
         closeMenuButton = headerView.findViewById(R.id.closeMenuButton);
 
-        closeMenuButton.setOnClickListener(view -> drawerLayout.closeDrawer(GravityCompat.START));
+        closeMenuButton.setOnClickListener(view -> {
+            view.animate().translationX(-30f).setDuration(100).withEndAction(() -> {
+                view.animate().translationX(0f).setDuration(100).setListener(null).start();
+                drawerLayout.closeDrawer(GravityCompat.START);
+            }).start();
+        });
+
+
+
 
         navigationView1.setNavigationItemSelectedListener(item -> {
+            View view = navigationView1.findViewById(item.getItemId());
 
-            if (item.getItemId() == R.id.navHome) {
-                if(!(this instanceof MainActivity)){
-                    startActivity(new Intent(this, MainActivity.class));
-                }
-            } else if (item.getItemId() == R.id.navKnowledge) {
-                if(!(this instanceof KnowledgeActivity)){
-                    startActivity(new Intent(this, KnowledgeActivity.class));
-                }
-            } else if (item.getItemId() == R.id.navHelp) {
-                if(!(this instanceof HelpActivity)){
-                    startActivity(new Intent(this, HelpActivity.class));
-                }
-            } else if (item.getItemId() == R.id.navAbout) {
-                if(!(this instanceof AboutActivity)){
-                    startActivity(new Intent(this, AboutActivity.class));
-                }
-                //} else if (item.getItemId() == R.id.navUpdateApp) {
-                //    checkForUpdate();
-            } else if (item.getItemId() == R.id.navExit) {
-                finishAffinity();
-                System.exit(0);
+            if (view != null) {
+                int originalColor = view.getSolidColor();
+                view.setBackgroundColor(Color.LTGRAY);
+
+                new Handler().postDelayed(() -> {
+                    view.setBackgroundColor(originalColor);
+
+                    if (item.getItemId() == R.id.navHome && !(this instanceof MainActivity)) {
+                        startActivity(new Intent(this, MainActivity.class));
+                    } else if (item.getItemId() == R.id.navKnowledge && !(this instanceof KnowledgeActivity)) {
+                        startActivity(new Intent(this, KnowledgeActivity.class));
+                    } else if (item.getItemId() == R.id.navHelp && !(this instanceof HelpActivity)) {
+                        startActivity(new Intent(this, HelpActivity.class));
+                    } else if (item.getItemId() == R.id.navAbout && !(this instanceof AboutActivity)) {
+                        startActivity(new Intent(this, AboutActivity.class));
+                    } else if (item.getItemId() == R.id.navExit) {
+                        finishAffinity();
+                        System.exit(0);
+                    }
+
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                }, 100);
             } else {
-                return false;
+                if (item.getItemId() == R.id.navHome && !(this instanceof MainActivity)) {
+                    startActivity(new Intent(this, MainActivity.class));
+                } else if (item.getItemId() == R.id.navKnowledge && !(this instanceof KnowledgeActivity)) {
+                    startActivity(new Intent(this, KnowledgeActivity.class));
+                } else if (item.getItemId() == R.id.navHelp && !(this instanceof HelpActivity)) {
+                    startActivity(new Intent(this, HelpActivity.class));
+                } else if (item.getItemId() == R.id.navAbout && !(this instanceof AboutActivity)) {
+                    startActivity(new Intent(this, AboutActivity.class));
+                } else if (item.getItemId() == R.id.navExit) {
+                    finishAffinity();
+                    System.exit(0);
+                }
+
+                drawerLayout.closeDrawer(GravityCompat.START);
             }
 
-            drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });
+
+
+
         
         /*navigationView2.setNavigationItemSelectedListener(item -> {
             if (item.getItemId() == R.id.navAbout) {
