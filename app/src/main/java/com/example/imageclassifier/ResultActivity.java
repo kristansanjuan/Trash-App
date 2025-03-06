@@ -5,6 +5,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.SpannableString;
+import android.text.style.LeadingMarginSpan;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -314,6 +316,10 @@ public class ResultActivity extends AppCompatActivity {
         String disposalGuide = disposalGuideActivity.getGuide(detectedObject);
         String engtag_objectname = wasteName(detectedObject, isEnglish);
 
+        int indent = 50;
+        SpannableString spannableString = new SpannableString(disposalGuide);
+        spannableString.setSpan(new LeadingMarginSpan.Standard(0, indent), 0, spannableString.length(), 0);
+
         if ("Unknown".equals(detectedObject) || "Unknown Object".equals(detectedObject)) {
             // Update UI for unknown object
             if (!isEnglish) {
@@ -334,11 +340,11 @@ public class ResultActivity extends AppCompatActivity {
             disposalGuideTitleTextView.setText(!isEnglish
                     ? "To properly dispose of " + engtag_objectname + ", follow these steps:"
                     : "Para sa tamang pagtatapon ng " + engtag_objectname + ", sundin ang mga steps na ito:");
-            disposalGuideContentsTextView.setText(disposalGuide);
+            disposalGuideContentsTextView.setText(spannableString);
         }
 
         // Set the disposal guide contents (ensure it supports both languages)
-        disposalGuideContentsTextView.setText(disposalGuide);
+        disposalGuideContentsTextView.setText(spannableString);
     }
 
     /*
