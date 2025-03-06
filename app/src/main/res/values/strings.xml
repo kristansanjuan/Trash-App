@@ -29,30 +29,40 @@
     </string>
     
     <string name="biodegradableDescription">
-        Biodegradable waste is material that breaks down naturally through
+        Biodegradable waste breaks down naturally through microorganisms
+        and the environment, reducing waste, enriching soil, and helping
+        the planet.
+        <!--Biodegradable waste is material that breaks down naturally through
         microorganisms and environmental factors, such as food scraps, dry leaves, and organic
         waste. This process helps reduce environmental impact and can contribute to climate
-        protection through recycling.
+        protection through recycling.-->
     </string>
     <string name="nonBiodegradableDescription">
-        Non-biodegradable waste refers to materials that cannot be broken down or
+        Non-biodegradable waste does not break down naturally, lingering in the environment and
+        harming ecosystems. It requires alternative disposal or recycling methods.
+        <!--Non-biodegradable waste refers to materials that cannot be broken down or
         decomposed by natural biological processes. These wastes, such as plastics, metals, and glass,
         remain in the environment for long periods, potentially causing harm to ecosystems. Unlike
         biodegradable waste, non-biodegradable waste does not return to the earth and requires alternative
-        methods of disposal or recycling.
+        methods of disposal or recycling.-->
     </string>
     <string name="recyclableDescription">
-        Recyclable waste refers to materials that can be collected, processed, and transformed
+        Recyclable waste can be processed into a new products instead of ending up in landfills,
+        helping conserve resources and reduce environmental impact.
+        <!--Recyclable waste refers to materials that can be collected, processed, and transformed
         into new products instead of being disposed of in landfills. Common recyclable materials
         include paper, glass, plastic, and metal, which can be reused after undergoing a recycling
-        process to reduce environmental impact and conserve resources.
+        process to reduce environmental impact and conserve resources.-->
     </string>
     <string name="ewasteDescription">
-        Electronic waste (e-waste) refers to discarded electronic devices and equipment, such as
+        Electronic waste (e-waste) includes discarded electronic devices with electrical components,
+        often containing hazardous materials. Proper disposal and recycling reduce harm and recover
+        valuable resources.
+        <!--Electronic waste (e-waste) refers to discarded electronic devices and equipment, such as
         computers, phones, and televisions, that are no longer in use or intended for reuse. This type of
         waste includes a wide range of items with electrical components or circuitry, often containing
         hazardous materials. Proper disposal and recycling of e-waste are essential to reduce environmental
-        impact and recover valuable materials.
+        impact and recover valuable materials.-->
     </string>
 
     <string name="title1">Welcome to Ecosort</string>
