@@ -60,7 +60,15 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
-        backButton.setOnClickListener(view -> getOnBackPressedDispatcher().onBackPressed());
+        backButton.setOnClickListener(view -> {
+            view.animate()
+                    .scaleX(0.9f).scaleY(0.9f).setDuration(100).withEndAction(() -> {
+                        view.animate().scaleX(1f).scaleY(1f).setDuration(100).withEndAction(() -> getOnBackPressedDispatcher().onBackPressed()) // Perform back action after animation
+                                .start();
+                    })
+                    .start();
+        });
+
     }
 
     /**private void goBack() {
@@ -297,15 +305,24 @@ public class ResultActivity extends AppCompatActivity {
         takeAnotherPictureButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Relaunch the camera intent
-                bottomSheetDialog.dismiss(); // Close the Bottom Sheet dialog
-                Intent intent = new Intent(ResultActivity.this, MainActivity.class);
-                intent.putExtra("EXTRA_START_CAMERA", true);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
+                v.animate()
+                        .scaleX(0.85f).scaleY(0.85f).setDuration(100).withEndAction(() -> {
+                            v.animate().scaleX(1f).scaleY(1f).setDuration(100).withEndAction(() -> {
+
+                                        // Relaunch the camera intent after animation completes
+                                        bottomSheetDialog.dismiss(); // Close the Bottom Sheet dialog
+                                        Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+                                        intent.putExtra("EXTRA_START_CAMERA", true);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                                        startActivity(intent);
+                                        finish();
+                                    })
+                                    .start();
+                        })
+                        .start();
             }
         });
+
 
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
