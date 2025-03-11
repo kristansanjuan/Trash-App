@@ -19,8 +19,10 @@ import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -62,6 +64,9 @@ public class MainActivity extends BaseActivity {
     TextView descriptionArea;
     ImageButton selectedButton = null;
 
+    float startAngle = 0f;
+    float selectedAngle = getRotationAngleBasedOnActiveButton();
+
     int[] oldIcon = {
             R.drawable.grey_biodegradable,
             R.drawable.grey_recylable,
@@ -71,6 +76,8 @@ public class MainActivity extends BaseActivity {
 
 
     };
+
+    List<ImageButton> wasteButtons = new ArrayList<>();
 
     /**int[] buttonColors = {
             R.color.green,
@@ -134,7 +141,6 @@ public class MainActivity extends BaseActivity {
         });
 
 
-        List<ImageButton> wasteButtons = new ArrayList<>();
         wasteButtons.add(findViewById(R.id.biodegradableButton));
         wasteButtons.add(findViewById(R.id.recyclableButton));
         wasteButtons.add(findViewById(R.id.ewasteButton));
@@ -295,6 +301,9 @@ public class MainActivity extends BaseActivity {
         button.setImageResource(newIcon);
         selectedButton = button;
 
+        selectedAngle = getRotationAngleBasedOnActiveButton();
+        startCircularAnimation(wasteButtons);
+
         displayInfo(titleId, descriptionId);
     }
 
@@ -365,19 +374,41 @@ public class MainActivity extends BaseActivity {
 
     private ValueAnimator animator; // Store animator globally to control it
 
+    public float getRotationAngleBasedOnActiveButton() {
+        if (selectedButton == null) return -1;
+        if (getButtonIndex(selectedButton) == 1)
+            return 90;
+        else if (getButtonIndex(selectedButton) == 0)
+            return 180;
+        else if (getButtonIndex(selectedButton) == 3)
+            return 270;
+        else if (getButtonIndex(selectedButton) == 2)
+            return 0;
+        return -1;
+    }
+
     public void startCircularAnimation(List<ImageButton> buttons) {
-        animator = ValueAnimator.ofFloat(0f, 360f);
-        animator.setDuration(18000);
-        animator.setRepeatCount(ValueAnimator.INFINITE);
+        if (animator != null) {
+            animator.cancel();
+            animator.removeAllUpdateListeners();
+        }
+
+        Log.d("TEST", selectedAngle + " ; " + startAngle);
+
+        float endAngle = (selectedAngle == -1) ? startAngle + 360 : selectedAngle; // Keep increasing
+        animator = ValueAnimator.ofFloat(startAngle, endAngle);
+        animator.setDuration(selectedAngle == -1 ? 18000 : 100);
+        animator.setRepeatCount(selectedAngle == -1 ? ValueAnimator.INFINITE : 1);
         animator.setInterpolator(new LinearInterpolator());
 
         animator.addUpdateListener(animation -> {
-            float angle = (float) animation.getAnimatedValue();
+            startAngle = (float) animation.getAnimatedValue();
             float separationAngle = 360f / buttons.size();
 
             for (int i = 0; i < buttons.size(); i++) {
                 ImageButton button = buttons.get(i);
-                float newAngle = (i * separationAngle + angle) % 360;
+                button.requestLayout();
+                float newAngle = (i * separationAngle + startAngle) % 360;
 
                 ConstraintLayout.LayoutParams params =
                         (ConstraintLayout.LayoutParams) button.getLayoutParams();
@@ -388,6 +419,7 @@ public class MainActivity extends BaseActivity {
 
         animator.start();
     }
+
 
     // Pause Animation
     private void pauseCircularAnimation() {
