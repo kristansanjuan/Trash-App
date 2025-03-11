@@ -9,8 +9,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="315dp"
-        android:layout_height="315dp"
+        android:layout_width="380dp"
+        android:layout_height="380dp"
+        android:layout_marginBottom="300dp"
         android:src="@drawable/pic2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
