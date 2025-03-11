@@ -49,7 +49,7 @@ public class DisposalGuideActivity {
                 // English
                 "1. Leftover residues can impact the recyclability of materials.\n" +
                         "2. Non-recyclable parts make processing less efficient.\n" +
-                        "3. Recycling works best when guidelines are followed.\n" +
+                        "3. Recycling works best when guidelines  are followed.\n" +
                         "4. Proper disposal in designated recycling bins ensures effective waste management.\n",
 
                 // Tagalog
