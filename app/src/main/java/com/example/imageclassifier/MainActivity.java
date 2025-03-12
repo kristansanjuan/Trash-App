@@ -376,16 +376,39 @@ public class MainActivity extends BaseActivity {
 
     public float getRotationAngleBasedOnActiveButton() {
         if (selectedButton == null) return -1;
-        if (getButtonIndex(selectedButton) == 1)
-            return 90;
-        else if (getButtonIndex(selectedButton) == 0)
-            return 180;
-        else if (getButtonIndex(selectedButton) == 3)
-            return 270;
-        else if (getButtonIndex(selectedButton) == 2)
-            return 0;
-        return -1;
+
+        int buttonIndex = getButtonIndex(selectedButton);
+        Log.d("BUTTON_CLICK", "Clicked button: " + buttonIndex);
+
+        float targetAngle = 0;
+
+        switch (buttonIndex) {
+            case 0:
+                targetAngle = 180;
+                break;
+            case 1:
+                targetAngle = 90;
+                break;
+            case 2:
+                targetAngle = 0;
+                break;
+            case 3:
+                targetAngle = 270;
+                break;
+        }
+
+        // Calculate shortest path (clockwise or counterclockwise)
+        float clockwiseDistance = (targetAngle - startAngle + 360) % 360;
+        float counterclockwiseDistance = (startAngle - targetAngle + 360) % 360;
+
+        // Choose the shortest direction
+        if (clockwiseDistance <= counterclockwiseDistance) {
+            return startAngle + clockwiseDistance; // Rotate clockwise
+        } else {
+            return startAngle - counterclockwiseDistance; // Rotate counterclockwise
+        }
     }
+
 
     public void startCircularAnimation(List<ImageButton> buttons) {
         if (animator != null) {
@@ -395,11 +418,12 @@ public class MainActivity extends BaseActivity {
 
         Log.d("TEST", selectedAngle + " ; " + startAngle);
 
-        float endAngle = (selectedAngle == -1) ? startAngle + 360 : selectedAngle; // Keep increasing
+        float endAngle = (selectedAngle == -1) ? startAngle + 360 : getRotationAngleBasedOnActiveButton();
+
+
         animator = ValueAnimator.ofFloat(startAngle, endAngle);
-        animator.setDuration(selectedAngle == -1 ? 18000 : 100);
-        animator.setRepeatCount(selectedAngle == -1 ? ValueAnimator.INFINITE : 1);
-        animator.setInterpolator(new LinearInterpolator());
+        animator.setDuration(selectedAngle == -1 ? 18000 : 500); // Increased duration for smoothness
+        animator.setInterpolator(new DecelerateInterpolator()); // Smooth stop
 
         animator.addUpdateListener(animation -> {
             startAngle = (float) animation.getAnimatedValue();
@@ -420,8 +444,7 @@ public class MainActivity extends BaseActivity {
         animator.start();
     }
 
-
-    // Pause Animation
+    // 0Pause Animation
     private void pauseCircularAnimation() {
         if (animator != null && animator.isRunning()) {
             animator.pause(); // Pause animation
