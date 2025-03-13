@@ -71,9 +71,11 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:scrollbars="vertical"
         android:scrollbarThumbVertical="@color/lightblue"
         android:requiresFadingEdge="vertical"
         android:fadingEdgeLength="150dp"
@@ -118,7 +120,7 @@
 
         </LinearLayout>
         
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <Button
         android:id="@+id/takeAnotherPictureButton"

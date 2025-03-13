@@ -16,6 +16,7 @@ import android.widget.TextView;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.widget.NestedScrollView;
 
 import com.example.imageclassifier.ml.ModelUnquant;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -274,6 +275,9 @@ public class ResultActivity extends AppCompatActivity {
         Button takeAnotherPictureButton = bottomSheetView.findViewById(R.id.takeAnotherPictureButton);
         SwitchCompat languageSwitch = bottomSheetView.findViewById(R.id.translateSwitch);
         ImageView wasteTypeIcon = bottomSheetView.findViewById(R.id.wasteTypeIcon);
+        NestedScrollView nestedScrollView = bottomSheetView.findViewById(R.id.nestedScrollView);
+
+        nestedScrollView.setNestedScrollingEnabled(true);
 
         // Set initial text for the switch (when OFF - Tagalog, when ON - English)
         //languageSwitch.setText(languageSwitch.isChecked() ? "ENG" : "TAG");
