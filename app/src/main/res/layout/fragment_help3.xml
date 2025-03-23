@@ -32,13 +32,13 @@
         android:fontFamily="@font/generalsansregular"
         android:text="@string/title3"
         android:textColor="#343232"
-        android:textSize="25sp"
+        android:textSize="@dimen/title_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.01" />
 
     <TextView
         android:id="@+id/description3"
@@ -48,12 +48,12 @@
         android:text="@string/description3"
         android:textAlignment="center"
         android:textColor="#343232"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title3"
-        app:layout_constraintVertical_bias="0.14" />
+        app:layout_constraintVertical_bias="0.02" />
 
     <Button
         android:id="@+id/skipButton"

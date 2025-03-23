@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <!--<androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"
@@ -37,14 +37,14 @@
                 android:src="@drawable/menu_icon" />
 
         </androidx.appcompat.widget.Toolbar>-->
-      
+
 
         <ImageView
             android:id="@+id/cicle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/circle1"
             android:layout_marginTop="125dp"
+            android:background="@drawable/circle1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -56,8 +56,8 @@
             android:id="@+id/circle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/circle2"
             android:layout_marginTop="60dp"
+            android:background="@drawable/circle2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,8 +68,8 @@
             android:id="@+id/circle3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/circle3"
             android:layout_marginTop="15dp"
+            android:background="@drawable/circle3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -78,10 +78,10 @@
 
         <ImageView
             android:id="@+id/centerPoint"
-            android:src="@drawable/ecosort_logo1"
             android:layout_width="49dp"
             android:layout_height="49dp"
             android:layout_marginTop="150dp"
+            android:src="@drawable/ecosort_logo1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -92,61 +92,61 @@
             android:id="@+id/biodegradableButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/grey_biodegradable"
             android:background="@drawable/round_button_bg"
+            android:contentDescription="Biodegradable"
+            android:src="@drawable/grey_biodegradable"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="0"
             app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="Biodegradable"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/nonBiodegradableButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/grey_nonbiodegradable"
             android:background="@drawable/round_button_bg"
+            android:contentDescription="Non-Biodegradable"
+            android:src="@drawable/grey_nonbiodegradable"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="270"
             app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="Non-Biodegradable" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/recyclableButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/grey_recylable"
             android:background="@drawable/round_button_bg"
+            android:contentDescription="Recyclable"
+            android:src="@drawable/grey_recylable"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="90"
             app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="Recyclable" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/ewasteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/grey_ewaste"
             android:background="@drawable/round_button_bg"
+            android:contentDescription="E-waste"
+            android:src="@drawable/grey_ewaste"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircle="@id/centerPoint"
             app:layout_constraintCircleAngle="180"
             app:layout_constraintCircleRadius="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="E-waste" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <!--<ImageButton
             android:id="@+id/infectiousButton"
@@ -169,7 +169,7 @@
             android:fontFamily="@font/generalsansregular"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/cameraButton"
@@ -190,7 +190,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleArea"
-            app:layout_constraintVertical_bias="0.103" >
+            app:layout_constraintVertical_bias="0.103">
 
             <TextView
                 android:id="@+id/descriptionArea"
@@ -203,8 +203,7 @@
                 android:text="Tap any of the moving buttons"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="19sp"
-
+                android:textSize="@dimen/text_size"
                 app:layout_constraintBottom_toTopOf="@+id/cameraButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -212,7 +211,6 @@
                 app:layout_constraintVertical_bias="0.103" />
 
         </ScrollView>
-
 
 
         <ImageButton
