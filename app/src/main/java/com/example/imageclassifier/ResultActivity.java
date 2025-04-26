@@ -121,7 +121,7 @@ public class ResultActivity extends AppCompatActivity {
             String detectedObject = classes[maxPos];
 
             // Check if confidence is below 94%
-            if (maxConfidence <= 0.8f) {
+            if (maxConfidence <= 0.7f) {
                 // Show a "Can't classify" message if confidence is low
                 detectedObject = "Unknown";
             }
