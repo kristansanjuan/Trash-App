@@ -27,6 +27,9 @@ import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.util.Log;
 
 public class ResultActivity extends AppCompatActivity {
@@ -70,6 +73,28 @@ public class ResultActivity extends AppCompatActivity {
                     .start();
         });
 
+    }
+
+    float[] lastConfidences;
+    String[] lastClasses;
+
+    private void showTop3Confidences() {
+        if (lastConfidences != null && lastClasses != null) {
+            List<Integer> indices = new ArrayList<>();
+            for (int i = 0; i < lastConfidences.length; i++) {
+                indices.add(i);
+            }
+            indices.sort((i1, i2) -> Float.compare(lastConfidences[i2], lastConfidences[i1]));
+
+            StringBuilder top3 = new StringBuilder("Top 3 Predictions:\n");
+            for (int i = 0; i < 3 && i < indices.size(); i++) {
+                int index = indices.get(i);
+                top3.append(String.format("%s: %.1f%%\n", lastClasses[index], lastConfidences[index] * 100));
+            }
+            //classificationResult.setText(top3.toString());
+        } else {
+            //classificationResult.setText("No classification yet.");
+        }
     }
 
     /**private void goBack() {
@@ -135,6 +160,10 @@ public class ResultActivity extends AppCompatActivity {
 
             // Print the result to the console log
             Log.d("ClassificationResult", s);
+
+            //classificationResult.setText(s);
+            //lastConfidences = confidences;
+            //lastClasses = classes;
 
         } catch (IOException e) {
             e.printStackTrace();
