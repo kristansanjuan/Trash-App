@@ -9,6 +9,8 @@ import android.text.SpannableString;
 import android.text.style.LeadingMarginSpan;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 
 import com.example.imageclassifier.ml.ModelUnquant;
@@ -28,9 +31,11 @@ import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import android.util.Log;
+import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -78,24 +83,24 @@ public class ResultActivity extends AppCompatActivity {
     float[] lastConfidences;
     String[] lastClasses;
 
-    private void showTop3Confidences() {
-        if (lastConfidences != null && lastClasses != null) {
-            List<Integer> indices = new ArrayList<>();
-            for (int i = 0; i < lastConfidences.length; i++) {
-                indices.add(i);
-            }
-            indices.sort((i1, i2) -> Float.compare(lastConfidences[i2], lastConfidences[i1]));
-
-            StringBuilder top3 = new StringBuilder("Top 3 Predictions:\n");
-            for (int i = 0; i < 3 && i < indices.size(); i++) {
-                int index = indices.get(i);
-                top3.append(String.format("%s: %.1f%%\n", lastClasses[index], lastConfidences[index] * 100));
-            }
-            //classificationResult.setText(top3.toString());
-        } else {
-            //classificationResult.setText("No classification yet.");
-        }
-    }
+//    private void showTop3Confidences() {
+//        if (lastConfidences != null && lastClasses != null) {
+//            List<Integer> indices = new ArrayList<>();
+//            for (int i = 0; i < lastConfidences.length; i++) {
+//                indices.add(i);
+//            }
+//            indices.sort((i1, i2) -> Float.compare(lastConfidences[i2], lastConfidences[i1]));
+//
+//            StringBuilder top3 = new StringBuilder("Top 3 Predictions:\n");
+//            for (int i = 0; i < 3 && i < indices.size(); i++) {
+//                int index = indices.get(i);
+//                top3.append(String.format("%s: %.1f%%\n", lastClasses[index], lastConfidences[index] * 100));
+//            }
+//            //classificationResult.setText(top3.toString());
+//        } else {
+//            //classificationResult.setText("No classification yet.");
+//        }
+//    }
 
     /**private void goBack() {
         Intent intent = new Intent(ResultActivity.this, MainActivity.class);
@@ -150,6 +155,9 @@ public class ResultActivity extends AppCompatActivity {
                 // Show a "Can't classify" message if confidence is low
                 detectedObject = "Unknown";
             }
+
+            lastConfidences = confidences;
+            lastClasses = classes;
 
             showBottomSheet(detectedObject, maxConfidence);
 
@@ -306,7 +314,38 @@ public class ResultActivity extends AppCompatActivity {
         ImageView wasteTypeIcon = bottomSheetView.findViewById(R.id.wasteTypeIcon);
         NestedScrollView nestedScrollView = bottomSheetView.findViewById(R.id.nestedScrollView);
 
+        TextView predictionsTextView = bottomSheetView.findViewById(R.id.top3Predictions);
+        TextView toggleTextView = bottomSheetView.findViewById(R.id.confidenceLevelToggle);
+
         nestedScrollView.setNestedScrollingEnabled(true);
+
+        if (lastConfidences != null && lastClasses != null) {
+            List<Integer> indices = new ArrayList<>();
+            for (int i = 0; i < lastConfidences.length; i++) {
+                indices.add(i);
+            }
+            indices.sort((i1, i2) -> Float.compare(lastConfidences[i2], lastConfidences[i1]));
+
+            StringBuilder top3 = new StringBuilder();
+            for (int i = 0; i < 3 && i < indices.size(); i++) {
+                int index = indices.get(i);
+                top3.append(String.format("%s: %.1f%%\n", lastClasses[index], lastConfidences[index] * 100));
+            }
+
+            predictionsTextView.setText(top3.toString());
+        } else {
+            predictionsTextView.setText("No classification yet.");
+        }
+
+        toggleTextView.setOnClickListener(v -> {
+            if (predictionsTextView.getVisibility() == View.GONE) {
+                predictionsTextView.setVisibility(View.VISIBLE);
+                toggleTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.dropup_arrow, 0);
+            } else {
+                predictionsTextView.setVisibility(View.GONE);
+                toggleTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.dropdown_arrow, 0);
+            }
+        });
 
         // Set initial text for the switch (when OFF - Tagalog, when ON - English)
         //languageSwitch.setText(languageSwitch.isChecked() ? "ENG" : "TAG");
@@ -355,7 +394,6 @@ public class ResultActivity extends AppCompatActivity {
                         .start();
             }
         });
-
 
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
