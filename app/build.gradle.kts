@@ -10,8 +10,8 @@ android {
         applicationId = "com.example.imageclassifier"
         minSdk = 24
         targetSdk = 34
-        versionCode = 9
-        versionName = "2"
+        versionCode = 10
+        versionName = "2.01"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
